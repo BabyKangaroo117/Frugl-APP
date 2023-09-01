@@ -1,4 +1,6 @@
-![image](https://github.com/BabyKangaroo117/Frugl-APP/assets/13011373/b5efcc9f-946b-44ee-88cb-0036170282ff)
+![image1](https://github.com/BabyKangaroo117/Frugl-APP/assets/13011373/b5efcc9f-946b-44ee-88cb-0036170282ff)
+
+<img src="Frugl_Logo.png" width=200 height=200/>
 
 Taazkir Nasir, Joesph Porrino, Aaron Feinberg, Syed Ahmed, Tyler Thompson 
 **Professor Nate Wagenhoffer **
