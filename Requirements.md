@@ -32,8 +32,8 @@ __Extensions__:
 - User has fewer then 5 previous orders (Success scenario)
   
 __Exceptions__:
-- User is not authenticated
-- User has no internet connection
+- User is not authenticated and selects previous orders 
+- User has no internet connection and selects previous orders
 
 # Nonfunctional Requirements
 
