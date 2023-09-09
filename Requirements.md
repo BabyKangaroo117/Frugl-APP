@@ -11,6 +11,7 @@
 
 # Product Discription
 
+Frugl is a price comparison app that compares prices of grocery store items to find the cheapest price. Companies that have made their data public through API’s will be used in the comparison. A user can initiate a search for an item such as chicken breast. The app will then return locations to get chicken breast with prices in ascending order. The user can then save selected items in a shopping cart. The user can create an account and save up to 5 recent orders. 
 # Use Cases (Functional Requirements)
 ### Tyler Thompson
 ### Use Case Previous Orders
