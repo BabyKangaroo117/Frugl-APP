@@ -1,3 +1,7 @@
+![image1](https://github.com/BabyKangaroo117/Frugl-APP/assets/13011373/b5efcc9f-946b-44ee-88cb-0036170282ff)
+
+<img src="Frugl_Logo.png" width=200 height=200/>
+
 # Team Info & Policies
 
 ### Team Members & Roles
@@ -47,6 +51,10 @@ __Exceptions__:
 
 # Nonfunctional Requirements
 
+### Upgrading to Premium Account
+- Scalibility factor in that a user can pay for premium access and gain an increased amount of uses per day.
+- Connect a transaction service to the application to allow for payment processing.
+- Would only be implemented in the future when application is fully fleshed out and working.
 # External Requirements
 
 # Team Process Description
