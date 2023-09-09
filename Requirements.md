@@ -1,5 +1,14 @@
 # Team Info & Policies
 
+### Team Members & Roles
+- #### Tyler Thompson<br>
+   __Role__: Provide functionality between application and database. Document project properly and reasearch useful techniques to speed up application.
+
+### Repository
+- [Link to repository](https://github.com/BabyKangaroo117/Frugl-APP)
+
+### Communication Channels
+
 # Product Discription
 
 # Use Cases (Functional Requirements)
