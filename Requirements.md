@@ -11,9 +11,9 @@
 - #### Joseph Porrino<br>
    __Role__: Full stack engineer. Provide functionality between application and API’s. Design and create a UI to display grocery store items.
 
-- #### Mansib Syed Ahmed<br>
-   __Role__: Backend engineer. Provide functionality and integration between application, API, and database. Writing, debugging and testing code to implement the application's underlying logic and algorithms.
-  
+- #### Aaron Feinberg  
+
+	__Role__:  Full stack engineer. Will focus on frontend and MVC development in the android ecosystem. 
 ### Repository
 - [Link to repository](https://github.com/BabyKangaroo117/Frugl-APP)
 
@@ -33,7 +33,6 @@ __Major Features__:
   
 __Minor Features__:
 - A premium version of the user account. This will be free unless major progress is made on transactions at the end of the project.
-
 # Use Cases (Functional Requirements)
 ### Tyler Thompson
 ### Use Case Previous Orders
@@ -119,22 +118,41 @@ __Exceptions__:
 1. User enters invalid input
 2. App is unable to retrieve the best suggestions
 
+### Aaron Feinberg
+#### User LogIn
+Actor: User
 
+**Trigger**: User launches a  new instance of the application 
+
+**Flow of events:**
+1. If User Is auth(), do not auth() and send to home page
+2. Present User with an auth page (username/phone number and password). user may log in or change password 
+3. User selects log in 
+4. credentials are sent to the user database for auth()
+5. if auth() send user to home page
+6. if not auth() request that user try again 
+
+**Extensions**
+	a. The user does not have an account, they will be presented with the option to create an account 
+	b. The User forgot their password, the user will be prompted to follow the standard email verification process to reset the password 
+
+**Exceptions**
+	a.  the user has entered the incorrect credentials, in this case the user will be notified of this and the "forgot username/password" functions will be presented clearly to the user
+	b. the app has trouble communicating with our database due to low/no internet on the users device...notify them of this 
+	c. the app has trouble communicating with our internal database due to a server/app issue... notify the user that we are experiencing difficulties
 
 # Nonfunctional Requirements
 
 ### Upgrading to Premium Account
-- Scalibility factor in that a user can pay for premium access and gain an increased amount of uses per day.
+- Scalability factor in that a user can pay for premium access and gain an increased amount of uses per day.
 - Connect a transaction service to the application to allow for payment processing.
 - Would only be implemented in the future when application is fully fleshed out and working.
-
 ### Securing user Data
 - User data will be encrypted and stored in a database
-  
 # External Requirements
 
 ### Running the application
-If permitted the application will be launched through the Andriod app store. Will also be able to run through the Android simulator for Android developers. This is incase the application does not make it on the app store. All launch parameters will be included to be able to excute the application.
+If permitted the application will be launched through the Androidd app store. Will also be able to run through the Android simulator for Android developers. This is incase the application does not make it on the app store. All launch parameters will be included to be able to execute the application.
 
 ### Extensive Testing
 Application will be unit tested thoroughly to ensure all bugs are handled. It will also be important to test the stress on the database, with users simultaneously making requests for information.
@@ -163,8 +181,8 @@ Develop a stable relationship between the database and application. Ensure the d
 #### Joseph Porrino
 The API interface is the core of our product becuase it is how we will recieve the prices to display to our users. The data from the API will go through data analysis so that the user can choose options such as cheapest price or shortest distance. Joseph has experience working with API's and processing the data recieved from them.
 
-### Mansib Syed Ahmed
-Has prior knowledge and experience of developing applications in Android Studio. Write the core logic of the application in Kotlin to process data and input from the frontend.
+#### Aaron Feinberg 
+My primary responsibility will be to help translate conceptual ideas into functional features within the app. A significant part of my role will involve displaying data to the UI (frontend), ensuring smooth data flow and integration using the Model-View-Controller (MVC) architecture. I have experience with the MVC structure of DJango and am working through an online android app development course.
 
 ### Milestones
 
@@ -194,22 +212,17 @@ Done by 10/1/23
 Done by 10/8/23
 - Goal 1: Design for how the items will be displayed in the grocery list
 
-#### Mansib Syed Ahmed
-Done by 9/22/23
-- Goal 1: Research android development and kotlin programming
+#### Aaron Feinberg 
+Done by 09/24/23:
+-  Research and understand the development process for an android app. This will involve creating a few demonstration apps to use as examples and practice
 
-Done by 10/6/23
-- Goal 2: Write code to implement the logic for login, creating, adding, editing, deleting items, suggesting the cheapest option etc
-
-Done by 10/13/23
-- Goal 3: Write unit tests for individual functions and test the interaction between different parts of the application
-
-Done by 10/31/23
-- Goal 4: Polish and tweak code as per additional requirements
+Done by 10/15/23:
+- learn to design a system architecture for our specific project. I would  like to be able to accurately describe the flow of data (via a diagram) between the various parts of our program (user, database, api, etc)
 
 ### Major Road Blocks
 
 #### API Problems
 
-Depending on the APIs used within this application, they may provide major challenges when it comes to making calls between them all. They may all provide different results and the important data will need to be extracted effectively and efficiently. Each of these APIs need to provide extensive amount of information about the products.
+- Depending on the APIs used within this application, they may provide major challenges when it comes to making calls between them all. They may all provide different results and the important data will need to be extracted effectively and efficiently. Each of these APIs need to provide extensive amount of information about the products.
+
 
