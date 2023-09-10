@@ -14,6 +14,9 @@
 - #### Aaron Feinberg  
 
 	__Role__:  Full stack engineer. Will focus on frontend and MVC development in the android ecosystem. 
+
+- #### Taazkir Nasir<br>
+  __Role__: Product design and security implementation. Frontend engineer focused on enhancing user experience and error handling.
 ### Repository
 - [Link to repository](https://github.com/BabyKangaroo117/Frugl-APP)
 
@@ -141,6 +144,39 @@ __Exceptions__
 - b. the app has trouble communicating with our database due to low/no internet on the users device...notify them of this 
 - c. the app has trouble communicating with our internal database due to a server/app issue... notify the user that we are experiencing difficulties
 
+### Taazkir Nasir
+### Use Case searching for individual products
+
+__Name__: Search for an item
+
+__Actors__: Authorized User
+
+__Triggers__: User clicks the “Search Item” button
+
+__Preconditions__: Logged in as authorized user and distance radius is set
+
+__Flow of events__:
+1.	User clicks the search icon.
+2.	System presents the search bar.
+3.	User focuses the search bar.
+4.	System brings up keyboard to screen.
+5.	System dynamically updates suggestions as user completes input.
+6.	User unfocused search bar
+7.	System disappears keyboard from screen.
+8.	User selects item from list of suggestions.
+9.	Systems processes API calls to retrieve price information.
+
+__Postconditions__: System presents the cheapest price for the correct product within the specified radius
+
+__Extensions__:
+- User can search for individual items from the grocery list
+- User can search for individual items from the previously ordered list
+
+__Exceptions__:
+1.	User fails to click suggestions after input is complete.
+2.	User input is invalid.
+3.	Item cannot be found in specified radius.
+
 # Nonfunctional Requirements
 
 ### Upgrading to Premium Account
@@ -184,6 +220,8 @@ The API interface is the core of our product becuase it is how we will recieve t
 #### Aaron Feinberg 
 My primary responsibility will be to help translate conceptual ideas into functional features within the app. A significant part of my role will involve displaying data to the UI (frontend), ensuring smooth data flow and integration using the Model-View-Controller (MVC) architecture. I have experience with the MVC structure of DJango and am working through an online android app development course.
 
+#### Taazkir Nasir
+Finding the cheapest price for any given product is the main idea of this project. It provides the baseline functionality of the app, so carrying out this use case successfully will establish our product’s viability. An intuitive product design will make the app easy to use for users with limited technical capabilities. Taazkir will draw from previous experience with UI design and error handling to provide a professional look to the app.
 ### Milestones
 
 #### Tyler Thompson
@@ -218,6 +256,22 @@ Done by 09/24/23:
 
 Done by 10/15/23:
 - learn to design a system architecture for our specific project. I would  like to be able to accurately describe the flow of data (via a diagram) between the various parts of our program (user, database, api, etc)
+
+#### Taazkir Nasir
+Done by 9/17/23
+- Research and design the outline for login, home, search, grocery list screens.
+
+Done by 9/24/23
+- Research and establish security needs.
+
+Done by 10/15/23
+- Produce final GUI and UI design.
+
+Done by 10/30/23
+- Implement security features.
+
+Done by 11/15/23
+- Test all possible user interaction with the system to identify potential sources of error.
 
 ### Major Road Blocks
 
