@@ -10,6 +10,9 @@
 
 - #### Joseph Porrino<br>
    __Role__: Full stack engineer. Provide functionality between application and API’s. Design and create a UI to display grocery store items.
+
+- #### Mansib Syed Ahmed<br>
+   __Role__: Backend engineer. Provide functionality and integration between application, API, and database. Writing, debugging and testing code to implement the application's underlying logic and algorithms.
   
 ### Repository
 - [Link to repository](https://github.com/BabyKangaroo117/Frugl-APP)
@@ -159,6 +162,10 @@ Develop a stable relationship between the database and application. Ensure the d
 
 #### Joseph Porrino
 The API interface is the core of our product becuase it is how we will recieve the prices to display to our users. The data from the API will go through data analysis so that the user can choose options such as cheapest price or shortest distance. Joseph has experience working with API's and processing the data recieved from them.
+
+### Mansib Syed Ahmed
+Has prior knowledge and experience of developing applications in Android Studio. Write the core logic of the application in Kotlin to process data and input from the frontend.
+
 ### Milestones
 
 #### Tyler Thompson
@@ -186,6 +193,19 @@ Done by 10/1/23
 
 Done by 10/8/23
 - Goal 1: Design for how the items will be displayed in the grocery list
+
+#### Mansib Syed Ahmed
+Done by 9/22/23
+- Goal 1: Research android development and kotlin programming
+
+Done by 10/6/23
+- Goal 2: Write code to implement the logic for login, creating, adding, editing, deleting items, suggesting the cheapest option etc
+
+Done by 10/13/23
+- Goal 3: Write unit tests for individual functions and test the interaction between different parts of the application
+
+Done by 10/31/23
+- Goal 4: Polish and tweak code as per additional requirements
 
 ### Major Road Blocks
 
