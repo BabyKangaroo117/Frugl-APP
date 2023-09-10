@@ -119,12 +119,12 @@ __Exceptions__:
 2. App is unable to retrieve the best suggestions
 
 ### Aaron Feinberg
-#### User LogIn
-Actor: User
+#### User Log-In
+__Actor__: User
 
-**Trigger**: User launches a  new instance of the application 
+**Trigger**: User launches a new instance of the application 
 
-**Flow of events:**
+__Flow of events:__
 1. If User Is auth(), do not auth() and send to home page
 2. Present User with an auth page (username/phone number and password). user may log in or change password 
 3. User selects log in 
@@ -132,14 +132,14 @@ Actor: User
 5. if auth() send user to home page
 6. if not auth() request that user try again 
 
-**Extensions**
-	a. The user does not have an account, they will be presented with the option to create an account 
-	b. The User forgot their password, the user will be prompted to follow the standard email verification process to reset the password 
+__Extensions__
+- a. The user does not have an account, they will be presented with the option to create an account 
+- b. The User forgot their password, the user will be prompted to follow the standard email verification process to reset the password 
 
-**Exceptions**
-	a.  the user has entered the incorrect credentials, in this case the user will be notified of this and the "forgot username/password" functions will be presented clearly to the user
-	b. the app has trouble communicating with our database due to low/no internet on the users device...notify them of this 
-	c. the app has trouble communicating with our internal database due to a server/app issue... notify the user that we are experiencing difficulties
+__Exceptions__
+- a.  the user has entered the incorrect credentials, in this case the user will be notified of this and the "forgot username/password" functions will be presented clearly to the user
+- b. the app has trouble communicating with our database due to low/no internet on the users device...notify them of this 
+- c. the app has trouble communicating with our internal database due to a server/app issue... notify the user that we are experiencing difficulties
 
 # Nonfunctional Requirements
 
