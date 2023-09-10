@@ -152,7 +152,7 @@ __Exceptions__
 # External Requirements
 
 ### Running the application
-If permitted the application will be launched through the Androidd app store. Will also be able to run through the Android simulator for Android developers. This is incase the application does not make it on the app store. All launch parameters will be included to be able to execute the application.
+If permitted the application will be launched through the Android app store. Will also be able to run through the Android simulator for Android developers. This is incase the application does not make it on the app store. All launch parameters will be included to be able to execute the application.
 
 ### Extensive Testing
 Application will be unit tested thoroughly to ensure all bugs are handled. It will also be important to test the stress on the database, with users simultaneously making requests for information.
