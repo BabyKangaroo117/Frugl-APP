@@ -93,6 +93,31 @@ __Exceptions__:
 - Item doesn't exist at any store
 - Item spelled wrong
 
+### Mansib Syed Ahmed
+### Use Case: Creating a Shopping List
+
+__Actors__: App User
+
+__Triggers__: User clicks on "shopping lists" feature
+
+__Precondition__: User installs the app and signs into their account
+
+__Flow of events__:
+1. User opens the app and navigates to "shopping lists" feature
+2. User selects the option to create a new shopping list
+3. User searches for their desired items by typing their names into the search bar and adds each of them to their list
+4. User finishes adding items to their list and clicks on "find cheapest option" feature
+
+__Postconditions__: The app suggests the best store to buy the grocery items
+
+__Extensions/Variations__: The user can also create their shopping list by selecting their previous orders
+
+__Exceptions__:
+1. User enters invalid input
+2. App is unable to retrieve the best suggestions
+
+
+
 # Nonfunctional Requirements
 
 ### Upgrading to Premium Account
