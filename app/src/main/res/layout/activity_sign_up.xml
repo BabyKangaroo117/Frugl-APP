@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="235dp"
+        android:layout_height="82dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="543dp"
+        android:paddingTop="15dp"
+        android:paddingLeft="10dp"
+        android:text="Create Account"
+        android:textSize="30dp" />
+
+
+    <!-- username -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="449dp"
+        android:hint="Create Username" />
+
+    <!-- password -->
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="389dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="396dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Create Password"/>
+
+    <!-- confirm password -->
+    <EditText
+        android:id="@+id/confirmPassword"
+        android:layout_width="389dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="340dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Confirm Password"/>
+
+    <!-- sign up button -->
+    <Button
+        android:id="@+id/create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="153dp"
+        android:layout_marginBottom="271dp"
+        android:text="Sign Up"/>
+</RelativeLayout>
