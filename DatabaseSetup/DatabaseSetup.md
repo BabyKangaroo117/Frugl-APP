@@ -6,4 +6,4 @@
 
 ### Setup SQL Server
 - Setup basic installation of SQL Server
-- 
+  - <img src="DatabaseSetup/DatabaseSetup1.jpeg" width=200 height=200/>
