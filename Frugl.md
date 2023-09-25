@@ -18,6 +18,7 @@ After doing analysis on similar apps to Frugl, we found that there is not an app
 The system architecture for this project includes a phone application that connects to a database to retrieve user information. From the information that was retrieved, the application will be able to sign the user in and remember a varying number of previous orders from the user. From this the user will then send requests to certain APIs that will retrieve the necessary information for the order and process it or tell the user where to go.
 
 The technologies used within this application will allow the programmers to get a solid understanding of how it will function in a real world scenario. This application will be developed through Android Studio using Kotlin. Since Android Studio will be used, the front end portion of the application will be developed using XML. The repository will be GitHub. The database needed for this project will be Firebase which has wonderful integration with Android Studio. A package that can track the user’s location will also be needed for the application to function. Finally, various APIs will be called from other companies, which will allow the calculation of the food totals to be processed. Security for this application will be emphasized. In addition to that, proper documentation and logging will also be heavily encouraged to try and simulate a real world programming environment. 
+
 # Key Development Tools  
 
 - IDE – Android Studio  
@@ -27,4 +28,9 @@ The technologies used within this application will allow the programmers to get 
 - SVC – GitHub  
 # Challenge to Overcome 
 
+## APIs
+
 One of the main challenges for us to overcome is being able to find enough companies that offer APIs for us to be able to compare prices. We want to be able to provide an accurate result for the cheapest grocery store item in a user's location. The technical aspect of calling all the API’s and sorting through the data is also going to be a challenge because each API is going to have a different means of collecting the data. In addition, search a user makes on our app will require querying a particular multiple times, we will have to consider an approach that offloads some of the burden on our vendors’ APIs.
+
+## Search & Fuzzy Search
+users may not necessarily know the exact product they are looking for and may make a general search (paper towels instead of bounty paper towels). The App should understand this and return results constrained by the specifics of the users request. We may need to categorize common items into different categories or possilby use an NLP model to extract the information we'd need to make searches. 
