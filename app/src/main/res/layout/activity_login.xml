@@ -42,6 +42,7 @@
 
     <!-- Login button -->
     <Button
+        android:id="@+id/button"
         android:layout_width="127dp"
         android:layout_height="62dp"
         android:layout_alignParentEnd="true"
