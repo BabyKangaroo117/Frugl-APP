@@ -38,8 +38,13 @@ Tasks that are not finished in the intented time should remain as in progress in
 
 Create issues in this section tailored towards problems that arrised, or will arrise in the future. Issues could range in severity, so put an emphasis on the priority of the problem.
 
-
 ### Branching and Merging
 
 Seperate branches will be created for each new feature within the project. Ensure commits are made often and pushed, to reduce the amount problems that could result.
 All merges must be reviewed by a least one fellow programer, to ensure any bugs or errors are caught.
+
+### Developer Contact
+- justyden - tylert123@yahoo.com
+
+### Ideas or Suggestions
+Any ideas or recommendations, feel free to contact the developers.
