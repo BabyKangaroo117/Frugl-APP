@@ -43,7 +43,9 @@ Create issues in this section tailored towards problems that arrised, or will ar
 Seperate branches will be created for each new feature within the project. Ensure commits are made often and pushed, to reduce the amount problems that could result.
 All merges must be reviewed by a least one fellow programer, to ensure any bugs or errors are caught.
 
-### Developer Contact
+# Contact Information
+
+### Developer Contacts
 - justyden - tylert123@yahoo.com
 
 ### Ideas or Suggestions
