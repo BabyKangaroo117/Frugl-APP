@@ -1,5 +1,5 @@
-# Setting up the Microsoft Azure Database
-
+# Setting Up and Connecting to the Microsoft Azure Database
+<img src="https://img.shields.io/badge/Database_Status-Online-green" /></a>
 ### Install necessarry requirements
 Both can be installed, most of the work will be done using Azure Data Studio. SQL Server Manaement Studio is more advanced but allows for more control.
 - [Azure Data Studio](https://learn.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver16&tabs=redhat-install%2Credhat-uninstall)<br>
