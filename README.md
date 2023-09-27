@@ -27,10 +27,6 @@ possible web application planned for the future.
 - Application aims to cut down on customer prices.
 - Plan which stores the user should, to grab x item from said store.
 - Update prices to provide accurate results.
-<p align="center">
-<a href="https://github.com/BabyKangaroo117/Frugl-APP/graphs/contributors" alt="Contributors">
-        <img src="https://img.shields.io/badge/Contributors-5-blue" /></a>
-</p>
 
 # Goals
 
