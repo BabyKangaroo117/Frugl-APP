@@ -1,5 +1,14 @@
 # Frugl
-<img src="Frugl_Logo.png" width=200 height=200/>
+
+<p align="center">
+  <img src="Frugl_Logo.png" width=200 height=200/>
+  <br>
+  <a href="https://github.com/BabyKangaroo117/Frugl-APP/graphs/contributors" alt="Contributors">
+        <img src="https://img.shields.io/badge/Contributors-5-blue" /></a>
+  <img src="https://img.shields.io/badge/Development_Stage-Early_Development-orange"
+  <a href="https://github.com/BabyKangaroo117/Frugl-APP/graphs/contributors" alt="License">
+        <img src="https://img.shields.io/badge/License-Not_Picked-green" /></a>
+</p>
 
 # Why Frugl?
 
@@ -8,7 +17,8 @@ such as coupons. The application is however, concerned with sale prices in the s
 items along side it. For this reason the application is aims to get customers cheap prices fast. Saving customers any amount in this situation, is what the application strives to do.
 
 # Project Status
-The project is currently in the early stages of development.
+The project is currently in the early stages of development. It is being developed in Android Studio using Kotlin. The product is aimed to run in the Android store, with a 
+possible web application planned for the future. 
 
 # A Better Way to Save
 
@@ -17,6 +27,10 @@ The project is currently in the early stages of development.
 - Application aims to cut down on customer prices.
 - Plan which stores the user should, to grab x item from said store.
 - Update prices to provide accurate results.
+<p align="center">
+<a href="https://github.com/BabyKangaroo117/Frugl-APP/graphs/contributors" alt="Contributors">
+        <img src="https://img.shields.io/badge/Contributors-5-blue" /></a>
+</p>
 
 # Goals
 
