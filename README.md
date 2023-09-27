@@ -60,6 +60,7 @@ All merges must be reviewed by a least one fellow programer, to ensure any bugs 
 
 ### Developer Contacts
 - justyden - tylert123@yahoo.com
+- afeins19 - afeinberg35@gmail.com
 
 ### Ideas or Suggestions
 Any ideas or recommendations, feel free to contact the developers.
