@@ -5,30 +5,43 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.BaseColumns
 import android.util.Log
+import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Toast
 import android.widget.SearchView
 import android.widget.CursorAdapter
+import android.widget.ListView
 import android.widget.SimpleCursorAdapter
 import androidx.core.view.get
 
 class CreateList : AppCompatActivity() {
+    private val items: ArrayList<String> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_list)
 
-        displaySuggestions()
+        // main function that handles searching items and creating list
+        createList()
     }
 
+    // function for displaying the items
+    private fun displayList(){
+
+        val list: ListView = findViewById(R.id.list)
+        val adapter: ArrayAdapter<String> = ArrayAdapter(this, R.layout.activity_list_view, R.id.text, items)
+        list.adapter = adapter
+    }
+
+    // adds the item to the item list
     private fun addItem(item: String){
-        Toast.makeText(this, "Adding " + item, Toast.LENGTH_LONG).show()
+        items.add(item)
     }
 
-    private fun displaySuggestions(){
+    private fun createList(){
         val searchView: SearchView = findViewById(R.id.search)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
             override fun onQueryTextSubmit(query: String?): Boolean {
-                // Handle search submit here if needed
                 return true
             }
 
@@ -41,9 +54,10 @@ class CreateList : AppCompatActivity() {
         })
     }
 
+    //update suggestions based on what the user typed in the search bar
     private fun updateSuggestions(searchView: SearchView, text: String){
-        val items = arrayOf("apple", "apricot",  "banana", "chicken", "cherry")
-        val suggestions = items.filter { it.startsWith(text) }
+        val suggestedItems = arrayOf("apple", "apricot",  "banana", "chicken", "cheese")
+        val suggestions = suggestedItems.filter { it.startsWith(text) }
         val columns = arrayOf(BaseColumns._ID, "suggestion")
         val cursor = MatrixCursor(columns)
 
@@ -69,6 +83,12 @@ class CreateList : AppCompatActivity() {
 
                 // add the item to the list when user clicks on the suggestion
                 addItem(selectedSuggestion.toString())
+
+                // display the list of items
+                displayList()
+
+                // clear the search bar
+                searchView.setQuery("", false)
 
                 return true
             }

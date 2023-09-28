@@ -1,22 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
-
     <!-- title -->
+
+    <!--- search bar -->
+
     <TextView
-        android:id="@+id/list"
-        android:layout_width="372dp"
-        android:layout_height="90dp"
+        android:id="@+id/title"
+        android:layout_width="373dp"
+        android:layout_height="97dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="23dp"
-        android:layout_marginBottom="625dp"
+        android:layout_marginTop="32dp"
         android:padding="20dp"
         android:text="Create Your Shopping List"
-        android:textSize="25dp"></TextView>
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
 
     <SearchView
         android:id="@+id/search"
@@ -24,10 +35,29 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="584dp"
-        android:queryHint="search something" />
+        android:layout_marginTop="28dp"
+        android:queryHint="search for an item"
 
+        android:queryBackground="@color/cardview_shadow_start_color"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        tools:layout_editor_absoluteX="16dp" />
 
-</RelativeLayout>
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="360dp"
+        android:layout_height="420dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="116dp"
+        android:divider="@color/cardview_light_background"
+        android:dividerHeight="7dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        app:layout_constraintVertical_bias="0.0"></ListView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
