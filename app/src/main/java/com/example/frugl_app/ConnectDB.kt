@@ -2,7 +2,6 @@ package com.example.frugl_app
 
 import android.os.StrictMode
 import android.util.Log
-import java.lang.Error
 import java.sql.Connection
 import java.lang.Exception
 import java.sql.DriverManager
@@ -15,10 +14,9 @@ fun connectDB(ip: String, databaseName: String, userName: String, password: Stri
     val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
     StrictMode.setThreadPolicy(policy)
     var conn : Connection? = null
-    var connString : String? = null
     try {
         Class.forName("net.sourceforge.jtds.jtds.Driver")
-        connString = "jdbc:jtds:sqlserver://$ip;databaseName=$databaseName;user=$userName;password=$password;"
+        var connString  : String? = "jdbc:jtds:sqlserver://$ip;databaseName=$databaseName;user=$userName;password=$password;"
         conn = DriverManager.getConnection(connString)
     }
     catch (ex1 : SQLException) {
