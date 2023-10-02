@@ -1,43 +1,64 @@
 package com.example.frugl_app
-
 import android.database.MatrixCursor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.BaseColumns
 import android.util.Log
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Toast
 import android.widget.SearchView
 import android.widget.CursorAdapter
-import android.widget.ListView
 import android.widget.SimpleCursorAdapter
-import androidx.core.view.get
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
-class CreateList : AppCompatActivity() {
-    private val items: ArrayList<String> = ArrayList()
+class CreateList : AppCompatActivity(), ItemListener {
+    private var itemList = mutableListOf<Item>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_list)
 
         // main function that handles searching items and creating list
-        createList()
+        createSearchBar()
+
+        // initialize view, adapter and layout
+        val itemRv: RecyclerView = findViewById(R.id.itemRv)
+        val itemAdapter = ItemAdapter(itemList, this)
+        itemRv.adapter = itemAdapter
+        itemRv.layoutManager = LinearLayoutManager(this)
     }
 
-    // function for displaying the items
-    private fun displayList(){
+    // function for adding items to the list
+    override fun onItemAdd(itemName: String) {
+        val itemRv: RecyclerView = findViewById(R.id.itemRv)
+        val itemAdapter = itemRv.adapter
 
-        val list: ListView = findViewById(R.id.list)
-        val adapter: ArrayAdapter<String> = ArrayAdapter(this, R.layout.activity_list_view, R.id.text, items)
-        list.adapter = adapter
+        val item: Item? = itemList.find { it.name == itemName }
+        if (item == null) {
+            itemList.add(Item(itemName, 1))
+            itemAdapter?.notifyItemInserted(itemList.size-1)
+            displayToastMessage("new item added")
+        }
+        else {
+            item.quantity++
+            val position: Int = itemList.indexOf(item)
+            itemAdapter?.notifyItemChanged(position)
+            displayToastMessage("item updated")
+        }
     }
 
-    // adds the item to the item list
-    private fun addItem(item: String){
-        items.add(item)
+    override fun onItemDelete(position: Int) {
+        val itemRv: RecyclerView = findViewById(R.id.itemRv)
+        itemList.removeAt(position)
+        itemRv.adapter?.notifyItemRemoved(position)
+        displayToastMessage("item is deleted")
     }
 
-    private fun createList(){
+    private fun displayToastMessage(message: String){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun createSearchBar(){
         val searchView: SearchView = findViewById(R.id.search)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
@@ -82,10 +103,7 @@ class CreateList : AppCompatActivity() {
                 searchView.setQuery(selectedSuggestion, true) // The second parameter submits the query
 
                 // add the item to the list when user clicks on the suggestion
-                addItem(selectedSuggestion.toString())
-
-                // display the list of items
-                displayList()
+                onItemAdd(selectedSuggestion)
 
                 // clear the search bar
                 searchView.setQuery("", false)

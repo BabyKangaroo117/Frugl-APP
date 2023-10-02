@@ -3,18 +3,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
     <!-- title -->
-
-    <!--- search bar -->
-
     <TextView
         android:id="@+id/title"
         android:layout_width="373dp"
@@ -29,6 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"></TextView>
 
+    <!-- search bar -->
     <SearchView
         android:id="@+id/search"
         android:layout_width="match_parent"
@@ -42,22 +39,16 @@
         app:layout_constraintTop_toBottomOf="@+id/title"
         tools:layout_editor_absoluteX="16dp" />
 
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="360dp"
-        android:layout_height="420dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="116dp"
-        android:divider="@color/cardview_light_background"
-        android:dividerHeight="7dp"
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/itemRv"
+        android:layout_width="388dp"
+        android:layout_height="334dp"
+        android:layout_marginBottom="152dp"
+        android:paddingLeft="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search"
-        app:layout_constraintVertical_bias="0.0"></ListView>
+        app:layout_constraintVertical_bias="0.81"></androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
