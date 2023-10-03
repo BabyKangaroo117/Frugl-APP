@@ -65,10 +65,15 @@
 
 ### Syed Ahmed
 ##### Previous Goals
+- My goal last week was to create a new activity that implements creating shopping list feature. This feature allows the user to create their own shopping list by searching for their desired items, and then selecting and adding items from the suggestions in the drop down. Additionally, I have implemented the feature to add multiple quantities of an item and delete items as per the user's needs. I have accomplished this goal using two approaches. One with ListView class that's simpler to implement but less efficient, and the other with RecyclerView that's more smooth and efficient but more complex in terms of writing and debugging code. In the coming weeks, I will tweak my approach according to the needs and requirements for our app.
 
 ##### Key Points
+- Added feature: create shopping list
+- Implemented using both ListView and RecyclerView
 
 ##### Next Week Goals
-
+- write unit tests for CreateList activity
+- implement filters such as distance, bugdget, no of stores etc.
+- look into Google Maps API integration
 
 
