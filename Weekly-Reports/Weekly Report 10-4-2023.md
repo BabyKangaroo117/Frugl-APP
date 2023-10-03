@@ -13,6 +13,7 @@
 		 - Added item search page.
 		 - Added more features to front portion.
 		 - Created database login information.
+- Start to learn Jira to enhance scrum meetings.
 - What worked
 	- Temporary database connection from application.
 	- Created temporary list for searching items.
@@ -25,9 +26,11 @@
 	- Distributing database information saftly to the team.
 	- Figuring out how to get accurate information on grocery store items accurately and fast.
 - Stuck on
+	- Major roadblock in the way data is to be retrieved. Debating on putting information into database or giving it dynamically to the user at the process of an order.
 	- Retrieving items from websites.
 #### Next Week Goals
 - Provide everyone with a way to connect to database through application. This would be without the temporary login information. Must be secure.
+- Decide on how information will be stored. This will determine how much this appliaction will depend on the database. If not information is stored within the application, then the database will only store user information and orders.
 
 # Individual Reports
 
@@ -36,9 +39,13 @@
 - Begin connecting database to the application.
 - Flesh out tables and ER diagram for the database.
 ##### Key Points
-
+- Database how to be reconfigured and ER diagram was rethought to in case we decide on going with the new method of data retrieval.
+- This put a stop on connecting database to application. Focused attention on views and how the database will interact with data.
+- Began learning Jira for scrum workflow.
 ##### Next Week Goals
-
+- Fully learn Jira.
+- Try and lock in how the database will be used within the application. This will depend on if the information is retrieved when a user processes an order or if a script will run in the morning to update the database with generic items.
+- Will work with Joe to fully flesh out what the application does with the web scrapper data.
 
 ### Joseph Porrino
 #### Previous Goals
