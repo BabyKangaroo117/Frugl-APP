@@ -7,14 +7,12 @@
     <!-- Title -->
     <TextView
         android:id="@+id/title"
-        android:layout_width="235dp"
+        android:layout_width="match_parent"
         android:layout_height="82dp"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="75dp"
-        android:layout_marginBottom="543dp"
-        android:paddingTop="15dp"
+        android:layout_marginBottom="500dp"
         android:paddingLeft="10dp"
+        android:paddingTop="15dp"
         android:text="Create Account"
         android:textSize="30dp" />
 
@@ -24,43 +22,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="449dp"
+        android:layout_marginBottom="400dp"
         android:hint="Create Username" />
 
     <!-- password -->
     <EditText
         android:id="@+id/password"
-        android:layout_width="389dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="396dp"
+        android:layout_marginBottom="350dp"
         android:ems="10"
-        android:inputType="textPassword"
-        android:hint="Create Password"/>
+        android:hint="Create Password"
+        android:inputType="textPassword" />
 
     <!-- confirm password -->
     <EditText
         android:id="@+id/confirmPassword"
-        android:layout_width="389dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="340dp"
+        android:layout_marginBottom="300dp"
         android:ems="10"
-        android:inputType="textPassword"
-        android:hint="Confirm Password"/>
+        android:hint="Confirm Password"
+        android:inputType="textPassword" />
 
     <!-- sign up button -->
     <Button
         android:id="@+id/create"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="153dp"
-        android:layout_marginBottom="271dp"
-        android:text="Sign Up"/>
+        android:layout_marginBottom="250dp"
+        android:text="Sign Up" />
 </RelativeLayout>

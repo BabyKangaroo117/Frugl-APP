@@ -6,33 +6,41 @@
 
     <Button
         android:id="@+id/login"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="169dp"
-        android:layout_marginBottom="227dp"
+        android:layout_marginBottom="162dp"
         android:text="Login" />
 
     <Button
         android:id="@+id/signup"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="166dp"
-        android:layout_marginBottom="171dp"
+        android:layout_marginBottom="110dp"
         android:text="Sign Up" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="332dp"
-        android:layout_height="123dp"
-        android:layout_alignParentEnd="true"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="469dp"
-        android:text="Welcome To Frugl"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:text="Frugl"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#324FB6"
         android:textSize="35dp" />
 
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:layout_above="@+id/login"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/frugl_" />
 </RelativeLayout>
