@@ -13,7 +13,7 @@
 		 - Added item search page.
 		 - Added more features to front portion.
 		 - Created database login information.
-- Start to learn Jira to enhance scrum meetings.
+- Start to learn how to use projects in GitHub to enhance scrum meetings.
 - What worked
 	- Temporary database connection from application.
 	- Created temporary list for searching items.
@@ -41,9 +41,9 @@
 ##### Key Points
 - Database how to be reconfigured and ER diagram was rethought to in case we decide on going with the new method of data retrieval.
 - This put a stop on connecting database to application. Focused attention on views and how the database will interact with data.
-- Began learning Jira for scrum workflow.
+- Began learning projects in GitHub for scrum work flow.
 ##### Next Week Goals
-- Fully learn Jira.
+- Fully learn how to make a scrum work flow in Github.
 - Try and lock in how the database will be used within the application. This will depend on if the information is retrieved when a user processes an order or if a script will run in the morning to update the database with generic items.
 - Will work with Joe to fully flesh out what the application does with the web scrapper data.
 
