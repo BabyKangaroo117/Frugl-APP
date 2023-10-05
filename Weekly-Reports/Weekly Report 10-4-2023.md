@@ -49,10 +49,14 @@
 
 ### Joseph Porrino
 #### Previous Goals
- 
+ Create a web scraper to gather Wegmans data using python
 ##### Key Points
-
+Gathered the name, price, and image for food items on a webpage and saved the data as a dictionary.
+Looked into services to host python script so that we can automate the webscraper to update our database. 
 ##### Next Week Goals
+Automate the webscraper to search many items at once
+Connect to the database
+Host the python script on github and use a cron schedule to update the database
 
 ### Aaron Feinberg
 #### Previous Goals
