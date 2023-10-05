@@ -74,11 +74,21 @@ Host the python script on github and use a cron schedule to update the database
 
 ### Taazkir Nasir
 ##### Previous Goals
+- Complete the tutorial and update the existing UI
+- Create and implement wireframe design for the main, login, signup, and search page
+- Create Sequence Diagrams
 
 ##### Key Points
-
+- We're working out the kinks of presenting the lowest-priced item to the user, and the logic behind calculating it. 
+- Just sorting by lowest price often yields related, but undesired items. Due to variations in packaging size, sometimes the lowest-priced item is not the "best deal".  
+- Should we present only the cheapest option? Maybe a list of the 5 cheapest? 
+- Should they be categorized by store, price, or distance? 
+- Due to the above issues, the sequence diagrams will be pushed back till a tentative solution is reached
+- Implemented wireframe design for main, login, and signup
 ##### Next Week Goals
-
+- Extend signup activity to get all pertinent user information 
+- Create a few more mockups of the search page to visualize the final output
+- Create user stories to flush out all possible functional requirements 
 
 ### Syed Ahmed
 ##### Previous Goals
