@@ -1,4 +1,4 @@
-# Date 10/4/2023
+# Date 10/11/2023
 # Team Report
 
 #### Previous Goals
@@ -6,9 +6,12 @@
 - Decide on how information will be stored. This will determine how much this appliaction will depend on the database. If not information is stored within the application, then the database will only store user information and orders.
 #### Key Points
 - What was done
-- Start to learn how to use projects in GitHub to enhance scrum meetings.
+  - Talked about how data is stored. Decided to go on unit price of items to get the best overall deal.
+  - Redefined the way the webscraper returns information.
 - What worked
+  - Setting up github actions.
 - What was learned
+  - How we want to item prices. It makes it easier to compare the best deals for each store.
 - Have trouble with
 - Stuck on
 #### Next Week Goals
