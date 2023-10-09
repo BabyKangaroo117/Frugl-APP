@@ -300,4 +300,12 @@ Done by 11/15/23
 
 - Depending on the APIs used within this application, they may provide major challenges when it comes to making calls between them all. They may all provide different results and the important data will need to be extracted effectively and efficiently. Each of these APIs need to provide extensive amount of information about the products.
 
+# Software Architecture
 
+# Software Design
+
+# Coding Guidelines
+### Kotlin
+- Kotlin is the language of choice for this project. The Kotlin coding guideline will be followed in unison with KDoc help standardize the code throughout the project.
+- [__Kotlin Coding Guidelines__](https://kotlinlang.org/docs/coding-conventions.html)
+- [__KDoc__](https://kotlinlang.org/docs/kotlin-doc.html)
