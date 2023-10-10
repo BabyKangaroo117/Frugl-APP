@@ -301,6 +301,27 @@ Done by 11/15/23
 - Depending on the APIs used within this application, they may provide major challenges when it comes to making calls between them all. They may all provide different results and the important data will need to be extracted effectively and efficiently. Each of these APIs need to provide extensive amount of information about the products.
 
 # Software Architecture
+### Major Software Components
+
+### Interfaces
+
+### Data
+- Users will be stored within the database. Until the application is fully fleshed out, every user will be given a username and password without the need to go through a sign up process.
+- A small range of the most popular items will be stored within the database, to let the script know what to scrape. The range of items will be around 70 to 100 and will feature the most popular grocery store items.
+- Price information relative to the date will be stored within the database. The price to be more specific is dealing with the unit prices of each item.
+- The stores information will be stored within the database.
+- Orders will be stored within the database with the idea being, that a customer can go back to the five most recent orders.
+### Reasoning
+- Microsoft Azure
+	- Wanted to get a feel for a major companies software.
+	- Has a free student subscription, which allows for $100 of free credit.
+ 	- Excellent security and load handling.
+### Alternative Choices
+- MySQL
+	- A pro is that it is free.
+ 	- A con is that it would struggle if our application to run multiple scripts to scrape a numerous amount of stores at the same time. It would have a chance of crashing the database with so many inputs at the same time.
+	- Could have used this for the database which is free. However, with the amount of web scrapping needing to be performed, Microsoft Azure felt like the right fit.
+  		
 
 # Software Design
 
