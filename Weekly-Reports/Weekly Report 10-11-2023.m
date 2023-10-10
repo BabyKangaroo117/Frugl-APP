@@ -48,10 +48,24 @@
 
 ### Aaron Feinberg
 #### Previous Goals
+- write unit tests for UI Activities 
+- collaborate with UI team to create a standardized layout for our app to be shared among activities 
+- look into location data for our app (with Syed) 
 
 ##### Key Points
+- Wrote unit tests for signup and login activities (validating username/password requirements were met)
+- Developed the validator object (Util) using TDD
+- collaborated with Syed and Tazkir about restructuring the files and finishing activities for testing
+
+What Im Stuck on
+- when checking out between branches i am sometimes having issues with the smart checkout function on android studio. 
+it claims to shelve my changes but sometimes it turns out they are deleted and it is difficult to restore them, 
+especially after i realized when i made a new commit already. 
 
 ##### Next Week Goals
+- Have a the UI end of our minimum viable product finished 
+- Have tests written for all util functions on for these activities 
+- move onto integrated and ui testing 
 
 ### Taazkir Nasir
 ##### Previous Goals
