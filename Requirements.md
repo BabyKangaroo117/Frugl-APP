@@ -15,11 +15,11 @@
   __Role__: Backend engineer. Provide functionality and integration between application, API, and database. Writing, debugging and testing code to implement the application's underlying logic and algorithms.
 
 - #### Aaron Feinberg  
-
-	__Role__:  Full stack engineer. Will focus on frontend and MVC development in the android ecosystem. 
+__Role__:  Full stack engineer. Will focus on frontend and MVC development in the android ecosystem. 
 
 - #### Taazkir Nasir<br>
   __Role__: Product design and security implementation. Frontend engineer focused on enhancing user experience and error handling.
+
 ### Repository
 - [Link to repository](https://github.com/BabyKangaroo117/Frugl-APP)
 
@@ -302,9 +302,9 @@ Done by 11/15/23
 
 # Software Architecture
 ### Major Software Components
-
+- Kotlin
 ### Interfaces
-
+- Connection function allows a connection to the database. This will have various ways of interacting with the database.
 ### Data
 - Users will be stored within the database. Until the application is fully fleshed out, every user will be given a username and password without the need to go through a sign up process.
 - A small range of the most popular items will be stored within the database, to let the script know what to scrape. The range of items will be around 70 to 100 and will feature the most popular grocery store items.
@@ -324,9 +324,18 @@ Done by 11/15/23
   		
 
 # Software Design
+### Packages, Classes, and Abstraction
+- JDBC Driver
+	- Allows the application to interact with the database. Developed by Microsoft. It was made for Java and works with Kotlin.
+### The Responsibilities of Each Package
 
 # Coding Guidelines
+### Plan to Include a User Guide
+- The user guide will feature a description on how to use the app.
+- Will provide users with a way to contact the developers.
+- This guide will highlight the key features of the application that might be unknown to the user.
+
 ### Kotlin
-- Kotlin is the language of choice for this project. The Kotlin coding guideline will be followed in unison with KDoc help standardize the code throughout the project.
+- Kotlin is the language of choice for this project. The Kotlin coding guideline will be followed in unison with KDoc help standardize the code throughout the project. Using KDocs allows a documentation page to be created.
 - [__Kotlin Coding Guidelines__](https://kotlinlang.org/docs/coding-conventions.html)
 - [__KDoc__](https://kotlinlang.org/docs/kotlin-doc.html)
