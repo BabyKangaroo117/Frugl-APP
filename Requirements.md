@@ -325,9 +325,9 @@ Done by 11/15/23
 
 # Software Design
 ### Packages, Classes, and Abstraction
-- JDBC Driver
-	- Allows the application to interact with the database. Developed by Microsoft. It was made for Java and works with Kotlin.
+- [__JDBC Driver__](https://learn.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver16)
 ### The Responsibilities of Each Package
+- The JDBC Driver allows the application to interact with the database. It is developed by Microsoft. It was made for Java and works with Kotlin.
 
 # Coding Guidelines
 ### Plan to Include a User Guide
