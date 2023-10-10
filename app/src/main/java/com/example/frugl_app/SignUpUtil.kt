@@ -41,7 +41,7 @@ object SignUpUtil {
      *      - password must be 8 characters or longer
      */
     private const val passwordRequirementsPattern = "^(?=.*[a-z])(?=.*\\d)(?=.*[!.,?\$%^&*]).{8,}\$"
-
+    private const val userNameRequirementsPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$"
     fun validatingSignUpInput(
         userName: String,
         password: String,
@@ -54,8 +54,9 @@ object SignUpUtil {
             return false
         }
 
-        //@TODO case for existing username being entered
-        //...
+        if (!userName.matches((userNameRequirementsPattern.toRegex()))){
+            return false
+        }
 
         //PASSWORD VALIDATION
 
@@ -76,5 +77,6 @@ object SignUpUtil {
 
         // passed all cases...valid return
         return true
+
     }
 }

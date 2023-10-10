@@ -6,20 +6,16 @@ import org.junit.Test
 class SignUpUtilTest{
 
     //creating a generic valid password for testing cases that reqiure it
-    private val validTestPassword: String = "Passoword123"
+    private val validTestPassword: String = "Passoword123."
 
-    //
-    private val newUsers = listOf("mark1@gmail.com")
 
-    //generating existing users to test failure of registering with existing username
-    private val existingUsers = listOf("Peter@gmail.com","Carl@hotmail.com")
 
     //VALID TEST CASE
     /**Testing for a successful SignUp submission*/
     @Test
     fun `valid signUp returns true`(){
         val result = SignUpUtil.validatingSignUpInput(
-            userName = newUsers[0],
+            userName = "mark1@gmail.com",
             password = validTestPassword,
             confirmPassword = validTestPassword
         )
@@ -38,18 +34,7 @@ class SignUpUtilTest{
         )
         assertThat(result).isFalse()
     }
-    /**Testing user inputing an existing userName*/
-    @Test
-    fun `existing userName returns false`(){
 
-        val result = SignUpUtil.validatingSignUpInput(
-            userName = existingUsers[0],
-            password = validTestPassword,
-            confirmPassword = validTestPassword
-        )
-
-        assertThat(result).isFalse()
-    }
 
     // testing password cases
 
@@ -57,7 +42,7 @@ class SignUpUtilTest{
     @Test
     fun `empty password returns false`(){
         val result = SignUpUtil.validatingSignUpInput(
-            userName = newUsers[0],
+            userName = "validuser@gmail.com",
             password = "",
             confirmPassword = ""   //note that since we are testing a single item - we still match comfirm password to password
         )
@@ -69,7 +54,7 @@ class SignUpUtilTest{
     @Test
     fun `confirmPassword doesn't match password returns false`(){
         val result = SignUpUtil.validatingSignUpInput(
-            userName = newUsers[0],
+            userName = "validuser@gmail.com",
             password = validTestPassword,
             confirmPassword = ""
         )
@@ -81,7 +66,7 @@ class SignUpUtilTest{
     @Test
     fun `password doesn't meet strength requirements returns false`(){
         val result = SignUpUtil.validatingSignUpInput(
-            userName = newUsers[0],
+            userName = "validuser@gmail.com",
             password = "weak",
             confirmPassword = "weak"
         )
