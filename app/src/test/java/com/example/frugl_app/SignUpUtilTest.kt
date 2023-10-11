@@ -6,7 +6,7 @@ import org.junit.Test
 class SignUpUtilTest{
 
     //creating a generic valid password for testing cases that reqiure it
-    private val validTestPassword: String = "Passoword123."
+    private val validTestPassword: String = "Password123."
 
 
 
