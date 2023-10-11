@@ -350,15 +350,23 @@ Done by 11/15/23
 # Software Design
 ### Packages, Classes, and Abstraction
 - [__JDBC Driver__](https://learn.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver16)
+- [JUnit] (https://junit.org/)
 ### The Responsibilities of Each Package
 - The JDBC Driver allows the application to interact with the database. It is developed by Microsoft. It was made for Java and works with Kotlin.
+- JUnit is a testing library that allows for the quick creation and execution of test functions. It executes Java and Kotlin Code. 
+
+### Utility Objects & Testing
+- Sinlgeton utility objects will be used to ensure data being passed between layers is valid at a fundemental level 
+- Will be developed using TDD (Test Driven Development) to maximize edge case catching 
+- each utility file will pertain to a specific activity or group of activities  
 
 # Coding Guidelines
 ### Plan to Include a User Guide
 - The user guide will feature a description on how to use the app.
 - Will provide users with a way to contact the developers.
 - This guide will highlight the key features of the application that might be unknown to the user.
-
+-  compnents will feature JDoc strings and comments
+-  New features will be implemented on separate branches and be pulled in 
 ### Kotlin
 - Kotlin is the language of choice for this project. The Kotlin coding guideline will be followed in unison with KDoc help standardize the code throughout the project. Using KDocs allows a documentation page to be created.
 - [__Kotlin Coding Guidelines__](https://kotlinlang.org/docs/coding-conventions.html)
