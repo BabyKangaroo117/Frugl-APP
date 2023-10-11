@@ -77,7 +77,14 @@ especially after i realized when i made a new commit already.
 
 ### Syed Ahmed
 ##### Previous Goals
+- Get an idea of how to integrate Google Maps API into our app
+- Figure our what architecture we were using. We will separate components of the app into 3 layers: UI, logic, and data. 
+We will take cues from google's guide to architectural principles <https://developer.android.com/topic/architecture>
 
 ##### Key Points
+- I get the architecture in concept, but still not entirely sure how it looks like in code
+- Collaborated with Aarron to understand our architecture and testing principles going forward
 
 ##### Next Week Goals
+- Try to refactor some of the code to be in line
+- Write code to implement google maps
