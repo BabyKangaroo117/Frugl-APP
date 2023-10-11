@@ -12,11 +12,11 @@
   - Set up teams which are appointed to certain aspects of the application.
 - What worked
   - Setting up github actions.
-  - Adding JTBC driver.
+  - Creating more Azure services including a api app and a function app.
 - What was learned
   - How we want to store item prices which is by unit price. It makes it easier to compare the best deals for each store.
 - Have trouble with
-  - Connecting the database with JDBC Driver. Mostly problems with how the connection is established.
+  - Connecting the database with an api for Azure. There are a few Azure services that need to be created in order for this to work.
 - Stuck on
   - Allowing access to the database through a pubilc network. Azure has a lot of security features.
 #### Next Week Goals
@@ -30,13 +30,13 @@
 - Try and lock in how the database will be used within the application. This will depend on if the information is retrieved when a user processes an order or if a script will run in the morning to update the database with generic items.
 - Will work with Joe to fully flesh out what the application does with the web scrapper data.
 ##### Key Points
-- Refactored the JTDS driver and replaced it with JDBC driver. This is more updated to work with the Azure database. JDBC driver is the interface used to interact with the database.
+- Refactored the JTDS driver and replaced it with api connection. This will ensure if a phone loses internet connection it will not crash the database.
 - Created most of the tables for the database. Most of the way the information will be stored is now known.
 - Set up a database team section in the GitHub projects section. Picked date estimates to try and have certain parts of the application completed by.
 - Started to look into JDocs documentation pages that can be created.
 ##### Next Week Goals
 - Fully learn JDoc documentation pages.
-- Finish debugging the database connection with JTDS driver.
+- Create a backend api to connect to database.
 - Start adding test data to the database if everything goes smooth.
 
 ### Joseph Porrino
