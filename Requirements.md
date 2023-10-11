@@ -302,9 +302,25 @@ Done by 11/15/23
 
 # Software Architecture
 ### Major Software Components
-- Kotlin
+- #### UI Layer:
+  	- Components that make up the user interface of the application
+	- Consists of activites, fragments, views etc.
+   	- Dictates the design, style, and layout of the app
+   	- Written in XML
+- #### Business Logic Layer:
+  	- Components that are used to implement the underlying logic and workflow of the application
+  	- Consists of functions, classes, and interfaces
+  	- Dictates functionality and processes data recieved from the databases
+  	- Written in Kotlin
+- #### Data Layer:
+	- Components that deal with the data required for the application
+	- Consists of database and webscraper
+	- Stores and gets the data
+	- Database written in SQL and webscraper in Python
 ### Interfaces
 - Connection function allows a connection to the database. This will have various ways of interacting with the database.
+- Action and event listeners act as interface between UI layer and logical layer. These are used to implement the functionalities of the UI components.
+- Adapters allow for converting data in logical layer into views so that they can be added to the UI.
 ### Data
 - Users will be stored within the database. Until the application is fully fleshed out, every user will be given a username and password without the need to go through a sign up process.
 - A small range of the most popular items will be stored within the database, to let the script know what to scrape. The range of items will be around 70 to 100 and will feature the most popular grocery store items.
@@ -312,11 +328,19 @@ Done by 11/15/23
 - The stores information will be stored within the database.
 - Orders will be stored within the database with the idea being, that a customer can go back to the five most recent orders.
 ### Reasoning
+- Kotlin
+  	- Popular and new industry standard for writing Android apps
+  	- Easy to code and significantly less boilerplate compared to Java
+  	- Runs on top of the Java Virtual Machine so has access to Java's plethora of libraries and frameworks
+  	- Universally loved unlike Java
 - Microsoft Azure
 	- Wanted to get a feel for a major companies software.
 	- Has a free student subscription, which allows for $100 of free credit.
  	- Excellent security and load handling.
 ### Alternative Choices
+- Java
+  	- Pro: Already knew Java so wouldn't have to spend time learning a new programming language
+  	- Cons: Frustrating to write code and universally hated unlike Kotlin
 - MySQL
 	- A pro is that it is free.
  	- A con is that it would struggle if our application to run multiple scripts to scrape a numerous amount of stores at the same time. It would have a chance of crashing the database with so many inputs at the same time.
