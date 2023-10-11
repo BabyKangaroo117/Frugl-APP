@@ -8,6 +8,7 @@ import java.sql.DriverManager
 import java.sql.SQLException
 
 /**
+ * CURRENTLY BEING REFACTORED.
  * Connects to a database. Ensure all parameters are correctly entered.
  */
 fun connectDB(ip: String, databaseName: String, userName: String, password: String): Connection? {
