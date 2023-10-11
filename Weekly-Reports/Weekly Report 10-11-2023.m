@@ -69,10 +69,17 @@ especially after i realized when i made a new commit already.
 
 ### Taazkir Nasir
 ##### Previous Goals
-
+- Extend signup activity to get all pertinent user information 
+- Create a few more mockups of the search page to visualize the final output
+- Create user stories to flush out all possible functional requirements 
 ##### Key Points
-
+- Views will be finalized based on the team's input after the next meeting to be implemented 
+- Same with user stories. Once they're finalized and confirmed, they will be added to the living document 
+- Will need to make better use of the GitHub projects to manage the workload and make effort estimates
 ##### Next Week Goals
+- Implement final UI components 
+- Review the non-functional requirements related to user experience (UX)
+- Extending signup will overflow into next week  
 
 
 ### Syed Ahmed
