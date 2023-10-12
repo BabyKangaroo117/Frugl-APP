@@ -19,6 +19,7 @@
   - Connecting the database with an api for Azure. There are a few Azure services that need to be created in order for this to work.
 - Stuck on
   - Allowing access to the database through a pubilc network. Azure has a lot of security features.
+  - Getting codespaces to run webscraper
 #### Next Week Goals
 - Keep trying to connect database and input sample data.
 
