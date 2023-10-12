@@ -95,3 +95,21 @@ We will take cues from google's guide to architectural principles <https://devel
 ##### Next Week Goals
 - Try to refactor some of the code to be in line
 - Write code to implement google maps
+
+
+### Joseph Porrino
+##### Previous goals
+-Automate the webscraper to search many items at once
+-Connect to the database 
+-Use github actions to automate webscraper
+
+##### Keypoints
+- I have not yet connected the webscraper to the database. Tyler had to make a design change on how we connect to the database. I am looking into the situation with him.
+- I am working on setting up the webscraper in codespaces so that it can be automated but im running into issues with getting chrome to work. I may have to create
+  a custom docker container to run the script.
+
+##### Next Week Goals
+- Fix issues with webscraper in codespaces
+- Set up custom docker container
+- Research github actions
+
