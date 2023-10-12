@@ -303,20 +303,19 @@ Done by 11/15/23
 # Software Architecture
 ### Major Software Components
 - #### UI Layer:
-  	- Components that make up the user interface of the application
+  	- Components that make up the user interface of the application.
 	- Consists of activites, fragments, views etc.
-   	- Dictates the design, style, and layout of the app
-   	- Written in XML
-- #### Business Logic Layer:
-  	- Components that are used to implement the underlying logic and workflow of the application
-  	- Consists of functions, classes, and interfaces
-  	- Dictates functionality and processes data recieved from the databases
-  	- Written in Kotlin
-- #### Data Layer:
-	- Components that deal with the data required for the application
-	- Consists of database communication and webscraper
-	- Stores and gets the data
-	- Database written in SQL and webscraper in Python
+   	- Dictates the design, style, and layout of the app.
+   	- Written in XML.
+- #### Data Layer and Business Logic Layer:
+	- Components that are used to implement the underlying logic and workflow of the application.
+  	- Consists of functions, classes, and interfaces.
+  	- Dictates functionality and processes data recieved from the databases.
+  	- Written in Kotlin.
+	- Components that deal with the data required for the application.
+	- Consists of database communication and webscraper.
+	- Stores and gets the data to send to web API.
+	- Database written in SQL and webscraper in Python.
 - #### API Layer
 	- A web API that comunicates from the data layer to the database.
  	- Needed in mobile applications to handle any possible network problems.
