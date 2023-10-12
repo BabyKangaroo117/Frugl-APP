@@ -100,9 +100,9 @@ We will take cues from google's guide to architectural principles <https://devel
 
 ### Joseph Porrino
 ##### Previous goals
--Automate the webscraper to search many items at once
--Connect to the database 
--Use github actions to automate webscraper
+- Automate the webscraper to search many items at once
+- Connect to the database 
+- Use github actions to automate webscraper
 
 ##### Keypoints
 - I have not yet connected the webscraper to the database. Tyler had to make a design change on how we connect to the database. I am looking into the situation with him.
