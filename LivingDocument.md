@@ -362,7 +362,7 @@ Done by 11/15/23
 # Software Design
 ### Packages, Classes, and Abstraction
 - [__Retrofit__](https://square.github.io/retrofit/)
-- [JUnit] (https://junit.org/)
+- [JUnit](https://junit.org/)
 ### The Responsibilities of Each Package
 - The Retrofit2 package allows Kotlin to easily make HTTP requests. This will be used with REST API structure.
 - JUnit is a testing library that allows for the quick creation and execution of test functions. It executes Java and Kotlin Code. 
