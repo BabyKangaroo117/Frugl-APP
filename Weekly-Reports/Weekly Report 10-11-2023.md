@@ -6,12 +6,12 @@
 - Decide on how information will be stored. This will determine how much this appliaction will depend on the database. If not information is stored within the application, then the database will only store user information and orders.
 #### Key Points
 - What was done
+  - Completed unit tests
   - Talked about how data is stored. Decided to go on unit price of items to get the best overall deal.
   - Redefined the way the webscraper returns information.
   - Set up and redefined the GitHub projects to make it like scrum sprints.
   - Set up teams which are appointed to certain aspects of the application.
 - What worked
-  - Setting up github actions.
   - Creating more Azure services including a api app and a function app.
 - What was learned
   - How we want to store item prices which is by unit price. It makes it easier to compare the best deals for each store.
