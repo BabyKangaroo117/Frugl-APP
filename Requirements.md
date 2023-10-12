@@ -314,13 +314,19 @@ Done by 11/15/23
   	- Written in Kotlin
 - #### Data Layer:
 	- Components that deal with the data required for the application
-	- Consists of database and webscraper
+	- Consists of database communication and webscraper
 	- Stores and gets the data
 	- Database written in SQL and webscraper in Python
+- #### API Layer
+	- A web API that comunicates from the data layer to the database.
+ 	- Needed in mobile applications to handle any possible network problems.
+  	- Will run no .NET Core.
+  	- Azure Web API
 ### Interfaces
-- Connection function allows a connection to the database. This will have various ways of interacting with the database.
 - Action and event listeners act as interface between UI layer and logical layer. These are used to implement the functionalities of the UI components.
 - Adapters allow for converting data in logical layer into views so that they can be added to the UI.
+- Azure functions to help with error handling and connecting to API layer.
+- Azure web API which uses a REST architecture.
 ### Data
 - Users will be stored within the database. Until the application is fully fleshed out, every user will be given a username and password without the need to go through a sign up process.
 - A small range of the most popular items will be stored within the database, to let the script know what to scrape. The range of items will be around 70 to 100 and will feature the most popular grocery store items.
@@ -333,6 +339,9 @@ Done by 11/15/23
   	- Easy to code and significantly less boilerplate compared to Java
   	- Runs on top of the Java Virtual Machine so has access to Java's plethora of libraries and frameworks
   	- Universally loved unlike Java
+- .NET Core
+	- Runs the web API using .NET Core
+	- Deploys web app which is separate from the Frugl application.
 - Microsoft Azure
 	- Wanted to get a feel for a major companies software.
 	- Has a free student subscription, which allows for $100 of free credit.
@@ -341,18 +350,21 @@ Done by 11/15/23
 - Java
   	- Pro: Already knew Java so wouldn't have to spend time learning a new programming language
   	- Cons: Frustrating to write code and universally hated unlike Kotlin
+- NodeJS
+	- Pro: Easy to set up.
+ 	- Con: Not up to speed with JavaScript.
+ 	- Coult have went with this instead of .NET Core.
 - MySQL
 	- A pro is that it is free.
  	- A con is that it would struggle if our application to run multiple scripts to scrape a numerous amount of stores at the same time. It would have a chance of crashing the database with so many inputs at the same time.
 	- Could have used this for the database which is free. However, with the amount of web scrapping needing to be performed, Microsoft Azure felt like the right fit.
-  		
 
 # Software Design
 ### Packages, Classes, and Abstraction
-- [__JDBC Driver__](https://learn.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver16)
+- [__Retrofit__](https://square.github.io/retrofit/)
 - [JUnit] (https://junit.org/)
 ### The Responsibilities of Each Package
-- The JDBC Driver allows the application to interact with the database. It is developed by Microsoft. It was made for Java and works with Kotlin.
+- The Retrofit2 package allows Kotlin to easily make HTTP requests. This will be used with REST API structure.
 - JUnit is a testing library that allows for the quick creation and execution of test functions. It executes Java and Kotlin Code. 
 
 ### Utility Objects & Testing
@@ -365,8 +377,8 @@ Done by 11/15/23
 - The user guide will feature a description on how to use the app.
 - Will provide users with a way to contact the developers.
 - This guide will highlight the key features of the application that might be unknown to the user.
--  compnents will feature JDoc strings and comments
--  New features will be implemented on separate branches and be pulled in 
+- Compnents will feature JDoc strings and comments
+- New features will be implemented on separate branches and be pulled in 
 ### Kotlin
 - Kotlin is the language of choice for this project. The Kotlin coding guideline will be followed in unison with KDoc help standardize the code throughout the project. Using KDocs allows a documentation page to be created.
 - [__Kotlin Coding Guidelines__](https://kotlinlang.org/docs/coding-conventions.html)
