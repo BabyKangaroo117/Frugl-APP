@@ -92,7 +92,6 @@ We will take cues from google's guide to architectural principles <https://devel
 - Try to refactor some of the code to be in line
 - Write code to implement google maps
 
-
 ### Joseph Porrino
 ##### Previous goals
 - Automate the webscraper to search many items at once
