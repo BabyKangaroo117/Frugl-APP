@@ -6,7 +6,8 @@
 
 ### Team Members & Roles
 - #### Tyler Thompson<br>
-   __Role__: Provide functionality between application and database. Document project properly and reasearch useful techniques to speed up application. Backend engineer coupled with a data analysis in this case.
+   __Role__: Provide functionality between application and database. Document project properly and reasearch useful techniques to speed up application. Backend engineer coupled with a data analysis in this case. Also create the web API that that each portion of the application will communicate with. Essential to making sure that the mobile data that is coming in is steady and can be read properly.
+  
 
 - #### Joseph Porrino<br>
    __Role__: Full stack engineer. Provide functionality between application and API’s. Design and create a UI to display grocery store items.
@@ -382,3 +383,12 @@ Done by 11/15/23
 - Kotlin is the language of choice for this project. The Kotlin coding guideline will be followed in unison with KDoc help standardize the code throughout the project. Using KDocs allows a documentation page to be created.
 - [__Kotlin Coding Guidelines__](https://kotlinlang.org/docs/coding-conventions.html)
 - [__KDoc__](https://kotlinlang.org/docs/kotlin-doc.html)
+
+# Risks
+### API not Ensuring Connection is Stable
+- The chance of this occuring is medium since we are using Azure REST API architecture. Functions are to be created to handle these types of scenarios. This will be done as an Azure function application. The process to make sure everything flows properly is rather complicated when viewing all this for the first time, so the programmers will try their best to make sure it is handled.
+- The impact if this occurs is high since a unstable connection to the database could result in the entire database crashing and having incorrect values inserted. It is essential to make sure this works to the best of applications ability.
+- Research had been done to take the easy approach and connect the database straight into the mobile application. While viewing countless other projects everyone concluded that doing that is a bad practice and should be avoided at all costs, unless you are only testing data with a constant connection.
+- Plans for detecting this problem include having Azure functions to not allow the request through if it can not establish a complete connection.
+- There is really no work around to this, if data is to be input in an incorrect fashion, the only hope would be that the connection is stable enough to not cause any problems.
+- While creating the requirments document, none of this type of information was known yet as research was still being conducted. Now understanding the full architecture and design of a mobile application have brought this situation to light.
