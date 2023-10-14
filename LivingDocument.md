@@ -31,7 +31,7 @@ This will be held through Microsoft Teams, and will provide a strong and consist
 
 # Product Discription
 
-Frugl is a price comparison app that compares prices of grocery store items to find the cheapest price. Companies that have made their data public through API’s will be used in the comparison. A user can initiate a search for an item such as chicken breast. The app will then return locations to get chicken breast with prices in ascending order. The user can then save selected items in a shopping cart. The user can create an account and save up to 5 recent orders. 
+Frugl is a price comparison app that compares prices of grocery store items to find the cheapest price. A user can initiate a search for an item such as chicken breast. The app will then return locations to get chicken breast with prices in ascending order. The user can then save selected items in a shopping cart. The user can create an account and save up to 5 recent orders. 
 
 __User Stories__:
 - As a customer, I want to find the cheapest price for an item I am looking for, so that I can be frugal 
@@ -49,7 +49,7 @@ __User Stories__:
 __Major Features__:
 - A way to retrieve previous orders from the database.
 - Selecting fastest route to each store based on order.
-- Making Requests to store API's for item prices
+- Using webscrapers to collect grocery store data
 - Creation of log in screen.
   
 __Minor Features__:
@@ -89,33 +89,33 @@ __Exceptions__:
 - User has no internet connection and selects previous orders
 
 ### Joseph Porrino
-### Use Case API Handler
+### Use Case Automated Webscraper
 
-__Name__: API Handler
+__Name__: Webscaper
 
-__Actors__: User and grocery list
+__Actors__: Github Action
 
 __Flow of events__:
-1.	User click’s button to send items in grocery list to API handler (Trigger)
-2.	API handler makes requests to each API.
-3.	API handler receives data from API’s (Postcondition)
-4.	Data can now be used for analysis.
+1.	Github action triggers webscraper to collect data
+2.	Webscraper organizes data into a json
+3.	Request is made to database
+4.	Data is inserted into tables in database
 
 __Entry__:
-- API authentication
-- Request to REST API
+- Github action
+- Request to database API
 
 __Exit__:
-- Recieve data from API's
-- Request denied
-- Item does not exist. No data
+- Success in data sent to database
+- Error scraping price data
+- No connection to database
 
 __Extensions__:
 - None
 
 __Exceptions__:
-- Item doesn't exist at any store
-- Item spelled wrong
+- Website changes layout breaking webscraper
+- Database is not running
 
 ### Mansib Syed Ahmed
 ### Use Case: Creating a Shopping List
@@ -316,9 +316,9 @@ Done by 11/15/23
 
 ### Major Road Blocks
 
-#### API Problems
+#### Data Acquistion
 
-- Depending on the APIs used within this application, they may provide major challenges when it comes to making calls between them all. They may all provide different results and the important data will need to be extracted effectively and efficiently. Each of these APIs need to provide extensive amount of information about the products.
+- Our data pipline is not very dynamic becuase we don't want to be bombarding websites with with webscrapes when ever a user searches an item. Instead we will be filling a database every few days with price data. Our database will start with only a pre selected set of items and then it will grow based on user searches. It will be difficult to automate this process because the selenium package for webscraping doesn't run well in cloud based systems.
 
 # Software Architecture
 ### Major Software Components
@@ -337,7 +337,7 @@ Done by 11/15/23
 	- Stores and gets the data to send to web API.
 	- Database written in SQL and webscraper in Python.
 - #### API Layer
-	- A web API that comunicates from the data layer to the database.
+	- A web API that communicates from the data layer to the database.
  	- Needed in mobile applications to handle any possible network problems.
   	- Will run no .NET Core.
   	- Azure Web API
@@ -346,6 +346,7 @@ Done by 11/15/23
 - Adapters allow for converting data in logical layer into views so that they can be added to the UI.
 - Azure functions to help with error handling and connecting to API layer.
 - Azure web API which uses a REST architecture.
+- Github actions will interface with webscraper repo and run the script.
 ### Data
 - Users will be stored within the database. Until the application is fully fleshed out, every user will be given a username and password without the need to go through a sign up process.
 - A small range of the most popular items will be stored within the database, to let the script know what to scrape. The range of items will be around 70 to 100 and will feature the most popular grocery store items.
@@ -406,6 +407,8 @@ Done by 11/15/23
 - Kotlin is the language of choice for this project. The Kotlin coding guideline will be followed in unison with KDoc help standardize the code throughout the project. Using KDocs allows a documentation page to be created.
 - [__Kotlin Coding Guidelines__](https://kotlinlang.org/docs/coding-conventions.html)
 - [__KDoc__](https://kotlinlang.org/docs/kotlin-doc.html)
+### Python
+-  PEP 8 guidline - https://peps.python.org/pep-0008/ 
 
 # Risks
 ### API not Ensuring Connection is Stable
