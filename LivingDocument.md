@@ -387,9 +387,11 @@ Done by 11/15/23
 ### Packages, Classes, and Abstraction
 - [__Retrofit__](https://square.github.io/retrofit/)
 - [JUnit](https://junit.org/)
+- Selenium
 ### The Responsibilities of Each Package
 - The Retrofit2 package allows Kotlin to easily make HTTP requests. This will be used with REST API structure.
-- JUnit is a testing library that allows for the quick creation and execution of test functions. It executes Java and Kotlin Code. 
+- JUnit is a testing library that allows for the quick creation and execution of test functions. It executes Java and Kotlin Code.
+- Selenium provides webscraping capabilites to collect data
 
 ### Utility Objects & Testing
 - Sinlgeton utility objects will be used to ensure data being passed between layers is valid at a fundemental level 
