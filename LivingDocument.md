@@ -411,10 +411,15 @@ Done by 11/15/23
 -  PEP 8 guidline - https://peps.python.org/pep-0008/ 
 
 # Risks
-### API not Ensuring Connection is Stable
+### Database API not Ensuring Connection is Stable
 - The chance of this occuring is medium since we are using Azure REST API architecture. Functions are to be created to handle these types of scenarios. This will be done as an Azure function application. The process to make sure everything flows properly is rather complicated when viewing all this for the first time, so the programmers will try their best to make sure it is handled.
 - The impact if this occurs is high since a unstable connection to the database could result in the entire database crashing and having incorrect values inserted. It is essential to make sure this works to the best of applications ability.
 - Research had been done to take the easy approach and connect the database straight into the mobile application. While viewing countless other projects everyone concluded that doing that is a bad practice and should be avoided at all costs, unless you are only testing data with a constant connection.
 - Plans for detecting this problem include having Azure functions to not allow the request through if it can not establish a complete connection.
 - There is really no work around to this, if data is to be input in an incorrect fashion, the only hope would be that the connection is stable enough to not cause any problems.
 - While creating the requirments document, none of this type of information was known yet as research was still being conducted. Now understanding the full architecture and design of a mobile application have brought this situation to light.
+### Website Bot Protection
+- During out analysis of which grocery stores to scrape data from, we found that many of them have strict bot rules. We found that wegmans and shoprite allow the use of bots, but this can change in the future.
+- Webscraping has a high risk becuase if a website decides to add bot protection, then we will no longer be able to provide data to our users.
+- There is no way to know if or when this could occur.
+- We have no mitigation plan because there is no other source of grocery store data other than webscraping.
