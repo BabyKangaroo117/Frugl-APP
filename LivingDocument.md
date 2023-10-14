@@ -33,6 +33,19 @@ This will be held through Microsoft Teams, and will provide a strong and consist
 
 Frugl is a price comparison app that compares prices of grocery store items to find the cheapest price. Companies that have made their data public through API’s will be used in the comparison. A user can initiate a search for an item such as chicken breast. The app will then return locations to get chicken breast with prices in ascending order. The user can then save selected items in a shopping cart. The user can create an account and save up to 5 recent orders. 
 
+__User Stories__:
+- As a customer, I want to find the cheapest price for an item I am looking for, so that I can be frugal 
+	- As a customer, I want to see a few options to buy the item from, so that I have the freedom to choose the option that is worth it for me
+	- As a customer, I want to only see the options that are nearby, so that I am actually able to go to that store
+	- As a customer, I want the items I looked for saved to my account, so that I don't have to look them up every time
+	- As a customer, I want to be notified if a previously searched item has changed its price, so that I am aware of the pricing trends
+	- As a customer, I want to be notified if a previously searched item can be found for even cheaper somewhere else, so that I can update where I do my shopping from
+
+
+- As a customer, I want to be able to add my entire grocery list, so that I don't have to look up each item individually 
+	- As a customer, I want to see the price for my entire grocery list, so that I can quickly determine where to do my weekly shopping from 
+	- As a customer, I want the option to add to my grocery list when I view a product, so that I can seamlessly add to my list without changing screens
+
 __Major Features__:
 - A way to retrieve previous orders from the database.
 - Selecting fastest route to each store based on order.
@@ -159,13 +172,13 @@ __Actors__: Authorized User
 
 __Triggers__: User clicks the “Search Item” button
 
-__Preconditions__: Logged in as authorized user and distance radius is set
+__Preconditions__: Logged in as an authorized user and the distance radius is set
 
 __Flow of events__:
 1.	User interacts with UI layer to start Search Item Activity 
 2.	Data layer sends the user's search history to the UI layer
 3.	User inputs search terms in the search bar. 
-4.	Data layer listens for changes in the text input and dynamically updates UI layer as the user completes input.
+4.	Data layer listens for changes in the text input and dynamically updates the UI layer as the user completes input.
 5.	User selects an item from the list of suggestions.
 6.	Data layer sends user selection to the API layer to save the search term and request data.
 7.	API layer requests database function for item store name, image, net/avg price, per unit price, weight
@@ -187,7 +200,7 @@ __Extensions__:
 __Exceptions__:
 1.	User fails to click suggestions after input is complete.
 2.	User input is invalid.
-3.	Item cannot be found in specified radius.
+3.	Item cannot be found in a specified radius.
 
 # Nonfunctional Requirements
 
