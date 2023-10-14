@@ -24,7 +24,7 @@ class Login : AppCompatActivity() {
         val button: Button = findViewById(R.id.button)
         button.setOnClickListener {
             if (username.text.toString() == "username" && password.text.toString() == "password"){
-                val intent: Intent = Intent(this, CreateList::class.java)
+                val intent: Intent = Intent(this, Homepage::class.java)
                 startActivity(intent)
             }
             else Toast.makeText(this, "Wrong Password", Toast.LENGTH_LONG).show()
