@@ -162,15 +162,21 @@ __Triggers__: User clicks the “Search Item” button
 __Preconditions__: Logged in as authorized user and distance radius is set
 
 __Flow of events__:
-1.	User clicks the search icon.
-2.	System presents the search bar.
-3.	User focuses the search bar.
-4.	System brings up keyboard to screen.
-5.	System dynamically updates suggestions as user completes input.
-6.	User unfocused search bar
-7.	System disappears keyboard from screen.
-8.	User selects item from list of suggestions.
-9.	Systems processes API calls to retrieve price information.
+1.	User interacts with UI layer to start Search Item Activity 
+2.	Data layer sends the user's search history to the UI layer
+3.	User inputs search terms in the search bar. 
+4.	Data layer listens for changes in the text input and dynamically updates UI layer as the user completes input.
+5.	User selects an item from the list of suggestions.
+6.	Data layer sends user selection to the API layer to save the search term and request data.
+7.	API layer requests database function for item store name, image, net/avg price, per unit price, weight
+8.    Data layer receives data from the API layer.
+9.    Data layer processes data and stores each variable as lists ie; list of images, list of per unit prices, etc 
+10.  Data layer finds the lowest number from the price and unit price lists and uses those indices to make two lists
+11. Data layer sends the lists to the UI layer
+12. User can switch between per unit price or fixed price views in the UI layer
+13. User selects an item to view
+14. Data layers launch view item fragment 
+15. User can click the add to grocery list button or exit the search item activity 
 
 __Postconditions__: System presents the cheapest price for the correct product within the specified radius
 
