@@ -360,6 +360,10 @@ Done by 11/15/23
 	- Could have used this for the database which is free. However, with the amount of web scrapping needing to be performed, Microsoft Azure felt like the right fit.
 
 # Software Design
+### Build Tools
+- __Azure Deployment Center__
+	- Create a .yml file that builds the API and deploys it whenever updates are made to the application.
+ 	- Allows for automation of workflow.
 ### Packages, Classes, and Abstraction
 - [__Retrofit__](https://square.github.io/retrofit/)
 - [JUnit](https://junit.org/)
