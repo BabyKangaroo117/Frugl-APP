@@ -34,6 +34,14 @@ class ItemAdapter(var items: List<Item>, private val itemListener: ItemListener)
             itemListener.onItemDelete(position)
         }
     }
+
+    // notify the adapter if items are updated (added or removed)
+    fun updateItems(items: MutableList<Item>?) {
+        if (items != null) {
+            this.items = items
+            notifyDataSetChanged()
+        }
+    }
 }
 
 // interface for performing actions related item lists

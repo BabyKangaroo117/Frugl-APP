@@ -8,56 +8,47 @@ import android.widget.SearchView
 import android.widget.CursorAdapter
 import android.widget.SimpleCursorAdapter
 import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class CreateList : AppCompatActivity(), ItemListener {
-    private var itemList = mutableListOf<Item>()
+    private lateinit var viewModel: CreateListViewModel
+    private lateinit var itemAdapter: ItemAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_list)
 
-        // main function that handles searching items and creating list
-        createSearchBar()
+        viewModel = ViewModelProvider(this).get(CreateListViewModel::class.java)
 
-        // initialize view, adapter and layout
         val itemRv: RecyclerView = findViewById(R.id.itemRv)
-        val itemAdapter = ItemAdapter(itemList, this)
+        itemAdapter = ItemAdapter(mutableListOf(), this)
         itemRv.adapter = itemAdapter
         itemRv.layoutManager = LinearLayoutManager(this)
+
+        viewModel.itemList.observe(this, Observer { items ->
+            itemAdapter.updateItems(items)
+        })
+
+        createSearchBar()
     }
 
-    // function for adding items to the list
     override fun onItemAdd(itemName: String) {
-        val itemRv: RecyclerView = findViewById(R.id.itemRv)
-        val itemAdapter = itemRv.adapter
-
-        val item: Item? = itemList.find { it.name == itemName }
-        if (item == null) {
-            itemList.add(Item(itemName, 1))
-            itemAdapter?.notifyItemInserted(itemList.size-1)
-            displayToastMessage("new item added")
-        }
-        else {
-            item.quantity++
-            val position: Int = itemList.indexOf(item)
-            itemAdapter?.notifyItemChanged(position)
-            displayToastMessage("item updated")
-        }
+        viewModel.addItem(itemName)
     }
 
     override fun onItemDelete(position: Int) {
-        val itemRv: RecyclerView = findViewById(R.id.itemRv)
-        itemList.removeAt(position)
-        itemRv.adapter?.notifyItemRemoved(position)
-        displayToastMessage("item is deleted")
+        viewModel.deleteItem(position)
     }
 
+    // shortcut method for displaying toast message
     private fun displayToastMessage(message: String){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
+    // create and update search bar
     private fun createSearchBar(){
         val searchView: SearchView = findViewById(R.id.search)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -66,6 +57,7 @@ class CreateList : AppCompatActivity(), ItemListener {
                 return true
             }
 
+            // update suggestions based on the text change in search bar
             override fun onQueryTextChange(newText: String?): Boolean {
                 newText?.let {
                     updateSuggestions(searchView, it)
@@ -77,7 +69,9 @@ class CreateList : AppCompatActivity(), ItemListener {
 
     //update suggestions based on what the user typed in the search bar
     private fun updateSuggestions(searchView: SearchView, text: String){
+        // array of suggested items
         val suggestedItems = arrayOf("apple", "apricot",  "banana", "chicken", "cheese")
+        // filter items based on starting text
         val suggestions = suggestedItems.filter { it.startsWith(text) }
         val columns = arrayOf(BaseColumns._ID, "suggestion")
         val cursor = MatrixCursor(columns)
@@ -90,13 +84,12 @@ class CreateList : AppCompatActivity(), ItemListener {
         val to = intArrayOf(android.R.id.text1)
         val adapter: SimpleCursorAdapter = SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, cursor, from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER)
 
-        searchView?.suggestionsAdapter = adapter
+        searchView.suggestionsAdapter = adapter
 
         searchView.setOnSuggestionListener(object : SearchView.OnSuggestionListener {
             override fun onSuggestionSelect(position: Int): Boolean {
                 return true
             }
-
             override fun onSuggestionClick(position: Int): Boolean {
                 // Retrieve the selected suggestion from your array
                 val selectedSuggestion = suggestions[position]
