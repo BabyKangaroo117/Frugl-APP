@@ -5,9 +5,14 @@
 - Keep trying to connect database and input sample data.
 #### Key Points
 - What was done
+  - Discussed the entire structure of the project, including the overall goal and how each portion of the application will communicate with eachother. Since the application has multiple different parts to it, it was not completely apparent until now.
+  - Set up the mobile API application to come online.   
 - What worked
+  - Using Azure web service to launch a web API.
 - What was learned
+  - How to manage the web services portion of Azure.
 - Have trouble with
+  - Creating the functions for the web API. This is what will handle all incoming requests and send outgoing requests all while ensuring the connection is stable.
 - Stuck on
 #### Next Week Goals
 
@@ -19,8 +24,14 @@
 - Create a backend api to connect to database.
 - Start adding test data to the database if everything goes smooth.
 ##### Key Points
+- The C# backend for the web API requires C# coding standards to be followed. This includes try to use docstrings in which C# uses XML to format this.
+- Deployed the web API, and set up a build file to push the newest changes as soon as commits to main happen.
+- Started to try and use the terminal more when it comes to handling processes in each respective coding IDE as well as the shell used for the API and database. Trying to write down useful commands and keep them close by to learn them as fast as possible.
 ##### Next Week Goals
-
+- Keep using the terminal.
+- Continue working on the web API and reguardless if it is finished, give everyone a rundown of what each function will do as well as the parameters and what it returns. It will return a JSON format, but what type of information that is returned will be important.
+- Keep researching best practices to see if there are better ways to complete the tasks I am doing.
+  
 ### Aaron Feinberg
 #### Previous Goals
 - write unit tests for UI Activities 
