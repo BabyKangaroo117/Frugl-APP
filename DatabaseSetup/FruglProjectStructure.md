@@ -22,11 +22,10 @@
 - ItemName
 
 ### Stores
-- Primary Key - StoreID
-- StoreName
+- Primary Key - StoreName, StorePostalCode
 - StoreAddress
 
-### Area
-- Primary Key - PostalCode
-- ItemID
+### AreaItems
+- Primary Key - StorePostalCode, ItemID
+- StoreName
 - ItemPrice
