@@ -69,20 +69,18 @@ especially after i realized when i made a new commit already.
 - Review the non-functional requirements related to user experience (UX)
 - Extending signup will overflow into next week  
 
-
 ### Syed Ahmed
 ##### Previous Goals
-- Get an idea of how to integrate Google Maps API into our app
-- Figure our what architecture we were using. We will separate components of the app into 3 layers: UI, logic, and data. 
-We will take cues from google's guide to architectural principles <https://developer.android.com/topic/architecture>
+- Refactor code to be line with the architecture for our app
+- Look into integration with google maps
 
 ##### Key Points
-- I get the architecture in concept, but still not entirely sure how it looks like in code
-- Collaborated with Aarron to understand our architecture and testing principles going forward
+- Overall, I spent this week trying getting a good grasp on the architectural pattern our android app, and refactoring the code to follow those patterns and principles. Although the functionally the app is the same, the outcome is clean, organized, and modularized code that's also more conducive for convinient testing and debugging.
+- Additionally, I spent a lot time in discussing the code and architecture with the group members.
 
 ##### Next Week Goals
-- Try to refactor some of the code to be in line
-- Write code to implement google maps
+- Collaborate with Tyler on writing functions for the API
+- Collaborate with Aaron on test-driven development
 
 ### Joseph Porrino
 ##### Previous goals
