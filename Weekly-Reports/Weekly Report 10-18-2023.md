@@ -34,24 +34,22 @@
   
 ### Aaron Feinberg
 #### Previous Goals
-- write unit tests for UI Activities 
-- collaborate with UI team to create a standardized layout for our app to be shared among activities 
-- look into location data for our app (with Syed) 
-
-##### Key Points
-- Wrote unit tests for signup and login activities (validating username/password requirements were met)
-- Developed the validator object (Util) using TDD
-- collaborated with Syed and Tazkir about restructuring the files and finishing activities for testing
-
-What Im Stuck on
-- when checking out between branches i am sometimes having issues with the smart checkout function on android studio. 
-it claims to shelve my changes but sometimes it turns out they are deleted and it is difficult to restore them, 
-especially after i realized when i made a new commit already. 
-
-##### Next Week Goals
 - Have a the UI end of our minimum viable product finished 
 - Have tests written for all util functions on for these activities 
 - move onto integrated and ui testing 
+
+##### Key Points
+- Pivoting towards focusing on getting backends data functioning of app up and running
+- working on using the REST API protocol to handle requests and incoming data from the db through Tyler's API
+- Creating logic to handle smart recommendations to user (based on data from multiple stores...this will require some changes to the web scraper and the data base)
+
+What Im Stuck on
+- best way to implement the code (breaking down into classes, data classes, etc.)
+
+##### Next Week Goals
+- Have a grasp of REST Api calls
+- understand how Syed ViewModel, View, and Data classes are implemented so i can supply them with data
+- understand how to interact with tylers API 
 
 ### Taazkir Nasir
 ##### Previous Goals
