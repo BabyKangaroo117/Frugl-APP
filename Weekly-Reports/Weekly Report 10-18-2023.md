@@ -55,19 +55,20 @@ especially after i realized when i made a new commit already.
 
 ### Taazkir Nasir
 ##### Previous Goals
-- Extend signup activity to get all pertinent user information 
-- Create a few more mockups of the search page to visualize the final output
-- Create user stories to flush out all possible functional requirements
-
-##### Key Points
-- Views will be finalized based on the team's input after the next meeting to be implemented 
-- Same with user stories. Once they're finalized and confirmed, they will be added to the living document 
-- Will need to make better use of the GitHub projects to manage the workload and make effort estimates
-
-##### Next Week Goals
 - Implement final UI components 
 - Review the non-functional requirements related to user experience (UX)
 - Extending signup will overflow into next week  
+
+##### Key Points
+- Implemented nav bar and other UI component across all activities
+- Since the app only performs two use cases after reaching the homepage, the homepage seems too bare. So homepage needs to be changed to have a grid layout in the center of the screen for navigation 
+- Learned how to send data between activities. Variables are set to accept incoming data but need to be updated to get data from the database to the backend 
+- The signup activity was extended but Firebase was not implemented. The signup process will be abandoned for the time being till the search and grocery list features are implemented. A few preset users will be added to the database for a mock login process.
+- 
+##### Next Week Goals
+- Extend the search activity to dynamically update suggestions with user input
+- Refactor existing code to follow the software architecture 
+- Learn how to handle incoming data from the database  
 
 ### Syed Ahmed
 ##### Previous Goals
