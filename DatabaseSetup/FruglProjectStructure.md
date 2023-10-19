@@ -21,11 +21,8 @@
 - Primary Key - ItemID
 - ItemName
 
-### Stores
-- Primary Key - StoreName, StorePostalCode
-- StoreAddress
-
 ### AreaItems
 - Primary Key - StorePostalCode, ItemID
-- StoreName
-- ItemPrice
+- Giant_Unit_Price
+- Shoprite_unit_Price
+- Wegmans_Unit_Price
