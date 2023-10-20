@@ -1,14 +1,23 @@
 package com.example.frugl_app
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 
 class Homepage : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homepage)
+
+        val bundle: Bundle? = intent.extras
+        val usnm = bundle!!.getString("user_name")
+
+        val usernameDisplay: TextView = findViewById(R.id.showUsername)
+        usernameDisplay.text = ("Hi $usnm")
 
         navigation()
     }
