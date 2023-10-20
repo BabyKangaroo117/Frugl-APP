@@ -27,3 +27,6 @@
 - Giant_Unit_Price
 - Shoprite_unit_Price
 - Wegmans_Unit_Price
+
+### OrdersItems
+- Primary Key - OrderID, ItemID
