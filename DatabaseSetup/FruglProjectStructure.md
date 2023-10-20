@@ -30,3 +30,6 @@
 
 ### OrdersItems
 - Primary Key - OrderID, ItemID
+
+### PostalCodes
+- Primary Key - PostalCode
