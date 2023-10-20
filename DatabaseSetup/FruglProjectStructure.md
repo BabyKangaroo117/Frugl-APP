@@ -10,6 +10,7 @@
 - Primary Key - UserID
 - Username
 - Password
+- Email
 
 ### Orders
 - Primary Key - OrderID
