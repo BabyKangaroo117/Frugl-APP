@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
 
         // go to the sign up page
         signup()
+
+        map()
     }
 
     private fun login(){
@@ -30,6 +32,14 @@ class MainActivity : AppCompatActivity() {
         val button: Button = findViewById(R.id.signup)
         button.setOnClickListener {
             val intent: Intent = Intent(this, SignUp::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun map(){
+        val button: Button = findViewById(R.id.map)
+        button.setOnClickListener {
+            val intent: Intent = Intent(this, MapActivity::class.java)
             startActivity(intent)
         }
     }
