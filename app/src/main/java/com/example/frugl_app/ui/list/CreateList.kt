@@ -1,9 +1,8 @@
-package com.example.frugl_app
+package com.example.frugl_app.ui.list
 import android.database.MatrixCursor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.BaseColumns
-import android.util.Log
 import android.widget.SearchView
 import android.widget.CursorAdapter
 import android.widget.SimpleCursorAdapter
@@ -12,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.frugl_app.R
 
 class CreateList : AppCompatActivity(), ItemListener {
     private lateinit var viewModel: CreateListViewModel

@@ -1,7 +1,8 @@
-package com.example.frugl_app
+package com.example.frugl_app.ui.signup
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.frugl_app.R
 
 class SignUp : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

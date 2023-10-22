@@ -1,8 +1,9 @@
-package com.example.frugl_app
+package com.example.frugl_app.ui.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.frugl_app.data.model.Item
 
 class CreateListViewModel : ViewModel() {
     private val _itemList = MutableLiveData<MutableList<Item>>()

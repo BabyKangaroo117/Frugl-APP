@@ -1,4 +1,4 @@
-package com.example.frugl_app
+package com.example.frugl_app.ui.list
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.frugl_app.R
+import com.example.frugl_app.data.model.Item
 
 // adapter class for passing data item list and recycler view
 class ItemAdapter(var items: List<Item>, private val itemListener: ItemListener): RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {

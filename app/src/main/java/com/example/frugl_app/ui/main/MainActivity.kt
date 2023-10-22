@@ -1,10 +1,12 @@
-package com.example.frugl_app
+package com.example.frugl_app.ui.main
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.frugl_app.R
+import com.example.frugl_app.ui.login.Login
+import com.example.frugl_app.ui.signup.SignUp
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

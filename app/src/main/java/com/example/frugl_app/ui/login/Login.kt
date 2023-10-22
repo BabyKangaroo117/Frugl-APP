@@ -1,12 +1,13 @@
-package com.example.frugl_app
+package com.example.frugl_app.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.frugl_app.R
+import com.example.frugl_app.ui.list.CreateList
 import com.google.android.material.textfield.TextInputEditText
 
 class Login : AppCompatActivity() {
