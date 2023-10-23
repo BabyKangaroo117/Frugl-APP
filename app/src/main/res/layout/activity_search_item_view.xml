@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp">
+
+    <ImageView
+        android:id="@+id/productImage"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/frugl_" />
+
+    <TextView
+        android:id="@+id/productDescription"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@id/productImage">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/fixedPrice"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/productDescription"
+        android:layout_toRightOf="@id/productImage"
+        android:text="$">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/unitPrice"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/productDescription"
+        android:layout_toRightOf="@id/fixedPrice"
+        android:text="per oz"
+        android:textAlignment="textEnd">
+    </TextView>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/storeLogo"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:src="@drawable/w" />-->
+
+
+
+
+</RelativeLayout>
