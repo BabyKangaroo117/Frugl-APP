@@ -84,7 +84,8 @@ What Im Stuck on
 - Set up google api
 
 ##### Key Points
-- Most of the time this past week was spent on discussing the design and workflow for our app. As I working with on the app, I realized that considering the design of the database, it would not be possible to calculate the aggregate cheapest price and recommend the best store. We could let the user search up the cheapest price and best store for each individual item, however, we would not be able to implement our original use case which was to take into account all of the user's desired grocery items. 
+- Most of the time this past week was spent on discussing the design and workflow for our app. As I was working on the app, I realized that considering the design of the database, it would not be possible to calculate the aggregate cheapest price and recommend the best store. We could let the user search up the cheapest price and best store for each individual item, however, we would not be able to implement our original use case which was to take into account all of the user's desired grocery items.
+- We finally decided to modify the database to add additional columns to store prices from all stores, but even this proved to be a challenge. For example, if a store didn't carry an item, we'd have to store null thus give rise to scalability issues. Moreover, we ran into design challenges when considering how we would tackle different variations of the same type of item. For example, no fat milk vs 2% fat milk.
 
 ##### Next Week Goals
 - Finalize the best approach for our app
