@@ -89,15 +89,15 @@ What Im Stuck on
 
 ### Joseph Porrino
 ##### Previous goals
-- Fix issues with webscraper in codespaces
-- Set up custom docker container
-- Research github actions
-
-##### Keypoints
-- Codespaces is unable to run a python project that uses selenium so we will be manually running the python script for the time being
-- I finished the webscraper and have the data formatted in a Json. The will be inserted into a text document until connected to the database
-- I started looking into pytest for unit testing
-
-##### Next Week Goals
 - Work with Tyler on getting the database connected
 - Start unittesting code
+
+##### Keypoints
+- Refactored webscraper code to make more readable and use less lines of code
+- Set up pytest and started unit testing
+- Got access to database.
+
+##### Next Week Goals
+- Finish unit testing
+- Work on database functions
+- Connect python code to database
