@@ -6,8 +6,11 @@
 - Get the model and controller created in the API.
 #### Key Points
 - What was done
-  - Created the model, view, and controller, folders in the API and populated them information from the database. Used a scaffold method to inport information from the database using an Azure library in the .Net Core.
+  - Created the model, view, and controller, folders in the API and populated them information from the database. Used a scaffold method to inport information from the database using an Azure library in the .Net
+  Core.
   - Researched ways to use Azure Key Vaults to hide sensitive information.
+  - created branch with standard program structure
+  - created framework for communicating with the api 
 - What worked
   - Creating the Azure Key Vaults.
   - Creating the model, view, and controller for the API.
@@ -15,12 +18,15 @@
 - What was learned
   - How Azure handles private information that should not be pushed to repositories.
   - How a model, view, controller layout is handled.
+  - function of viewmodels and their purpose
+  - how the retrofit library interacts with the internet
 - Have trouble with
   - Getting the Azure Key Vaults to be able to output the needed connection string.
 - Stuck on
 #### Next Week Goals
 - Continue creating and improving the API functions, and try and input real data into the database.
-
+- Finish Implementing Viewmodel interface for the API to the backend 
+- Create activities for searching and creating lists of items
 # Individual Reports
 
 ### Tyler Thompson
@@ -40,22 +46,20 @@
   
 ### Aaron Feinberg
 #### Previous Goals
-- Have a the UI end of our minimum viable product finished 
-- Have tests written for all util functions on for these activities 
-- move onto integrated and ui testing 
+- Have a grasp of REST Api calls
+- understand how Syed ViewModel, View, and Data classes are implemented so i can supply them with data
+- understand how to interact with tylers API 
 
 ##### Key Points
-- Pivoting towards focusing on getting backends data functioning of app up and running
-- working on using the REST API protocol to handle requests and incoming data from the db through Tyler's API
-- Creating logic to handle smart recommendations to user (based on data from multiple stores...this will require some changes to the web scraper and the data base)
+- learned the structure of the android mvvm workflow
+- created framework for our data layer (link between backend and the UI) 
 
 What Im Stuck on
 - best way to implement the code (breaking down into classes, data classes, etc.)
 
 ##### Next Week Goals
-- Have a grasp of REST Api calls
-- understand how Syed ViewModel, View, and Data classes are implemented so i can supply them with data
-- understand how to interact with tylers API 
+- Pass Data from in the backend (which was recieved by the api) to various components of our program 
+- Help with creating the item and shopping list views. Users should be able to make search queries while the app will only suggest valid search items from the database 
 
 ### Taazkir Nasir
 ##### Previous Goals
