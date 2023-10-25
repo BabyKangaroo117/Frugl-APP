@@ -425,3 +425,40 @@ Done by 11/15/23
 - Webscraping has a high risk becuase if a website decides to add bot protection, then we will no longer be able to provide data to our users.
 - There is no way to know if or when this could occur.
 - We have no mitigation plan because there is no other source of grocery store data other than webscraping.
+
+# Continuous Integration 
+### The Frugl Application
+
+### The Frugl API
+#### The Service
+- The service used for continuous integration is Azure pipelines, and it has plenty of built in features to help with automation.
+- The build file is specified as .yml file and is ran through GitHub actions. Azure pipelines syncs up with GitHub actions to ensure that this file has everything needs to ensure that the website is up and running properly. Any changes in this .yml will also change anything on the Azure pipelines side.
+- This was selected since it is integrated into Azure services. It is reliable and has plenty of features.
+#### Actions Triggered on Build
+- Since most of the testing is done on local databases, the only major trigger that happens is when code is pushed to main.
+- When a push to main occurs, the web API changes are synced and the new website is automatically deployed. This includes every portion of the API, not just the main page that is shown. For example, the main website is
+[Frugl API Website](fruglapp.azurewebsites.net), which will never give a response, and the API requests include [Example API Call to the Website](https://fruglapp.azurewebsites.net/WeatherForecast), which will be updated on pushes to main.
+#### Alternate Services
+- A service that could have been chosen is Jenkins, which works well to deploy ASP.NET web applications. It is well documented when compared to all Azure services. Azure services is also well documented, but the documenation is rather thrown everywhere and it is hard to follow along. A reason not to chose Jenkins is that Azure pipelines is simply built into Azure services and it would have been more work to add another service that would do the same thing.
+#### Viewing the Building Process
+- Some of the building process is located with Azure itself, so if there are any questions feel free to contact the developers.
+- The build file is located within FruglAPI/.github/workflows/main_fruglapp.yml in the [Frugl API Repository](https://github.com/justyden/FruglAPI) which is a seperate application.
+
+# Automated Testing
+### The Frugl Application
+
+### The Frugl API
+#### Infastructure
+- Uses Azure test plans which is integrated into Azure pipelines.
+- Selected as the testing enviornment since it is built into Azure pipelines. It is really easy to set up.
+#### How to Use Azure Test Plans
+- Simply create test plan which includes any type of testing, from functions to load testing.
+- Add the test plan into a test suite which can be ran depending on what is required from the testing.
+- These tests can easily be analyzed from the tests reports that can be generated.
+- Integrate it into Azure pipelines which will run the tests depending on how they were specified.
+#### What Will be Tested
+- On push to main, proper API calls will be tested to verify that there is a connection to the database. A response should be sent to each of these calls.
+- In addition to the API functionality testing, there are automatic tests that are ran on the Azure test plans side, that ensure that the web API is up and running.
+#### Viewing the Testing Process
+- Some of the testing can be done through Azure services. If there are any questions, feel free to contact the developers.
+- The build file is located within FruglAPI/.github/workflows/main_fruglapp.yml in the [Frugl API Repository](https://github.com/justyden/FruglAPI) which is a seperate application.
