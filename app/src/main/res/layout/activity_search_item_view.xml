@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="150dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:layout_toRightOf="@id/productName"
+        app:srcCompat="@drawable/wegmans_logo" />
 
     <ImageView
         android:id="@+id/productImage"
@@ -9,10 +17,22 @@
         android:layout_height="match_parent"
         android:src="@drawable/frugl_" />
 
+
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/productImage">
+
+    </TextView>
+
     <TextView
         android:id="@+id/productDescription"
         android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/productName"
+        android:text="Description"
         android:layout_toRightOf="@id/productImage">
 
     </TextView>
@@ -23,7 +43,8 @@
         android:layout_height="100dp"
         android:layout_below="@id/productDescription"
         android:layout_toRightOf="@id/productImage"
-        android:text="$">
+        android:text="$"
+        android:textStyle="bold">
 
     </TextView>
 
