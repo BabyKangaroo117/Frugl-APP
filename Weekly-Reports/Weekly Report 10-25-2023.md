@@ -80,16 +80,15 @@ What Im Stuck on
 
 ### Syed Ahmed
 ##### Previous Goals
-- Refactor code to be line with the architecture for our app
-- Look into integration with google maps
+- Figure out the workflow and design of the app, API, and database with other team members
+- Set up google api
 
 ##### Key Points
-- Overall, I spent this week trying getting a good grasp on the architectural pattern our android app, and refactoring the code to follow those patterns and principles. Although the functionally the app is the same, the outcome is clean, organized, and modularized code that's also more conducive for convinient testing and debugging.
-- Additionally, I spent a lot time in discussing the code and architecture with the group members.
+- Most of the time this past week was spent on discussing the design and workflow for our app. As I working with on the app, I realized that considering the design of the database, it would not be possible to calculate the aggregate cheapest price and recommend the best store. We could let the user search up the cheapest price and best store for each individual item, however, we would not be able to implement our original use case which was to take into account all of the user's desired grocery items. 
 
 ##### Next Week Goals
-- Collaborate with Tyler on writing functions for the API
-- Collaborate with Aaron on test-driven development
+- Finalize the best approach for our app
+- Write code for finding cheapest price feature
 
 ### Joseph Porrino
 ##### Previous goals
