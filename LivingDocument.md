@@ -432,7 +432,7 @@ Done by 11/15/23
 ### The Frugl API
 #### The Service
 - The service used for continuous integration is Azure pipelines, and it has plenty of built in features to help with automation.
-- The build file is specified as .yml file and is ran through GitHub actions. Azure pipelines syncs up with GitHub actions to ensure that this file has everything needs to ensure that the website is up and running properly. Any changes in this .yml will also change anything on the Azure pipelines side.
+- The build file is specified as .yml file and is ran through GitHub actions. Azure pipelines syncs up with GitHub actions to ensure that this file has everything it needs, so the website can run properly. Any changes in this .yml will also change anything on the Azure pipelines side.
 - This was selected since it is integrated into Azure services. It is reliable and has plenty of features.
 #### Actions Triggered on Build
 - Since most of the testing is done on local databases, the only major trigger that happens is when code is pushed to main.
