@@ -63,19 +63,21 @@ What Im Stuck on
 
 ### Taazkir Nasir
 ##### Previous Goals
-- Implement final UI components 
-- Review the non-functional requirements related to user experience (UX)
-- Extending signup will overflow into next week  
-
-##### Key Points
-- Implemented nav bar and other UI component across all activities
-- Since the app only performs two use cases after reaching the homepage, the homepage seems too bare. So homepage needs to be changed to have a grid layout in the center of the screen for navigation 
-- Learned how to send data between activities. Variables are set to accept incoming data but need to be updated to get data from the database to the backend 
-- The signup activity was extended but Firebase was not implemented. The signup process will be abandoned for the time being till the search and grocery list features are implemented. A few preset users will be added to the database for a mock login process.
-- 
-##### Next Week Goals
 - Extend the search activity to dynamically update suggestions with user input
 - Refactor existing code to follow the software architecture 
+- Learn how to handle incoming data from the database  
+
+##### Key Points
+- The SearchItem activity is implemented along with the layout to display each individual item.
+- The recycler view element was complex to work with and needs to be understood more.
+- In the initial implementation of the search activity, the recycler view would populate with all items. However, this design choice would not be feasible with a live DB because the app would have to make 70 API calls just to load the search page.
+- The latest implementation only displays the items that are being searched, and the recycler view reverts to the initial state when the search bar is empty 
+- The item layout needs to be rethought since it displays the price now.
+- Getting the price would not be possible during the fuzzy search since the call to the API would not be made till after the item is clicked
+- So a View Item activity needs to be made to display the prices, item description, store logo, and image(possibly) 
+- The current layout to display items can be used in the View Item activity
+##### Next Week Goals
+- Design and implement View Item activity
 - Learn how to handle incoming data from the database  
 
 ### Syed Ahmed
