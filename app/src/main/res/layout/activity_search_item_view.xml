@@ -5,7 +5,7 @@
     android:layout_height="150dp">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/storeLogo"
         android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:layout_toRightOf="@id/productName"
@@ -23,6 +23,8 @@
         android:id="@+id/productName"
         android:layout_width="200dp"
         android:layout_height="40dp"
+        android:textStyle="bold"
+        android:textSize="30sp"
         android:layout_toRightOf="@id/productImage">
 
     </TextView>
@@ -54,11 +56,23 @@
         android:layout_height="100dp"
         android:layout_below="@id/productDescription"
         android:layout_toRightOf="@id/fixedPrice"
-        android:text="per oz"
+        android:text="per unit"
+        android:textStyle="bold"
         android:textAlignment="textEnd">
     </TextView>
 
-<!--    <ImageView-->
+    <Button
+        android:id="@+id/addToGroceryList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/storeLogo"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_toRightOf="@id/unitPrice"
+        android:textSize="10sp"
+        android:text="Add to List" />
+
+    <!--    <ImageView-->
 <!--        android:id="@+id/storeLogo"-->
 <!--        android:layout_width="100dp"-->
 <!--        android:layout_height="match_parent"-->

@@ -38,15 +38,15 @@ class SearchItem : AppCompatActivity() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                if (newText != null) {
-                    suggestionsList.clear()
+                suggestionsList.clear()
+                if (!newText.isNullOrEmpty()) {
                     for (item in predefinedItems) {
                         if (item.startsWith(newText, ignoreCase = true)) {
                             suggestionsList.add(item)
                         }
                     }
-                    adapter.notifyDataSetChanged()
                 }
+                adapter.notifyDataSetChanged()
                 return false
             }
         })
