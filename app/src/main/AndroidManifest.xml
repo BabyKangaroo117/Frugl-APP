@@ -15,6 +15,18 @@
             android:name=".ui.list.CreateList"
             android:exported="false" />
         <activity
+            android:name=".ui.homepage.Homepage"
+            android:exported="false" />
+        <activity
+            android:name=".ui.searchitem.SearchItem"
+            android:exported="false" />
+        <activity
+            android:name=".ui.user.UserAccount"
+            android:exported="false" />
+        <activity
+            android:name=".ui.user.CreateUser"
+            android:exported="false" />
+        <activity
             android:name=".ui.signup.SignUp"
             android:exported="false" />
         <activity

@@ -7,8 +7,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.frugl_app.R
-import com.example.frugl_app.ui.list.CreateList
 import com.google.android.material.textfield.TextInputEditText
+import com.example.frugl_app.ui.homepage.Homepage
 
 class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +25,8 @@ class Login : AppCompatActivity() {
         val button: Button = findViewById(R.id.button)
         button.setOnClickListener {
             if (username.text.toString() == "username" && password.text.toString() == "password"){
-                val intent: Intent = Intent(this, CreateList::class.java)
+                val intent: Intent = Intent(this, Homepage::class.java)
+                intent.putExtra("user_name", username.text.toString())
                 startActivity(intent)
             }
             else Toast.makeText(this, "Wrong Password", Toast.LENGTH_LONG).show()
