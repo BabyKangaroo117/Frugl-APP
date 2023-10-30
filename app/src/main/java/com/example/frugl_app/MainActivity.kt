@@ -33,5 +33,5 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
+    // adding random comment to test github workflow
 }
