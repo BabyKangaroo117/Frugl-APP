@@ -429,6 +429,27 @@ Done by 11/15/23
 # Continuous Integration 
 ### The Frugl Application
 
+#### Test Automation Infrastructure
+Given that we have a large group with a shared repository, github actions seemed like the best all around resource for our CI for the following reasons:
+- Automatic Test Runs executed when specific conditions are met (pushes, pull requests, etc.)
+- report generation (stores the output of the test functions within xml files for easy reading and catalogging)
+- Distributed Computing: we are able to divide functions that wed like to run into different yml "jobs". These jobs may be hosted on a swarm of github computers allowing us to execute the jobs concurrently
+- master branch saftey: if a test fails, github automatically reverts the master branch effectively blocking the push with incorrect code from breaknig the project.
+
+#### Actions Triggered
+a build is triggered (at this moment) when a push occurs on the WritingTests branch. This Triggers:
+- The machine running our CI to check the cache for precompiled dependencies
+- install dependencies that were not found
+- build the gradle and project
+- run tests for the util functions SignUpUtilTest and LoginUtilTest
+- generate a report and save it in the "artifacts" section of github actions
+- close the project
+
+#### Alternate Services 
+##### Travis CI
+- this was probably one of the best other options. It supported many of the pros that github actions had and could even be run within a docker environment. It seems like github (with the power and might of Microsoft behind it) can simply take whatever Travis is doing and pump crazy amounts of money in to do it better. Its likely that with Githubs larger pool of servers, we'll have more computational time available to our repository. In fact, travis doesnt offer free CI to non-open source (public repositories). 
+  
+
 ### The Frugl API
 #### The Service
 - The service used for continuous integration is Azure pipelines, and it has plenty of built in features to help with automation.
@@ -470,6 +491,19 @@ Done by 11/15/23
 
 # Automated Testing
 ### The Frugl Application
+
+#### Tools
+- JUnit
+- Assert (Google)
+
+#### Test Cases
+- util functions were created using TDD to ensure edge case capture
+- util functions serve to ensure that user data is validated for correctness and formatting before being sent to anywhere it may cause errors
+- test cases may be run independentaly or in any desired sequence
+- we can omit certain test cases and group them using the @category decorator (this lets us run different tests for different builds but still have them all avialble to be viewed) 
+
+#### Report Generation
+- JUnit has built in functionality to generate XML reports showing a detailed breakdown of the test results
 
 ### The Frugl API
 #### Infastructure
