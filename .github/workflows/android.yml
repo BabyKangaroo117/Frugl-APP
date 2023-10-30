@@ -17,7 +17,7 @@ jobs:
     - name: Set up JDK 1.8
       uses: actions/setup-java@v2
       with:
-        java-version: '11'
+        java-version: '17' # trial and error for this veriosn number - plz keep at 17 for now
         distribution: 'adopt'
         cache: gradle
 
