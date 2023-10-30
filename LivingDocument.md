@@ -462,3 +462,31 @@ Done by 11/15/23
 #### Viewing the Testing Process
 - Some of the testing can be done through Azure services. If there are any questions, feel free to contact the developers.
 - The build file is located within FruglAPI/.github/workflows/main_fruglapp.yml in the [Frugl API Repository](https://github.com/justyden/FruglAPI) which is a seperate application.
+
+### Webscraper CI
+
+#### Test Automation Infrastructure:
+- We use Pytest as our test automation framework.
+- Pytest provides a simple and easy-to-use framework for writing and executing tests. It offers powerful features, extensive plugin support, and detailed reporting, making it a suitable choice for our project's testing needs.
+
+#### Adding a New Test to the Code Base:
+- To add a new test, create a new test file or add a new test function within an existing test file. Make sure to follow the naming conventions and organize tests logically. Execute the tests using the Pytest framework to ensure the new test is running as expected.
+
+####Continuous Integration (CI) Service:
+- We use GitHub Actions as our CI service.
+- GitHub Actions seamlessly integrates with our GitHub repository, providing easy setup and configuration. It offers a wide range of customization options, supports various programming languages, and allows us to automate our CI/CD workflows efficiently within the GitHub ecosystem.
+
+#### Pros/Cons Matrix for CI Services:
+   - GitHub Actions:
+     - Pros: Seamless integration with GitHub, easy setup, diverse customization options, and strong community support.
+     - Cons: Limited support for external integrations, relatively new service with occasional feature limitations.
+   - Jenkins:
+     - Pros: Highly customizable, supports a wide range of plugins and integrations, and suitable for complex CI/CD pipelines.
+     - Cons: Requires significant configuration and maintenance, may be complex for smaller projects, and lacks native GitHub integration.
+
+#### Tests Executed in CI Build:
+   - Answer: The CI build executes all unit tests, integration tests, and any other specified tests to ensure the codebase meets the defined quality standards. It also checks for code formatting, linting errors, and other code quality metrics to maintain the overall code health.
+
+#### Development Actions Triggering CI Build:
+   - The CI build is triggered on every push to the main branch or on pull requests. Additionally, any commits to feature branches or specific tags may also trigger the CI build, depending on the project's specific configuration. This ensures that changes are thoroughly tested before merging into the main codebase.
+
