@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         signup()
     }
 
+
     private fun login(){
         val button: Button = findViewById(R.id.login)
         button.setOnClickListener {
