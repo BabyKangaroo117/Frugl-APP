@@ -19,6 +19,7 @@
 - Stuck on
   - Understanding the setup for the controller classes and how to create them from the models.
 #### Next Week Goals
+- Work with everyone to try and get Data from the API into the database.
 
 # Individual Reports
 
