@@ -10,16 +10,19 @@
   - Worked on controller classes for API. Still need to implement the rest of the classes or models in this case.
   - Continued research Azure key vaults.
   - Set up build and test processes for API.
+  - Talked about solutions to problems that might not be solved in time.
 - What worked
   - Setting up the building and testing process for the API.
 - What was learned
   - How a secrets work in the .yml file. This can used to verify the person that started the build process. This can do useful things like automatically create comments in the GitHub. The comment can contain a coverage report on the tests.
 - Have trouble with
   - Azure key vaults, started looking for other solutions.
+  - Learning the Entity Framework Core architecture. There is a lot to it.
 - Stuck on
   - Understanding the setup for the controller classes and how to create them from the models.
 #### Next Week Goals
 - Work with everyone to try and get Data from the API into the database.
+- Create a plan for anything that might not be finished in time.
 
 # Individual Reports
 
