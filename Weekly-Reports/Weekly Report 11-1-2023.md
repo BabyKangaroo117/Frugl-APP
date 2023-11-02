@@ -42,20 +42,22 @@
   
 ### Aaron Feinberg
 #### Previous Goals
-- Have a grasp of REST Api calls
-- understand how Syed ViewModel, View, and Data classes are implemented so i can supply them with data
-- understand how to interact with tylers API 
-
+- Pass Data from in the backend (which was recieved by the api) to various components of our program 
+- Help with creating the item and shopping list views. Users should be able to make search queries while the app will only suggest valid search items from the database
+  
 ##### Key Points
-- learned the structure of the android mvvm workflow
-- created framework for our data layer (link between backend and the UI) 
+- Learned how to parcelize and pass data between activities
+- created diagrams to help us understand MVVM and the backend processing process
+- Learned about kotlin's built int lazy loading which executes encapsulated code at run time only when needed 
 
 What Im Stuck on
-- best way to implement the code (breaking down into classes, data classes, etc.)
+- Interfacing with the API (will discuss with Tyler and Joe)
+- architecture choices (where should we make initial call to api, where should we store a list of items to be shared between activities)
 
 ##### Next Week Goals
-- Pass Data from in the backend (which was recieved by the api) to various components of our program 
-- Help with creating the item and shopping list views. Users should be able to make search queries while the app will only suggest valid search items from the database 
+- implement the shopping list (ranking) activity which will provide a general overview of the total price of a user's shopping cart as well as some store statistics
+- integrate passing of intent (store name) to Syed's Google Maps activity
+- finish the ApiService interface (add functions for getting all items, store names, and user data) 
 
 ### Taazkir Nasir
 ##### Previous Goals
