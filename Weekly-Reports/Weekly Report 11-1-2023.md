@@ -58,21 +58,17 @@ What Im Stuck on
 
 ### Taazkir Nasir
 ##### Previous Goals
-- Extend the search activity to dynamically update suggestions with user input
-- Refactor existing code to follow the software architecture 
-- Learn how to handle incoming data from the database  
+- Design and implement View Item activity
+- Learn how to handle incoming data from the database 
 
 ##### Key Points
-- The SearchItem activity is implemented along with the layout to display each individual item.
-- The recycler view element was complex to work with and needs to be understood more.
-- In the initial implementation of the search activity, the recycler view would populate with all items. However, this design choice would not be feasible with a live DB because the app would have to make 70 API calls just to load the search page.
-- The latest implementation only displays the items that are being searched, and the recycler view reverts to the initial state when the search bar is empty 
-- The item layout needs to be rethought since it displays the price now.
-- Getting the price would not be possible during the fuzzy search since the call to the API would not be made till after the item is clicked
-- So a View Item activity needs to be made to display the prices, item description, store logo, and image(possibly) 
-- The current layout to display items can be used in the View Item activity
+- The search page will remain as it is. Users will input search terms and suggestions will appear including price and details, as only one API call will be made at app launch.
+- We'll use the same layout from the search page to show item details when clicked. I am also considering a dialog box to display contextual information instead of launching a new activity.
+- The grid layout for the homepage nav bar is proving difficult. It requires downloading the layout as an additional feature in Android Studio but the dependency is not being pushed to GitHub 
+- Still researching how to work with a live database.
 ##### Next Week Goals
-- Design and implement View Item activity
+- Implement the user account activity where the user's address and search radius will be inputted. 
+- Get image buttons in a grid layout to work on the homepage, if not implement it using a linear layout 
 - Learn how to handle incoming data from the database  
 
 ### Syed Ahmed
