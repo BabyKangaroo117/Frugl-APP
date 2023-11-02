@@ -18,6 +18,7 @@
 - Have trouble with
   - Azure key vaults, started looking for other solutions.
   - Learning the Entity Framework Core architecture. There is a lot to it.
+  - Ran into bot issues with the shoprite webscraper. May not be able to set specific zipcodes.
 - Stuck on
   - Understanding the setup for the controller classes and how to create them from the models.
 #### Next Week Goals
@@ -86,15 +87,15 @@ What Im Stuck on
 
 ### Joseph Porrino
 ##### Previous goals
-- Work with Tyler on getting the database connected
-- Start unittesting code
-
-##### Keypoints
-- Refactored webscraper code to make more readable and use less lines of code
-- Set up pytest and started unit testing
-- Got access to database.
-
-##### Next Week Goals
 - Finish unit testing
 - Work on database functions
 - Connect python code to database
+
+##### Keypoints
+- Almost finished shoprite webscraper. Ran into issues with bots but was able to "hack" my way through.
+- Started helping tyler with the database functions.
+- Set up CI with the webscraper. Still need to test if selenium will work with github actions.
+
+##### Next Week Goals
+- Finish the webscrapers and collect sample data to store as a json.
+- Help Tyler with the database functions
