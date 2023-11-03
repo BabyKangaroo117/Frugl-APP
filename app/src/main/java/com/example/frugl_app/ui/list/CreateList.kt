@@ -1,12 +1,12 @@
 package com.example.frugl_app.ui.list
 import android.database.MatrixCursor
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.BaseColumns
-import android.widget.SearchView
 import android.widget.CursorAdapter
+import android.widget.SearchView
 import android.widget.SimpleCursorAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -66,6 +66,7 @@ class CreateList : AppCompatActivity(), ItemListener {
             }
         })
     }
+
 
     //update suggestions based on what the user typed in the search bar
     private fun updateSuggestions(searchView: SearchView, text: String){
