@@ -4,5 +4,5 @@ package com.example.frugl_app.data.model
 //at a particular store
 data class Store(
     var storeName: String,
-    val totalPrice: Double = 0.0,
+    val totalPrice: Double = 0.0
 )

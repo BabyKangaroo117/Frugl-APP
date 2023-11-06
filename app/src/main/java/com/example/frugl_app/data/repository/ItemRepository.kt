@@ -1,8 +1,9 @@
 package com.example.frugl_app.data.repository
 
 import com.example.frugl_app.data.api.ApiService
+import com.example.frugl_app.data.model.ApiItem
 import com.example.frugl_app.data.model.Item
-import retrofit2.Response
+
 
 /**
  * This is where our app will actually use ApiService and retrofit to make requests.
@@ -15,8 +16,30 @@ import retrofit2.Response
 
 class ItemRepository(private val api: ApiService) {
 
-    suspend fun getSpecificItems(itemId: String): Response<List<Item>> {
-        return api.getSpecificItems(itemId)
-    }
+    //grabs a list of items from the api, stores them in an ApiItem() object, then converts
+    //them into the item() object
+    suspend fun getItemsFromApi(): List<Item> {
+        // Make the API call
+        val response = api.getItems()
 
+        if (response.isSuccessful) {
+            val apiResponse = response.body()
+
+            if (apiResponse != null) {
+                // Convert ApiResponse to list of Items
+                val itemList = apiResponse.items.map { apiItem: ApiItem ->
+                    Item(
+                        name = apiItem.name,
+                        quantity = apiItem.quantity,
+                        unitPrices = apiItem.storePrices
+                    )
+                }
+
+                return itemList // Return the list of items
+            }
+        }
+
+        // Return an empty list in case of an error or no items received
+        return emptyList()
+    }
 }
