@@ -59,18 +59,19 @@ What Im Stuck on
 
 ### Taazkir Nasir
 ##### Previous Goals
-- Design and implement View Item activity
+- Implement the user account activity where the user's address and search radius will be inputted. 
+- Get image buttons in a grid layout to work on the homepage, if not implement it using a linear layout 
 - Learn how to handle incoming data from the database 
 
 ##### Key Points
-- The search page will remain as it is. Users will input search terms and suggestions will appear including price and details, as only one API call will be made at app launch.
-- We'll use the same layout from the search page to show item details when clicked. I am also considering a dialog box to display contextual information instead of launching a new activity.
-- The grid layout for the homepage nav bar is proving difficult. It requires downloading the layout as an additional feature in Android Studio but the dependency is not being pushed to GitHub 
-- Still researching how to work with a live database.
+- Got the grid layout to work for the homepage with image buttons.
+- Have to tinker with the design after the alpha release but functionally it works. Just looks ugly 
+- User Account activity can show the user's address, but having some trouble sending the address from sign-up to the user account activity.
+- The address was initially split into separate segments which is causing the issue. It is an easy fix that should be taken care of very soon
+- Will have to work on creating dummy users in the database so the address can be grabbed from the database instead of the signup activity 
 ##### Next Week Goals
-- Implement the user account activity where the user's address and search radius will be inputted. 
-- Get image buttons in a grid layout to work on the homepage, if not implement it using a linear layout 
-- Learn how to handle incoming data from the database  
+- Use the API to populate the search results with items from the database 
+- Make sure the user's flow between activities is working according to design across the whole app 
 
 ### Syed Ahmed
 ##### Previous Goals
