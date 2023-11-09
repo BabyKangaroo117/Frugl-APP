@@ -15,7 +15,7 @@ class CreateListViewModel : ViewModel() {
 
     fun addItem(itemName: String) {
         val list = _itemList.value ?: mutableListOf()
-        val item = list.find { it.name == itemName }
+        val item = list.find { it.itemName == itemName }
 
         if (item == null) {
             list.add(Item(itemName, 1))

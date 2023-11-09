@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.frugl_app.R
+import com.example.frugl_app.data.api.RetrofitClient
+import com.example.frugl_app.data.repository.ItemRepository
 import com.example.frugl_app.ui.login.Login
 import com.example.frugl_app.ui.signup.SignUp
 
@@ -18,6 +20,10 @@ class MainActivity : AppCompatActivity() {
 
         // go to the sign up page
         signup()
+
+        // get all items to test api call
+        val itemRepository: ItemRepository = ItemRepository(RetrofitClient.instance)
+        itemRepository.getItems()
     }
 
     private fun login(){
@@ -35,5 +41,4 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
 }

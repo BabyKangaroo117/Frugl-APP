@@ -1,7 +1,10 @@
 package com.example.frugl_app.data.repository
 
+import android.util.Log
 import com.example.frugl_app.data.api.ApiService
 import com.example.frugl_app.data.model.Item
+import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 
 /**
@@ -15,7 +18,26 @@ import retrofit2.Response
 
 class ItemRepository(private val api: ApiService) {
 
-    suspend fun getSpecificItems(itemId: String): Response<List<Item>> {
-        return api.getSpecificItems(itemId)
+//    suspend fun getSpecificItems(itemId: String): Response<List<Item>> {
+//        return api.getAreaItems(itemId)
+//    }
+
+    fun getItems() {
+        val call = api.getItems()
+
+        call.enqueue(object : Callback<List<Item>> {
+            override fun onResponse(
+                call: Call<List<Item>>,
+                response: Response<List<Item>>
+            ) {
+                if (response.isSuccessful) {
+                    Log.d("LOG_MESSAGE", response.body().toString())
+                }
+            }
+
+            override fun onFailure(call: Call<List<Item>>, t: Throwable) {
+                Log.e("LOG_MESSAGE", t.message.toString())
+            }
+        })
     }
 }
