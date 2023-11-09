@@ -74,16 +74,13 @@ What Im Stuck on
 
 ### Syed Ahmed
 ##### Previous Goals
-- Figure out the workflow and design of the app, API, and database with other team members
-- Set up google api
+- Modify and refactor existing code to allow for smoother integration with backend-api
 
 ##### Key Points
-- Most of the time this past week was spent on discussing the design and workflow for our app. As I was working on the app, I realized that considering the design of the database, it would not be possible to calculate the aggregate cheapest price and recommend the best store. We could let the user search up the cheapest price and best store for each individual item, however, we would not be able to implement our original use case which was to take into account all of the user's desired grocery items.
-- We finally decided to modify the database to add additional columns to store prices from all stores, but even this proved to be a challenge. For example, if a store didn't carry an item, we'd have to store null thus give rise to scalability issues. Moreover, we ran into design challenges when considering how we would tackle different variations of the same type of item. For example, no fat milk vs 2% fat milk.
+- My goal this week is to work with Tyler to integrate the backend api layer with the android app. In general, the separate parts of the application work as intended so we just need to combine them altogether
 
 ##### Next Week Goals
-- Finalize the best approach for our app
-- Write code for finding cheapest price feature
+- Finalize aplha build
 
 ### Joseph Porrino
 ##### Previous goals
