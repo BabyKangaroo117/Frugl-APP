@@ -17,8 +17,7 @@
   - How to use Retrofit2 to parse JSON objects from the API response.
 - Have trouble with
   - Still having trouble with Azure key vaults. Security features may not be the best for now.
-- Stuck on
-  
+
 #### Next Week Goals
 - Create the Alpha build.
 - Test API connection calls within the application. Also test web scrapper through API.
@@ -85,15 +84,15 @@ What Im Stuck on
 
 ### Joseph Porrino
 ##### Previous goals
-- Finish unit testing
-- Work on database functions
-- Connect python code to database
-
-##### Keypoints
-- Almost finished shoprite webscraper. Ran into issues with bots but was able to "hack" my way through.
-- Started helping tyler with the database functions.
-- Set up CI with the webscraper. Still need to test if selenium will work with github actions.
-
-##### Next Week Goals
 - Finish the webscrapers and collect sample data to store as a json.
 - Help Tyler with the database functions
+##### Keypoints
+- Created the controllers for the database
+- Added more unit tests to the webscraper
+- Still figuring out how to account for edge cases when standardizing units
+##### Next Week Goals
+- Connect to the database and add data
+- Add more unit tests
+- Figure out issue with standardizing units
+- Help with finishing up kotlin development
+
