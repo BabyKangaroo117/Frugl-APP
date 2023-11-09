@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import com.example.frugl_app.R
 import com.example.frugl_app.ui.searchitem.SearchItem
@@ -29,9 +30,11 @@ class Homepage : AppCompatActivity() {
 
     private fun navigation(){
 
-        val searchButton: Button = findViewById(R.id.searchNav)
-        val groceryListButton: Button = findViewById(R.id.GroceryListNav)
-        val accountButton: Button = findViewById(R.id.accountNav)
+        val searchButton: ImageButton = findViewById(R.id.searchNav)
+        val groceryListButton: ImageButton = findViewById(R.id.GroceryListNav)
+        val accountButton: ImageButton = findViewById(R.id.accountNav)
+        val mapButton: ImageButton = findViewById(R.id.mapNav)
+
 
         searchButton.setOnClickListener{
             val intent: Intent = Intent(this, SearchItem::class.java)
@@ -39,6 +42,11 @@ class Homepage : AppCompatActivity() {
         }
 
         groceryListButton.setOnClickListener{
+            val intent: Intent = Intent(this, CreateList::class.java)
+            startActivity(intent)
+        }
+
+        mapButton.setOnClickListener{
             val intent: Intent = Intent(this, CreateList::class.java)
             startActivity(intent)
         }
