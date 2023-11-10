@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 // instance of retrofit for interacting with the api
 object RetrofitClient {
-    private const val BASE_URL = "https://CHANGETHISTOOURAPIENDPOINTPLZ" //holds the general entry point
+    private const val BASE_URL = "fruglapp.azurewebsites.net/api/Items" //holds the general entry point
 
     /*
         everything inside the lazy{} block is compiled only when it is called and the result of that first

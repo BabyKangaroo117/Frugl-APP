@@ -18,7 +18,7 @@ class ItemRepository(private val api: ApiService) {
 
     //grabs a list of items from the api, stores them in an ApiItem() object, then converts
     //them into the item() object
-    suspend fun getItemsFromApi(): List<Item> {
+    suspend fun getAllItemsFromApi(): List<Item> {
         // Make the API call
         val response = api.getItems()
 
