@@ -7,13 +7,12 @@ import com.example.frugl_app.data.model.Store
 class ListDataPresentationViewModel: ViewModel() {
     //internal list of items
     private val _itemList = ArrayList<Item>()
+
     private val _stores = ArrayList<String>()
     private val _storeObjects = ArrayList<Store>()
 
     //gettable list of items (for external interfacing)
     val itemList: ArrayList<Item> get() = _itemList
-
-
 
     init {
         //setting up our mutable list
@@ -29,6 +28,14 @@ class ListDataPresentationViewModel: ViewModel() {
     //pass in the name of stores here
     fun addStores(stores: List<String>){
         _stores.addAll(stores)
+    }
+
+     fun findCheapestStore(): String{
+        //sum unit prices for wegmans
+        //sum unit prices for giant
+        //return cheapest
+
+        return ""
     }
 
     private fun computeCartPriceForStore(Store: String): Double{
