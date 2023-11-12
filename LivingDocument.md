@@ -425,3 +425,108 @@ Done by 11/15/23
 - Webscraping has a high risk becuase if a website decides to add bot protection, then we will no longer be able to provide data to our users.
 - There is no way to know if or when this could occur.
 - We have no mitigation plan because there is no other source of grocery store data other than webscraping.
+
+# Continuous Integration 
+### The Frugl Application
+
+#### Test Automation Infrastructure
+Given that we have a large group with a shared repository, github actions seemed like the best all around resource for our CI for the following reasons:
+- Automatic Test Runs executed when specific conditions are met (pushes, pull requests, etc.)
+- report generation (stores the output of the test functions within xml files for easy reading and catalogging)
+- Distributed Computing: we are able to divide functions that wed like to run into different yml "jobs". These jobs may be hosted on a swarm of github computers allowing us to execute the jobs concurrently
+- master branch saftey: if a test fails, github automatically reverts the master branch effectively blocking the push with incorrect code from breaknig the project.
+
+#### Actions Triggered
+a build is triggered (at this moment) when a push occurs on the WritingTests branch. This Triggers:
+- The machine running our CI to check the cache for precompiled dependencies
+- install dependencies that were not found
+- build the gradle and project
+- run tests for the util functions SignUpUtilTest and LoginUtilTest
+- generate a report and save it in the "artifacts" section of github actions
+- close the project
+
+#### Alternate Services 
+##### Travis CI
+- this was probably one of the best other options. It supported many of the pros that github actions had and could even be run within a docker environment. It seems like github (with the power and might of Microsoft behind it) can simply take whatever Travis is doing and pump crazy amounts of money in to do it better. Its likely that with Githubs larger pool of servers, we'll have more computational time available to our repository. In fact, travis doesnt offer free CI to non-open source (public repositories). 
+  
+
+### The Frugl API
+#### The Service
+- The service used for continuous integration is Azure pipelines, and it has plenty of built in features to help with automation.
+- The build file is specified as .yml file and is ran through GitHub actions. Azure pipelines syncs up with GitHub actions to ensure that this file has everything it needs, so the website can run properly. Any changes in this .yml will also change anything on the Azure pipelines side.
+- This was selected since it is integrated into Azure services. It is reliable and has plenty of features.
+#### Actions Triggered on Build
+- Since most of the testing is done on local databases, the only major trigger that happens is when code is pushed to main.
+- When a push to main occurs, the web API changes are synced and the new website is automatically deployed. This includes every portion of the API, not just the main page that is shown. For example, the main website is
+[Frugl API Website](fruglapp.azurewebsites.net), which will never give a response, and the API requests include [Example API Call to the Website](https://fruglapp.azurewebsites.net/WeatherForecast), which will be updated on pushes to main.
+#### Alternate Services
+- A service that could have been chosen is Jenkins, which works well to deploy ASP.NET web applications. It is well documented when compared to all Azure services. Azure services is also well documented, but the documenation is rather thrown everywhere and it is hard to follow along. A reason not to chose Jenkins is that Azure pipelines is simply built into Azure services and it would have been more work to add another service that would do the same thing.
+#### Viewing the Building Process
+- Some of the building process is located with Azure itself, so if there are any questions feel free to contact the developers.
+- The build file is located within FruglAPI/.github/workflows/main_fruglapp.yml in the [Frugl API Repository](https://github.com/justyden/FruglAPI) which is a seperate application.
+
+### Webscraper CI
+
+#### Test Automation Infrastructure:
+- We use Pytest as our test automation framework.
+- Pytest provides a simple and easy-to-use framework for writing and executing tests. It offers powerful features, extensive plugin support, and detailed reporting, making it a suitable choice for our project's testing needs.
+
+#### Adding a New Test to the Code Base:
+- To add a new test, create a new test file or add a new test function within an existing test file. Make sure to follow the naming conventions and organize tests logically. Execute the tests using the Pytest framework to ensure the new test is running as expected.
+
+#### Continuous Integration (CI) Service:
+- We use GitHub Actions as our CI service.
+- GitHub Actions seamlessly integrates with our GitHub repository, providing easy setup and configuration. It offers a wide range of customization options, supports various programming languages, and allows us to automate our CI/CD workflows efficiently within the GitHub ecosystem.
+
+#### Pros/Cons Matrix for CI Services:
+   - GitHub Actions:
+     - Pros: Seamless integration with GitHub, easy setup, diverse customization options, and strong community support.
+     - Cons: Limited support for external integrations, relatively new service with occasional feature limitations.
+   - Jenkins:
+     - Pros: Highly customizable, supports a wide range of plugins and integrations, and suitable for complex CI/CD pipelines.
+     - Cons: Requires significant configuration and maintenance, may be complex for smaller projects, and lacks native GitHub integration.
+
+#### Development Actions Triggering CI Build:
+   - The CI build is triggered on every push to the main branch or on pull requests. Additionally, any commits to feature branches or specific tags may also trigger the CI build, depending on the project's specific configuration. This ensures that changes are thoroughly tested before merging into the main codebase.
+
+# Automated Testing
+### The Frugl Application
+
+#### Tools
+- JUnit
+- Assert (Google)
+
+#### Test Cases
+- util functions were created using TDD to ensure edge case capture
+- util functions serve to ensure that user data is validated for correctness and formatting before being sent to anywhere it may cause errors
+- test cases may be run independentaly or in any desired sequence
+- we can omit certain test cases and group them using the @category decorator (this lets us run different tests for different builds but still have them all avialble to be viewed) 
+
+#### Report Generation
+- JUnit has built in functionality to generate XML reports showing a detailed breakdown of the test results
+
+### The Frugl API
+#### Infastructure
+- Uses Azure test plans which is integrated into Azure pipelines.
+- Selected as the testing enviornment since it is built into Azure pipelines. It is really easy to set up.
+#### How to Use Azure Test Plans
+- Simply create test plan which includes any type of testing, from functions to load testing.
+- Add the test plan into a test suite which can be ran depending on what is required from the testing.
+- These tests can easily be analyzed from the tests reports that can be generated.
+- Integrate it into Azure pipelines which will run the tests depending on how they were specified.
+#### What Will be Tested
+- On push to main, proper API calls will be tested to verify that there is a connection to the database. A response should be sent to each of these calls.
+- In addition to the API functionality testing, there are automatic tests that are ran on the Azure test plans side, that ensure that the web API is up and running.
+#### Viewing the Testing Process
+- Some of the testing can be done through Azure services. If there are any questions, feel free to contact the developers.
+- The build file is located within FruglAPI/.github/workflows/main_fruglapp.yml in the [Frugl API Repository](https://github.com/justyden/FruglAPI) which is a seperate application.
+
+### Webscraper Testing
+
+#### Tests Executed in CI Build:
+   - The CI build executes all unit tests, integration tests, and any other specified tests to ensure the codebase meets the defined quality standards. It also checks for code formatting, linting errors, and other code quality metrics to maintain the overall code health.
+   - Selenium is tested to make sure it is properly scraping the website.
+   - Tests are in place to check that the item details such as name and price are being formatted properlly
+
+###  Viewing the Testing Process
+- Git hub actions can manually run a workflow to make sure that it is functioning properly. Any build errors are returned with the error specified.
