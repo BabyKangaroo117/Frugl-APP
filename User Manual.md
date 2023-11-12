@@ -122,9 +122,7 @@ If you ran into any technical difficulties with the installation steps, refer to
 1. **Unzip Project:**
     
     - Download the Frugl App project file and unzip it to a location of your choice.
-2.  **Open in An
-3. 
-4. droid Studio:**
+2.  **Open in Android Studio:**
     
     - Launch Android Studio.
     - Click on "File" > "Open..."
