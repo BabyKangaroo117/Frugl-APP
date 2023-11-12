@@ -5,7 +5,7 @@ name: Android CI
 
 on:
   push:
-    branches: [ "WritingTests", "master" ]
+    branches: [ "WritingTests" ]
 
 jobs:
   build:
