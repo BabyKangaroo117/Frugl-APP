@@ -1,35 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="140dp"
-    tools:context=".ui.rank.ListDataPresentation">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/storeName"
-        android:layout_width="wrap_content"
+    <!-- Container 1 -->
+    <LinearLayout
+        android:id="@+id/container1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="116dp"
-        android:text="something"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/totalPrice"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
 
-    <TextView
-        android:id="@+id/totalPrice"
-        android:layout_width="72dp"
+        <!-- StoreName1 -->
+        <TextView
+            android:id="@+id/storeName1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Store Name 1"
+            android:textSize="24sp" />
+
+        <!-- Add horizontal space -->
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="match_parent" />
+
+        <!-- TotalPrice1 -->
+        <TextView
+            android:id="@+id/totalPrice1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Total Price 1"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- Container 2 -->
+    <LinearLayout
+        android:id="@+id/container2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"
-        android:paddingLeft="20dp"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
+        android:orientation="horizontal"
+        android:layout_below="@id/container1"
+        android:layout_marginTop="16dp">
 
+        <!-- StoreName2 -->
+        <TextView
+            android:id="@+id/storeName2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Store Name 2"
+            android:textSize="24sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Add horizontal space -->
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="match_parent" />
+
+        <!-- TotalPrice2 -->
+        <TextView
+            android:id="@+id/totalPrice2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Total Price 2"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</RelativeLayout>

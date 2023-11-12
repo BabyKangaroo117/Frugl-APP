@@ -30,21 +30,20 @@ class ListDataPresentationViewModel: ViewModel() {
         _stores.addAll(stores)
     }
 
-     fun findCheapestStore(): String{
-        //sum unit prices for wegmans
-        //sum unit prices for giant
-        //return cheapest
+    fun rankStores(): Pair<String, String>{
 
-        return ""
+        val wegmansPrice: Double = itemList.sumOf { it.wegmansItem }
+        val shopritePrice: Double = itemList.sumOf { it.shopriteItem }
+
+        val rankedStores: Pair<String, String> =
+            if (wegmansPrice < shopritePrice) {
+                Pair("Wegmans", wegmansPrice.toString())
+            } else {
+                Pair("Shoprite", shopritePrice.toString())
+            }
+
+        return rankedStores
     }
 
-    private fun computeCartPriceForStore(Store: String): Double{
-        //for each item
-        //compute unit price * units in item * quantity of items
-        //sum total price
-        //return sum
-
-        return 0.0
-    }
 
 }

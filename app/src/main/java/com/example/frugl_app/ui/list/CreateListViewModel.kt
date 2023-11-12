@@ -18,7 +18,7 @@ class CreateListViewModel : ViewModel() {
         val item = list.find { it.itemName == itemName }
 
         if (item == null) {
-            list.add(Item(itemName, 1))
+            list.add(Item(itemName = itemName, quantity = 1))
         } else {
             item.quantity++
         }

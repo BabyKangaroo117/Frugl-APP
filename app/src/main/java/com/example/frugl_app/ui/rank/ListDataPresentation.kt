@@ -28,6 +28,22 @@ class ListDataPresentation : AppCompatActivity() {
         //storeName
         //totalPrice
 
-        val storeName: TextView = findViewById(R.id.storeName)
+        val storeName1: TextView = findViewById(R.id.storeName1)
+        val totalPrice1: TextView = findViewById(R.id.totalPrice1)
+
+        val storeName2: TextView = findViewById(R.id.storeName2)
+        val totalPrice2: TextView = findViewById(R.id.totalPrice2)
+
+        //get the list of stores ranked in order by price
+        var rankedStores = viewModel.rankStores()
+
+        storeName1.text = rankedStores.first[0].toString()
+        totalPrice1.text = rankedStores.second[0].toString()
+
+        storeName2.text = rankedStores.first[1].toString()
+        storeName2.text = rankedStores.second[1].toString()
+
+
+
     }
 }

@@ -32,6 +32,7 @@ class ItemRepository(private val api: ApiService) {
             ) {
                 if (response.isSuccessful) {
                     Log.d("LOG_MESSAGE", response.body().toString())
+                    response.body()?.get(0)?.let { Log.d("LOG_HEADERS", it.toString()) }
                 }
             }
 
