@@ -19,10 +19,19 @@ class Homepage : AppCompatActivity() {
         setContentView(R.layout.activity_homepage)
 
         val bundle: Bundle? = intent.extras
-        val usnm = bundle!!.getString("user_name")
 
-        val usernameDisplay: TextView = findViewById(R.id.showUsername)
-        usernameDisplay.text = ("Hi $usnm")
+        // Check if bundle is not null and contains "user_name" extra
+        if (bundle != null && bundle.containsKey("user_name")) {
+            val usnm = bundle.getString("user_name")
+
+            val usernameDisplay: TextView = findViewById(R.id.showUsername)
+            usernameDisplay.text = "Hi $usnm"
+        } else {
+            // Handle the case when "user_name" extra is not present
+            // For example, you can set a default username or show an error message
+            val usernameDisplay: TextView = findViewById(R.id.showUsername)
+            usernameDisplay.text = "Hi Guest"
+        }
 
         navigation()
     }

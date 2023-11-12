@@ -1,7 +1,9 @@
 package com.example.frugl_app.ui.list
+import android.content.Intent
 import android.database.MatrixCursor
 import android.os.Bundle
 import android.provider.BaseColumns
+import android.widget.Button
 import android.widget.CursorAdapter
 import android.widget.SearchView
 import android.widget.SimpleCursorAdapter
@@ -12,6 +14,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frugl_app.R
+import com.example.frugl_app.ui.homepage.Homepage
+import com.example.frugl_app.ui.searchitem.SearchItem
+import com.example.frugl_app.ui.user.UserAccount
 
 class CreateList : AppCompatActivity(), ItemListener {
     private lateinit var viewModel: CreateListViewModel
@@ -33,6 +38,34 @@ class CreateList : AppCompatActivity(), ItemListener {
         })
 
         createSearchBar()
+
+        // When Home button is clicked, go to Homepage
+        val homeButton: Button = findViewById(R.id.CLbtnHomepage)
+        homeButton.setOnClickListener {
+            val intent: Intent = Intent(this, Homepage::class.java)
+            startActivity(intent)
+        }
+
+        // When Search button is clicked, go to SearchItem
+        val searchButton: Button = findViewById(R.id.CLbtnSearch)
+        searchButton.setOnClickListener {
+            val intent: Intent = Intent(this, SearchItem::class.java)
+            startActivity(intent)
+        }
+
+        // When Account button is clicked, go to UserAccount
+        val cartButton: Button = findViewById(R.id.CLbtnUserAccount)
+        cartButton.setOnClickListener {
+            val intent: Intent = Intent(this, UserAccount::class.java)
+            startActivity(intent)
+        }
+
+//        // When Map button is clicked, go to Maps
+//        val mapButton: Button = findViewById(R.id.CLbtnMaps)
+//        mapButton.setOnClickListener {
+//            val intent: Intent = Intent(this, Maps::class.java)
+//            startActivity(intent)
+//        }
     }
 
     override fun onItemAdd(itemName: String) {

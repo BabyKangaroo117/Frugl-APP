@@ -10,14 +10,15 @@ import com.example.frugl_app.R
 
 class MyRecyclerViewAdapter(
     private val context: Context,
-    private val items: List<String>
+    private val items: List<String>,
+    private val itemDetailsMap: Map<String, Triple<String, String, String>>
 ) : RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val itemName: TextView = itemView.findViewById(R.id.productName)
         val productDescription: TextView = itemView.findViewById(R.id.productDescription)
         val fixedPrice: TextView = itemView.findViewById(R.id.fixedPrice)
         val unitPrice: TextView = itemView.findViewById(R.id.unitPrice)
-        // Add more views if needed
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,10 +27,13 @@ class MyRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = items[position]
-        // Set data from your items list to the views in your layout
-        holder.productDescription.text = item
-        // Set other data to your other views as needed
+        val itemName = items[position]
+        val details = itemDetailsMap[itemName]
+
+        holder.itemName.text = itemName
+        holder.productDescription.text = details?.first ?: "Description not available"
+        holder.fixedPrice.text = details?.second ?: "Price not available"
+        holder.unitPrice.text = details?.third ?: "Unit Price not available"
     }
 
     override fun getItemCount(): Int {

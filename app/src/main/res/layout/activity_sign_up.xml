@@ -9,11 +9,11 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="82dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="500dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="15dp"
+        android:layout_above="@id/firstName"
+        android:paddingLeft="5dp"
         android:text="Create Account"
+        android:textColor="@color/darkBlue_200"
+        android:textStyle="bold"
         android:textSize="30dp" />
 
     <!-- First name -->
@@ -30,11 +30,19 @@
         android:id="@+id/lastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/newUsername"
+        android:layout_above="@+id/newEmailAddress"
         android:layout_marginBottom="15dp"
         android:hint="Last Name" />
 
-    <!-- username -->
+    <!-- Last name -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/newEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/newUsername"
+        android:layout_marginBottom="15dp"
+        android:hint="Email Address" />
+    <!-- Username -->
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/newUsername"
         android:layout_width="match_parent"
@@ -54,20 +62,58 @@
         android:hint="Create Password"
         android:inputType="textPassword" />
 
-    <!-- confirm password -->
+    <!-- Confirm password -->
     <EditText
         android:id="@+id/confirmNewPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/create"
-        android:layout_marginBottom="60dp"
+        android:layout_above="@+id/streetAddress"
+        android:layout_marginBottom="15dp"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword" />
 
-    <!-- sign up button -->
+    <!-- Street Address -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/streetAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/city"
+        android:layout_marginBottom="15dp"
+        android:hint="Street Address" />
+
+    <!-- City -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/state"
+        android:layout_marginBottom="15dp"
+        android:hint="City" />
+
+    <!-- State -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/zipcode"
+        android:layout_marginBottom="15dp"
+        android:hint="State" />
+
+    <!-- ZIP code -->
+    <EditText
+        android:id="@+id/zipcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/createAccountButton"
+        android:layout_marginBottom="15dp"
+        android:ems="5"
+        android:hint="ZIP Code"
+        android:inputType="number" />
+
+    <!-- Sign up button -->
     <Button
-        android:id="@+id/create"
+        android:id="@+id/createAccountButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

@@ -4,80 +4,127 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
+    <!-- Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/UAnavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:padding="4dp"
+        android:background="@color/darkBlue">
+
+        <Button
+            android:id="@+id/UAbtnHomepage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home"
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/UAbtnSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Search"
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/UAbtnGroceryList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cart"
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/UAbtnMaps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Maps"
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <!-- User Information Section -->
     <TextView
         android:id="@+id/fullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/blue"
+        android:textColor="@color/darkBlue"
         android:textSize="30sp"
-        >
+        android:layout_below="@id/UAnavigationBar"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        tools:text="User's Name"/>
 
-    </TextView>
 
     <TextView
-        android:id="@+id/address1"
+        android:id="@+id/userEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/fullName"
-        android:textColor="@color/blue"
-        android:textSize="25sp">
+        android:textColor="@color/darkBlue"
+        android:textSize="20sp"
+        android:gravity="center"
+        tools:text="user@example.com"/>
 
-    </TextView>
-
+    <!-- Display user's address -->
     <TextView
-        android:id="@+id/address2"
+        android:id="@+id/userAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/address1"
-        android:textColor="@color/blue"
-        android:textSize="25sp">
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@+id/userEmail"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Address will be displayed here"
+        android:gravity="center" />
 
-    </TextView>
 
-    <TextView
-        android:id="@+id/zipcode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/address2"
-        android:textColor="@color/blue"
-        android:textSize="25sp">
-
-    </TextView>
-
-    <Button
-        android:id="@+id/editUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit"
-        android:layout_below="@id/zipcode">
-
-    </Button>
+    <!--    <Button-->
+    <!--        android:id="@+id/editUser"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Edit Address"-->
+    <!--        android:layout_below="@id/userAddress"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:background="@color/darkBlue"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:layout_marginTop="20dp"/>-->
 
     <EditText
         android:id="@+id/editRadius"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Enter your search radius"
-        android:layout_below="@id/editUser"
-        >
+        android:layout_below="@id/userAddress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:inputType="number"/>
 
-    </EditText>
-
-    <NumberPicker
+    <Button
+        android:id="@+id/saveRadius"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter your search radius"
+        android:text="Save Radius"
         android:layout_below="@id/editRadius"
-
-        >
-
-    </NumberPicker>
-
-
-
-
-
+        android:layout_centerHorizontal="true"
+        android:background="@color/darkBlue"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"/>
 </RelativeLayout>
