@@ -66,3 +66,14 @@ All merges must be reviewed by a least one fellow programer, to ensure any bugs 
 
 ### Ideas or Suggestions
 Any ideas or recommendations, feel free to contact the developers.
+
+# How to Run Frugl (Alpha Release)
+
+### Build Systems, Testing, and Continuous Integreation
+- The build systems, testing, and continuous integration can be found within the GitHub actions of this application. It is contained in a .yml file.
+- The build systems, testing, and continuous integreation for the API can be found at [Frugl API](https://github.com/justyden/FruglAPI).
+  
+### Downloads
+- The IDE used for Frugl development is [Android Studio](https://developer.android.com/studio). This application currently runs on the Giraffe version of Android Studio.
+- An Android emulator is needed for Frugl, which can be downloaded from inside the Android Studio IDE. Please download the correct emulator for the application to function properly.
+- [Link to the User Manual](https://github.com/BabyKangaroo117/Frugl-APP/blob/Alpha-Build-Documentation/User%20Manual.md)
