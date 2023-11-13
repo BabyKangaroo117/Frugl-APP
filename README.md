@@ -76,4 +76,4 @@ Any ideas or recommendations, feel free to contact the developers.
 ### Downloads
 - The IDE used for Frugl development is [Android Studio](https://developer.android.com/studio). This application currently runs on the Giraffe version of Android Studio.
 - An Android emulator is needed for Frugl, which can be downloaded from inside the Android Studio IDE. Please download the correct emulator for the application to function properly.
-- [Link to the User Manual](https://github.com/BabyKangaroo117/Frugl-APP/blob/master/User%20Manual.md)
+- [Link to the User Manual](User_Manual.md)
