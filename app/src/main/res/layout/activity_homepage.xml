@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp" >
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="300dp"
+        android:columnCount="2"
+        android:rowCount="2">
+
+        <ImageButton
+            android:id="@+id/searchNav"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="18dp"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="Search"
+            android:scaleType="fitCenter"
+            android:src="@drawable/search_icon" />
+
+        <ImageButton
+            android:id="@+id/GroceryListNav"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="20dp"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="Grocery List"
+            android:scaleType="fitCenter"
+            android:src="@drawable/grocery_cart" />
+
+        <ImageButton
+            android:id="@+id/mapNav"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="Map"
+            android:scaleType="fitCenter"
+            android:src="@drawable/map" />
+
+        <ImageButton
+            android:id="@+id/accountNav"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="20dp"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="Account"
+            android:scaleType="fitCenter"
+            android:src="@drawable/account_avatar" />
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/showUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/searchNav"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:textColor="@color/darkBlue_200"
+        android:paddingLeft="10dp"
+        android:text="TextView"
+        tools:ignore="NotSibling" />
+</RelativeLayout>

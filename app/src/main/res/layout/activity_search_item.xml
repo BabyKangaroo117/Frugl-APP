@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!-- Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/SInavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:padding="4dp"
+        android:background="@color/darkBlue">
+
+        <Button
+            android:id="@+id/SIbtnHomepage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home"
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/SIbtnGroceryList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cart"
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/SIbtnUserAccount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Account"
+            android:textSize="12sp"
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/SIbtnMaps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Maps"
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <SearchView
+        android:id="@+id/searchItemBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SInavigationBar"
+        android:queryHint="Search Item">
+
+    </SearchView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchItemBar">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

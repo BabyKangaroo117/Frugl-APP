@@ -12,7 +12,31 @@
         android:theme="@style/Theme.FruglAPP"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.rank.ListDataPresentation"
+            android:exported="false" />
+        <activity
+            android:name=".ui.list.CreateList"
+            android:exported="false" />
+        <activity
+            android:name=".ui.homepage.Homepage"
+            android:exported="false" />
+        <activity
+            android:name=".ui.searchitem.SearchItem"
+            android:exported="false" />
+        <activity
+            android:name=".ui.user.UserAccount"
+            android:exported="false" />
+        <activity
+            android:name=".ui.user.CreateUser"
+            android:exported="false" />
+        <activity
+            android:name=".ui.signup.SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.Login"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,5 +45,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
