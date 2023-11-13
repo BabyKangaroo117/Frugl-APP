@@ -70,7 +70,7 @@ Any ideas or recommendations, feel free to contact the developers.
 # How to Run Frugl (Alpha Release)
 
 ### Build Systems, Testing, and Continuous Integreation
-- The build systems, testing, and continuous integration can be found within the GitHub actions of this application. It is contained in a .yml file.
+- The build systems, testing, and continuous integration can be found within the GitHub actions of this application. It is contained in a .yml file. [The .yml File](https://github.com/BabyKangaroo117/Frugl-APP/blob/master/.github/workflows/android.yml)
 - The build systems, testing, and continuous integreation for the API can be found at [Frugl API](https://github.com/justyden/FruglAPI).
   
 ### Downloads
