@@ -7,7 +7,7 @@
         <img src="https://img.shields.io/badge/Contributors-5-blue" /></a>
   <img src="https://img.shields.io/badge/Development_Stage-Alpha-orange"
   <a href="https://github.com/BabyKangaroo117/Frugl-APP/graphs/contributors" alt="License">
-        <img src="https://img.shields.io/badge/License-Not_Picked-green" /></a>
+        <img src="https://img.shields.io/badge/License-MIT-green" /></a>
 </p>
 
 # Why Frugl?
