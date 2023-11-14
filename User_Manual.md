@@ -240,11 +240,11 @@ certain features (especially new ones) realsed for the Android Ecosystem require
 Below are some specifications about the device that we emulated and tested our project on: 
 
 Properties:
-AvdId                    Pixel_3a_API_34_extension_level_7_x86_64
-disk.dataPartition.size  6442450944
-hw.device.manufacturer   Google
-hw.device.name           pixel_3a
-image.androidVersion.api 34
+- AvdId                    Pixel_3a_API_34_extension_level_7_x86_64
+- disk.dataPartition.size  6442450944
+- hw.device.manufacturer   Google
+- hw.device.name           pixel_3a
+- image.androidVersion.api 34
 
 
 
