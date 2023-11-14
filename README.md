@@ -63,6 +63,7 @@ All merges must be reviewed by a least one fellow programer, to ensure any bugs 
 - afeins19 - afeinberg35@gmail.com
 - sma6629 - mansib.syedahmed@gmail.com
 - BabyKangaroo117 (Joseph Porrino) - joeyporrino1998@gmail.com
+- Taazkir - tazkirnasir95@gmail.com
 
 ### Ideas or Suggestions
 Any ideas or recommendations, feel free to contact the developers.
