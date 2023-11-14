@@ -224,6 +224,35 @@ If you ran into any technical difficulties with the installation steps, refer to
 	- Users will have the option to set a search radius from the User Account page
 	- NOTE: ** Access the app using the "SIGN UP" button from the landing page and fill in the form to view your details in the Account page
 
+## Testing
+testing is performed with **JUnit4**. Test are able to be run easily within android studio in the following way: 
+
+Within the Java folder, you will find 2 subdirectories (test and androidtest)
+
+![image](https://github.com/BabyKangaroo117/Frugl-APP/assets/56986596/36b46230-b40b-4830-914f-620395c0978c)
+
+### Unit Tests
+unit tests run the foundational aspects of your code and are limited to the output of a single function. 
+These tests are placed in the test folder (java/com/example/frugl_app). LoginUtilTest and SignUpUtilTest are
+prewritten unit tests 
+
+### Integration & androidtests:
+android tests represent testing that android specific tasks (such as activity changes) work. These are placed
+int the androidtest folder (java/com/example/frugl_app). 
+
+### Running Tests: 
+Tests may be easily run within android studio as it features built-in testing support.
+
+![image](https://github.com/BabyKangaroo117/Frugl-APP/assets/56986596/9f90170b-062f-41b1-9c24-bfae426a768b)
+
+
+you may run tests in the following ways
+- pressing the green "play" button next to the line number next to a test **class**. This will run
+every test function in the class.
+-  pressing the green "play" button next to the line number next to a test
+  **function** and only test that specific function.
+
+
 ## Common Issues 
 
 ### Gradle
