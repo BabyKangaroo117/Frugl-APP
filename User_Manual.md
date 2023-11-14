@@ -223,3 +223,14 @@ If you ran into any technical difficulties with the installation steps, refer to
 	- Account page will display placeholder data for the user's name, email, address
 	- Users will have the option to set a search radius from the User Account page
 	- NOTE: ** Access the app using the "SIGN UP" button from the landing page and fill in the form to view your details in the Account page
+
+## Common Issues
+### Gradle
+please ensure that you have performed a gradle sync. Gradle is the build system used to manage dependencies within android studio and will 
+automatically fetch libraries for your project as needed. Sometimes performing a "sync" operation may resolve issues related to having 
+missing dependencies. 
+
+Please refer to this guide from JetBrains on syncing your gradle: https://www.jetbrains.com/guide/java/tutorials/working-with-gradle/syncing-and-reloading/
+
+
+
