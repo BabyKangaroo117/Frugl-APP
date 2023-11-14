@@ -223,3 +223,57 @@ If you ran into any technical difficulties with the installation steps, refer to
 	- Account page will display placeholder data for the user's name, email, address
 	- Users will have the option to set a search radius from the User Account page
 	- NOTE: ** Access the app using the "SIGN UP" button from the landing page and fill in the form to view your details in the Account page
+
+## Testing
+testing is performed with **JUnit4**. Test are able to be run easily within android studio in the following way: 
+
+Within the Java folder, you will find 2 subdirectories (test and androidtest)
+
+![image](https://github.com/BabyKangaroo117/Frugl-APP/assets/56986596/36b46230-b40b-4830-914f-620395c0978c)
+
+### Unit Tests
+unit tests run the foundational aspects of your code and are limited to the output of a single function. 
+These tests are placed in the test folder (java/com/example/frugl_app). LoginUtilTest and SignUpUtilTest are
+prewritten unit tests 
+
+### Integration & androidtests:
+android tests represent testing that android specific tasks (such as activity changes) work. These are placed
+int the androidtest folder (java/com/example/frugl_app). 
+
+### Running Tests: 
+Tests may be easily run within android studio as it features built-in testing support.
+
+![image](https://github.com/BabyKangaroo117/Frugl-APP/assets/56986596/9f90170b-062f-41b1-9c24-bfae426a768b)
+
+
+you may run tests in the following ways
+- pressing the green "play" button next to the line number next to a test **class**. This will run
+every test function in the class.
+-  pressing the green "play" button next to the line number next to a test
+  **function** and only test that specific function.
+
+
+## Common Issues 
+
+### Gradle
+please ensure that you have performed a gradle sync. Gradle is the build system used to manage dependencies within android studio and will 
+automatically fetch libraries for your project as needed. Sometimes performing a "sync" operation may resolve issues related to having 
+missing dependencies. 
+
+Please refer to this guide from JetBrains on syncing your gradle: https://www.jetbrains.com/guide/java/tutorials/working-with-gradle/syncing-and-reloading/
+
+### API Version  
+certain features (especially new ones) realsed for the Android Ecosystem require a minimum API version to run. Frugl was written and tested on a device running 
+**API Version 34**. Please you have at least this version of android on your emulator or device.
+
+Below are some specifications about the device that we emulated and tested our project on: 
+
+Properties:
+- AvdId                    Pixel_3a_API_34_extension_level_7_x86_64
+- disk.dataPartition.size  6442450944
+- hw.device.manufacturer   Google
+- hw.device.name           pixel_3a
+- image.androidVersion.api 34
+
+
+

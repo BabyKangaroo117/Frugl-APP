@@ -24,7 +24,7 @@ database from the webscraper end.
 
 ### Strategy
 
-- Application aims to cut down on customer prices.
+- Application aims to cut down customer's grocery bill.
 - Plan which stores the user should, to grab x item from said store.
 - Update prices to provide accurate results.
 
@@ -63,6 +63,7 @@ All merges must be reviewed by a least one fellow programer, to ensure any bugs 
 - afeins19 - afeinberg35@gmail.com
 - sma6629 - mansib.syedahmed@gmail.com
 - BabyKangaroo117 (Joseph Porrino) - joeyporrino1998@gmail.com
+- Taazkir - tazkirnasir95@gmail.com
 
 ### Ideas or Suggestions
 Any ideas or recommendations, feel free to contact the developers.
@@ -75,5 +76,5 @@ Any ideas or recommendations, feel free to contact the developers.
   
 ### Downloads
 - The IDE used for Frugl development is [Android Studio](https://developer.android.com/studio). This application currently runs on the Giraffe version of Android Studio.
-- An Android emulator is needed for Frugl, which can be downloaded from inside the Android Studio IDE. Please download the correct emulator for the application to function properly.
+- An Android emulator is needed for Frugl, which can be downloaded from inside the Android Studio IDE. Please download the correct emulator for the application to function properly. For best experience use Pixel 7 Pro with API 34.
 - [Link to the User Manual](User_Manual.md)
