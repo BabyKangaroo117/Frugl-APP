@@ -17,8 +17,8 @@ such as coupons. The application is however, concerned with sale prices in the s
 items along side it. For this reason the application is aims to get customers cheap prices fast. Saving customers any amount in this situation, is what the application strives to do.
 
 # Project Status
-The project is currently in the early stages of development. It is being developed in Android Studio using Kotlin. The product is aimed to run in the Android store, with a 
-possible web application planned for the future. 
+The alpha build is finished. The front end is fully layed out with most activites except maps integration. The app is able to retrieve data using the azure api. There are still issues with posting data to the 
+database from the webscraper end.
 
 # A Better Way to Save
 
