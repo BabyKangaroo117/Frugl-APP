@@ -119,6 +119,83 @@ If you ran into any technical difficulties with the installation steps, refer to
 
 ## 3. Configure Android Studio and Run Frugl
 
+
+### Quickstart: Android Emulator API and SDK Setup 
+certain features (especially new ones) realsed for the Android Ecosystem require a minimum API version to run. Frugl was written and tested on a device running API Version 34. Please you have at least this version of android on your emulator or device.
+
+Below are some specifications about the device that we emulated and tested our project on:
+
+**Emulator API Properties**:
+
+AvdId Pixel_3a_API_34_extension_level_7_x86_64
+disk.dataPartition.size 6442450944
+hw.device.manufacturer Google
+hw.device.name pixel_3a
+image.androidVersion.api 34
+
+**SDK Properties**
+- minSdk 24
+- targetSdk 33
+
+### Gradle File: 
+
+Please ensure the gradle file for the **app** (Path: build.gradle)
+matches this 
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.frugl_app'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.frugl_app"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'io.github.cdimascio:dotenv-kotlin:6.4.1'
+    implementation files('libs/jtds-1.3.1.jar')
+
+    testImplementation 'com.google.truth:truth:1.1.2'
+    testImplementation 'junit:junit:4.13.2'
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test:rules:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
+}
+
+
+
 1. **Unzip Project:**
     
     - Download the Frugl App project file and unzip it to a location of your choice.
@@ -137,6 +214,8 @@ If you ran into any technical difficulties with the installation steps, refer to
     
     - In the AVD Manager, click "Create Virtual Device."
     - Choose the hardware profile __Pixel 7 Pro__and click "Next."
+  
+      
     
 5. **Select System Image:**
     
