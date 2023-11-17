@@ -119,19 +119,25 @@ If you ran into any technical difficulties with the installation steps, refer to
 
 ## 3. Configure Android Studio and Run Frugl
 
+### Downloading the Android Virtual Device (AVD) & Emulator Setup
+
+In order to run our app on your machine, you'll need to emulate an android phone. Android Studio has a built-in Device manager and emulator for running your Android Virtual Device (AVD). Please follow the attached link for guidance on setting up and using your AVD. ****Please Use the Specifications Listed Below in the Quick Start Section for your AVD****
+
+Setting up your AVD: https://developer.android.com/studio/run/managing-avds
+
+AVD Usage Basics: https://developer.android.com/studio/run/emulator
 
 ### Quickstart: Android Emulator API and SDK Setup 
 certain features (especially new ones) realsed for the Android Ecosystem require a minimum API version to run. Frugl was written and tested on a device running API Version 34. Please you have at least this version of android on your emulator or device.
 
 Below are some specifications about the device that we emulated and tested our project on:
 
-**Emulator API Properties**:
+**Emulator API Properties:**
 
-AvdId Pixel_3a_API_34_extension_level_7_x86_64
-disk.dataPartition.size 6442450944
-hw.device.manufacturer Google
-hw.device.name pixel_3a
-image.androidVersion.api 34
+- AvdId Pixel_3a_API_34_extension_level_7_x86_64
+- disk.dataPartition.size 6442450944
+- hw.device.name pixel_3a
+- image.androidVersion.api 34
 
 **SDK Properties**
 - minSdk 24
@@ -194,7 +200,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
 }
 
-
+### Setting Up 
 
 1. **Unzip Project:**
     
