@@ -123,9 +123,9 @@ If you ran into any technical difficulties with the installation steps, refer to
 
 In order to run our app on your machine, you'll need to emulate an android phone. Android Studio has a built-in Device manager and emulator for running your Android Virtual Device (AVD). Please follow the attached link for guidance on setting up and using your AVD. ****Please Use the Specifications Listed Below in the Quick Start Section for your AVD****
 
-**Setting up your AVD:** https://developer.android.com/studio/run/managing-avds
+Setting up your AVD: https://developer.android.com/studio/run/managing-avds
 
-**AVD Usage Basics: ** https://developer.android.com/studio/run/emulator
+AVD Usage Basics: https://developer.android.com/studio/run/emulator
 
 ### Quickstart: Android Emulator API and SDK Setup 
 certain features (especially new ones) realsed for the Android Ecosystem require a minimum API version to run. Frugl was written and tested on a device running API Version 34. Please you have at least this version of android on your emulator or device.
@@ -201,7 +201,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
 }
 
-
+### Setting Up 
 
 1. **Unzip Project:**
     
