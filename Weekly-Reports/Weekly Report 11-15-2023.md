@@ -79,14 +79,14 @@ What Im Stuck on
 
 ### Joseph Porrino
 ##### Previous goals
-- Finish the webscrapers and collect sample data to store as a json.
-- Help Tyler with the database functions
-##### Keypoints
-- Created the controllers for the database
-- Added more unit tests to the webscraper
-- Still figuring out how to account for edge cases when standardizing units
-##### Next Week Goals
 - Connect to the database and add data
 - Add more unit tests
 - Figure out issue with standardizing units
 - Help with finishing up kotlin development
+##### Keypoints
+- Connected to database from python end but ran into issues with AreaItems table
+- Made changes to controllers to allow for multiple key inputs due to composite keys
+##### Next Week Goals
+- Finish up web scraper
+- Currently have to manually add data using a sql command because of bug with AreaItems table
+
