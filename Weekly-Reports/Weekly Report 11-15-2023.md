@@ -9,6 +9,7 @@
   - Lots of testing.
   - Inputing real world data.
   - Made the user manual.
+  - Test the application on other environments.
 - What worked
   - Taking data from the API.
 - What was learned
