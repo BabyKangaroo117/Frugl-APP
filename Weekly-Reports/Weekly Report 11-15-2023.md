@@ -35,23 +35,23 @@
   
 ### Aaron Feinberg
 #### Previous Goals
-- implement the shopping list (ranking) activity which will provide a general overview of the total price of a user's shopping cart as well as some store statistics
-- integrate passing of intent (store name) to Syed's Google Maps activity
-- finish the ApiService interface (add functions for getting all items, store names, and user data) 
-  
-##### Key Points
-- Learned how to parcelize and pass data between activities
-- created diagrams to help us understand MVVM and the backend processing process
-- Learned about kotlin's built int lazy loading which executes encapsulated code at run time only when needed 
-
-What Im Stuck on
-- deciding on the best way to share data between activities. Data thats recieved from the api is held in an object with methods to unpack it into item() objects used by the backend 
-
-##### Next Week Goals
 - finish setting up the final rank activity
 - perform a test call to the API and have it display information correctly within the activity
 - link the api to all other acitivities as needed
 - prepare for the alpha demonstration by testing the basic functionality of our app 
+  
+##### Key Points
+- Successfully implemented the backend-to-api interface
+- data is now "parcelized" between activities
+- presented with my team for the alpha release
+
+What Im Stuck on
+- finding the best implementation for the final rank activity. Id like to be able to present the best option for users (which store to visit) as well as the price of their shopping cart for each store. 
+
+##### Next Week Goals
+- improve the rank activity for displaying the best store to visit
+- write tests for the backend (might create util functions)
+- try out some integration tests 
 
 ### Taazkir Nasir
 ##### Previous Goals
