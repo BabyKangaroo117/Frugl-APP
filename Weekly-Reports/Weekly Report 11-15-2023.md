@@ -55,19 +55,16 @@ What Im Stuck on
 
 ### Taazkir Nasir
 ##### Previous Goals
-- Implement the user account activity where the user's address and search radius will be inputted. 
-- Get image buttons in a grid layout to work on the homepage, if not implement it using a linear layout 
-- Learn how to handle incoming data from the database 
+- Use the API to populate the search results with items from the database 
+- Make sure the user's flow between activities is working according to design across the whole app
 
 ##### Key Points
-- Got the grid layout to work for the homepage with image buttons.
-- Have to tinker with the design after the alpha release but functionally it works. Just looks ugly 
-- User Account activity can show the user's address, but having some trouble sending the address from sign-up to the user account activity.
-- The address was initially split into separate segments which is causing the issue. It is an easy fix that should be taken care of very soon
-- Will have to work on creating dummy users in the database so the address can be grabbed from the database instead of the signup activity 
+- For the alpha, I kept the dummy data in since it was a proof of concept demonstration and the other activities do not have real data yet. 
+- Added more dummy data for the search page to give a full demo
+- Finalized the UI design. There are a few more activities to be added like Maps so it should be seamless to integrate them into the front end now
+- Data persistence is still an issue and will be looking into that all of next week.
 ##### Next Week Goals
-- Use the API to populate the search results with items from the database 
-- Make sure the user's flow between activities is working according to design across the whole app 
+- Research the lifecycle of activities and integrate methods other then onCreate it in our project according to the use cases, possibly make a diagram to plan/show the lifecycles.
 
 ### Syed Ahmed
 ##### Previous Goals
