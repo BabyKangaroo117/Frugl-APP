@@ -5,7 +5,7 @@
   <br>
   <a href="https://github.com/BabyKangaroo117/Frugl-APP/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/badge/Contributors-5-blue" /></a>
-  <img src="https://img.shields.io/badge/Development_Stage-Alpha-orange"
+  <img src="https://img.shields.io/badge/Development_Stage-Released-orange"
   <a href="https://github.com/BabyKangaroo117/Frugl-APP/graphs/contributors" alt="License">
         <img src="https://img.shields.io/badge/License-MIT-green" /></a>
 </p>
@@ -68,11 +68,12 @@ All merges must be reviewed by a least one fellow programer, to ensure any bugs 
 ### Ideas or Suggestions
 Any ideas or recommendations, feel free to contact the developers.
 
-# How to Run Frugl (Alpha Release)
+# How to Run Frugl (Final Release)
 
 ### Build Systems, Testing, and Continuous Integreation
 - The build systems, testing, and continuous integration can be found within the GitHub actions of this application. It is contained in a .yml file. [The .yml File](.github/workflows/android.yml)
 - The build systems, testing, and continuous integreation for the API can be found at [Frugl API](https://github.com/justyden/FruglAPI).
+- Please visit the .github/workflows/android.yml to see all build parameters.
   
 ### Downloads
 - The IDE used for Frugl development is [Android Studio](https://developer.android.com/studio). This application currently runs on the Giraffe version of Android Studio.
