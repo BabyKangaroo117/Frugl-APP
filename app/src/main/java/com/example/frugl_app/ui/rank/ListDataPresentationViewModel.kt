@@ -32,8 +32,8 @@ class ListDataPresentationViewModel: ViewModel() {
 
     fun rankStores(): Pair<String, String>{
 
-        val wegmansPrice: Double = itemList.sumOf { it.wegmansItem }
-        val shopritePrice: Double = itemList.sumOf { it.shopriteItem }
+        val wegmansPrice: Double = itemList.sumOf { it.wegmansUnitPrice }
+        val shopritePrice: Double = itemList.sumOf { it.shopriteUnitPrice }
 
         val rankedStores: Pair<String, String> =
             if (wegmansPrice < shopritePrice) {

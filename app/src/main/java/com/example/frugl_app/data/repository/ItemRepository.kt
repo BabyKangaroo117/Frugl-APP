@@ -1,6 +1,7 @@
 package com.example.frugl_app.data.repository
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import com.example.frugl_app.data.api.ApiService
 import com.example.frugl_app.data.model.Item
 import retrofit2.Call
@@ -17,13 +18,11 @@ import retrofit2.Response
  */
 
 class ItemRepository(private val api: ApiService) {
+    // Use LiveData to observe changes in the data
+    val itemsLiveData = MutableLiveData<List<Item>?>()
 
-//    suspend fun getSpecificItems(itemId: String): Response<List<Item>> {
-//        return api.getAreaItems(itemId)
-//    }
-
-    fun getItems() {
-        val call = api.getItems()
+    fun getAreaItems() {
+        val call = api.getAreaItems()
 
         call.enqueue(object : Callback<List<Item>> {
             override fun onResponse(
@@ -31,14 +30,20 @@ class ItemRepository(private val api: ApiService) {
                 response: Response<List<Item>>
             ) {
                 if (response.isSuccessful) {
-                    Log.d("LOG_MESSAGE", response.body().toString())
-                    response.body()?.get(0)?.let { Log.d("LOG_HEADERS", it.toString()) }
+                    val items = response.body()
+                    itemsLiveData.value = items
+                    //Log.d("LOG_MESSAGE", response.body().toString())
+                    //response.body()?.get(0)?.let { Log.d("LOG_HEADERS", it.toString()) }
+                }
+                else {
+                    Log.e("LOG_MESSAGE", "response unsuccessful")
                 }
             }
 
             override fun onFailure(call: Call<List<Item>>, t: Throwable) {
-                Log.e("LOG_MESSAGE", t.message.toString())
+                Log.e("LOG_MESSAGE", "call failed")
             }
         })
     }
+
 }

@@ -3,18 +3,23 @@ package com.example.frugl_app.ui.searchitem
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frugl_app.R
+import com.example.frugl_app.data.api.RetrofitClient
+import com.example.frugl_app.data.repository.ItemRepository
 import com.example.frugl_app.ui.homepage.Homepage
 import com.example.frugl_app.ui.list.CreateList
+import com.example.frugl_app.ui.main.ItemViewModel
 import com.example.frugl_app.ui.user.UserAccount
 
 
 class SearchItem : AppCompatActivity() {
-
+    private val repository = ItemRepository(RetrofitClient.instance)
+    private val viewModel: ItemViewModel = ItemViewModel(repository)
     private lateinit var searchView: SearchView
     // Dummy data for the RecyclerView
     private val predefinedItems = arrayOf(
@@ -53,6 +58,12 @@ class SearchItem : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_item)
+
+        viewModel.itemsLiveData.observe(this) { items ->
+            // Update UI with the list of items
+            Log.d("LOG_MESSAGE", items.toString())
+        }
+        viewModel.fetchData()
 
         searchView = findViewById(R.id.searchItemBar)
         recyclerView = findViewById(R.id.searchRV)
