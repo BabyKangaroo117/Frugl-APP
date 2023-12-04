@@ -44,12 +44,13 @@ class SearchItem : AppCompatActivity() {
         viewModel.itemsLiveData.observe(this) {
             // Update UI with the list of items
             viewModel.findCheapestPrice()
-            //Log.d("LOG_MESSAGE", it.toString())
+            viewModel.findGenericItemNames()
+            Log.d("LOG_MESSAGE", it.toString())
         }
 
         viewModel.itemsLiveData.observe(this) { items ->
             for (item in items) {
-                itemDetailsMap[item.itemName] = Triple(item.itemName, item.cheapestUnitPrice.toString(), "")
+                itemDetailsMap[item.genericName] = Triple(item.itemName, item.cheapestUnitPrice.toString(), "")
             }
 
         }
@@ -72,7 +73,7 @@ class SearchItem : AppCompatActivity() {
                 suggestionsList.clear()
                 if (!newText.isNullOrEmpty()) {
                     for ((item,detail) in itemDetailsMap) {
-                        if (item.startsWith(newText, ignoreCase = true)) {
+                        if (item.contains(newText, ignoreCase = true)) {
                             suggestionsList.add(item)
                         }
                     }

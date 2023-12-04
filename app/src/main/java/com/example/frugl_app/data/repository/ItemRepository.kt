@@ -20,6 +20,7 @@ import retrofit2.Response
 class ItemRepository(private val api: ApiService) {
     // Use LiveData to observe changes in the data
     var itemsLiveData = MutableLiveData<List<Item>>()
+    var genericItems = MutableLiveData<List<Item>>()
 
     fun getAreaItems() {
         val call = api.getAreaItems()
@@ -33,6 +34,33 @@ class ItemRepository(private val api: ApiService) {
                     val items = response.body()
                     itemsLiveData.value = items
                     //Log.d("LOG_MESSAGE", response.body().toString())
+                    //response.body()?.get(0)?.let { Log.d("LOG_HEADERS", it.toString()) }
+                }
+                else {
+                    Log.e("LOG_MESSAGE", "response unsuccessful")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Item>>, t: Throwable) {
+                Log.e("LOG_MESSAGE", "call failed")
+            }
+        })
+    }
+
+    fun getItems(){
+        val call = api.getItems()
+
+        call.enqueue(object : Callback<List<Item>> {
+            override fun onResponse(
+                call: Call<List<Item>>,
+                response: Response<List<Item>>
+            ) {
+                if (response.isSuccessful) {
+                    val items = response.body()
+
+                    genericItems.value = items
+
+                    Log.d("LOG_MESSAGE", response.body().toString())
                     //response.body()?.get(0)?.let { Log.d("LOG_HEADERS", it.toString()) }
                 }
                 else {

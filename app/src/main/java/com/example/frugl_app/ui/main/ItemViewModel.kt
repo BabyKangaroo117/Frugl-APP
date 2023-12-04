@@ -12,10 +12,12 @@ class ItemViewModel(private val repository: ItemRepository) : ViewModel() {
 
     // Observe changes in the data using LiveData
     var itemsLiveData: MutableLiveData<List<Item>> = repository.itemsLiveData
+    var genericItemNames: MutableLiveData<List<Item>> = repository.genericItems
 
     fun fetchData() {
         if (!isDataLoaded) {
             repository.getAreaItems()
+            repository.getItems()
             isDataLoaded = true
         }
     }
@@ -36,6 +38,19 @@ class ItemViewModel(private val repository: ItemRepository) : ViewModel() {
             }
 
             // Notify observers that the data has changed
+            itemsLiveData.postValue(itemList)
+        }
+    }
+
+    fun findGenericItemNames(){
+        val itemList = itemsLiveData.value
+        val genList = genericItemNames.value
+
+        if (itemList != null) {
+            val zippedList = itemList.zip(genList!!)
+            for (item in zippedList) {
+                item.first.genericName = item.second.itemName
+            }
             itemsLiveData.postValue(itemList)
         }
     }

@@ -4,6 +4,7 @@ import android.os.Parcelable
 
 data class Item(
     var itemName: String,
+    var genericName: String,
     val shopriteItem: String,
     val wegmansItem: String,
     var quantity: Int = 0,
@@ -16,6 +17,7 @@ data class Item(
 
 ): Parcelable {
     constructor(parcel: android.os.Parcel) : this(
+        parcel.readString()!!, // generic name for the item
         parcel.readString()!!, // item name
         parcel.readString()!!, // shoprite item name
         parcel.readString()!!, // wegmans item name
@@ -30,6 +32,7 @@ data class Item(
 
     override fun writeToParcel(parcel: android.os.Parcel, flags: Int) {
         parcel.writeString(itemName)
+        parcel.writeString(genericName)
         parcel.writeString(shopriteItem)
         parcel.writeString(wegmansItem)
         parcel.writeInt(quantity)
