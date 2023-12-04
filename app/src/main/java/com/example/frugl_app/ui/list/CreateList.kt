@@ -14,9 +14,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frugl_app.R
+import com.example.frugl_app.data.model.Item
 import com.example.frugl_app.ui.homepage.Homepage
+import com.example.frugl_app.ui.rank.ListDataPresentation
 import com.example.frugl_app.ui.searchitem.SearchItem
 import com.example.frugl_app.ui.user.UserAccount
+
 
 class CreateList : AppCompatActivity(), ItemListener {
     private lateinit var viewModel: CreateListViewModel
@@ -66,6 +69,30 @@ class CreateList : AppCompatActivity(), ItemListener {
 //            val intent: Intent = Intent(this, Maps::class.java)
 //            startActivity(intent)
 //        }
+
+        // When Go button is clicked, go to Rank
+        val rankButton: Button = findViewById(R.id.RankPrices)
+        rankButton.setOnClickListener {
+            val intent: Intent = Intent(this, ListDataPresentation::class.java)
+
+            // parcelize the shopping list that the user created
+            val itemList: MutableList<Item>? = viewModel.itemList.value
+
+            //Log.d("Debug", "itemList size: ${itemList?.size}")
+
+            if (itemList != null){
+                // parcelize the shopping list
+                intent.putParcelableArrayListExtra("items", ArrayList(itemList))
+                // start the Rank Activity
+                startActivity(intent)
+            }
+
+            // shopping cart is empty
+            else{
+                // notify the user that they need to add some items to their list
+                Toast.makeText(this, "Please add items to your shopping list", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     override fun onItemAdd(itemName: String) {

@@ -30,20 +30,24 @@ class ListDataPresentationViewModel: ViewModel() {
         _stores.addAll(stores)
     }
 
-    fun rankStores(): Pair<String, String>{
+
+    // calculates the price of all selected grocery items for each store
+    fun rankStores(): Pair<Pair<String, String>, Pair<String, String>> {
 
         val wegmansPrice: Double = itemList.sumOf { it.wegmansItem }
         val shopritePrice: Double = itemList.sumOf { it.shopriteItem }
 
-        val rankedStores: Pair<String, String> =
-            if (wegmansPrice < shopritePrice) {
-                Pair("Wegmans", wegmansPrice.toString())
-            } else {
-                Pair("Shoprite", shopritePrice.toString())
-            }
+        val wegmansPair = Pair("Wegmans", wegmansPrice.toString())
+        val shopritePair = Pair("Shoprite", shopritePrice.toString())
 
-        return rankedStores
+        // return value based on conditional (thats crazy)
+        return if (wegmansPrice < shopritePrice) {
+            Pair(wegmansPair, shopritePair)
+        } else {
+            Pair(shopritePair, wegmansPair)
+        }
     }
+
 
 
 }

@@ -1,6 +1,7 @@
 package com.example.frugl_app.ui.rank
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.frugl_app.R
@@ -21,6 +22,9 @@ class ListDataPresentation : AppCompatActivity() {
         _itemList = intent.getParcelableArrayListExtra<Item>("items")!! //means this will be a non-null call
         viewModel.addItems(_itemList)
 
+        //Did this activity recieve the intent correctly from CreateList?
+        Log.d("Debug", "_itemList size: ${_itemList.size}")
+
         //we will then send the items to the ListDataPresentationViewModel
         //data will be subdivided into lists corresponding to the prices for shoprite and wegmans
         //these lists will be sent to the recyclerviews for their given store
@@ -35,15 +39,15 @@ class ListDataPresentation : AppCompatActivity() {
         val totalPrice2: TextView = findViewById(R.id.totalPrice2)
 
         //get the list of stores ranked in order by price
-        var rankedStores = viewModel.rankStores()
+        val rankedStores = viewModel.rankStores()
 
-        storeName1.text = rankedStores.first[0].toString()
-        totalPrice1.text = rankedStores.second[0].toString()
+        // first pair(storeName, price)
+        storeName1.text = rankedStores.first.first
+        totalPrice1.text = rankedStores.first.second
 
-        storeName2.text = rankedStores.first[1].toString()
-        storeName2.text = rankedStores.second[1].toString()
-
-
+// second pair(storeName, price)
+        storeName2.text = rankedStores.second.first
+        totalPrice2.text = rankedStores.second.second
 
     }
 }
