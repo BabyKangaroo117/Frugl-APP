@@ -19,7 +19,7 @@ import retrofit2.Response
 
 class ItemRepository(private val api: ApiService) {
     // Use LiveData to observe changes in the data
-    val itemsLiveData = MutableLiveData<List<Item>?>()
+    var itemsLiveData = MutableLiveData<List<Item>>()
 
     fun getAreaItems() {
         val call = api.getAreaItems()

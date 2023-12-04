@@ -11,7 +11,7 @@ import com.example.frugl_app.R
 class MyRecyclerViewAdapter(
     private val context: Context,
     private val items: List<String>,
-    private val itemDetailsMap: Map<String, Triple<String, String, String>>
+    private val itemDetailsMap: MutableMap<String, Triple<String, String, String>>
 ) : RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

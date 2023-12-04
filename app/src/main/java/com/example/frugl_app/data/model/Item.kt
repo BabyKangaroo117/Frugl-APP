@@ -3,7 +3,7 @@ package com.example.frugl_app.data.model
 import android.os.Parcelable
 
 data class Item(
-    val itemName: String,
+    var itemName: String,
     val shopriteItem: String,
     val wegmansItem: String,
     var quantity: Int = 0,
@@ -11,7 +11,8 @@ data class Item(
 
     //unit prices
     val shopriteUnitPrice: Double = 0.0,
-    val wegmansUnitPrice: Double = 0.0
+    val wegmansUnitPrice: Double = 0.0,
+    var cheapestUnitPrice: Double
 
 ): Parcelable {
     constructor(parcel: android.os.Parcel) : this(
@@ -23,9 +24,9 @@ data class Item(
 
         //unit prices
         parcel.readDouble(), // shoprite unit price
-        parcel.readDouble() // wegmans unit price
-    ) {
-    }
+        parcel.readDouble(), // wegmans unit price
+        parcel.readDouble() // cheapest unit price
+    )
 
     override fun writeToParcel(parcel: android.os.Parcel, flags: Int) {
         parcel.writeString(itemName)
@@ -37,6 +38,7 @@ data class Item(
         //unit prices
         parcel.writeDouble(shopriteUnitPrice)
         parcel.writeDouble(wegmansUnitPrice)
+        parcel.writeDouble(cheapestUnitPrice)
     }
 
     override fun describeContents(): Int {

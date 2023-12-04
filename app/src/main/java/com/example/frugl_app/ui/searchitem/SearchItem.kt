@@ -28,26 +28,7 @@ class SearchItem : AppCompatActivity() {
         "Strawberry", "Watermelon"
     )
 
-    // Dummy data for items in the RecyclerView
-    private val itemDetailsMap = mapOf(
-        "Apple" to Triple("Fresh and juicy apple", "$1.99", "$0.50"),
-        "Banana" to Triple("Ripe yellow banana", "$0.99", "$0.25"),
-        "Cherry" to Triple("Sweet red cherry", "$2.49", "$0.75"),
-        "Date" to Triple("Dried date", "$3.99", "$1.00"),
-        "Fig" to Triple("Organic fig", "$2.79", "$0.70"),
-        "Grape" to Triple("Seedless green grape", "$1.49", "$0.35"),
-        "Kiwi" to Triple("Fuzzy kiwi", "$1.79", "$0.45"),
-        "Lemon" to Triple("Sour yellow lemon", "$0.89", "$0.20"),
-        "Mango" to Triple("Ripe mango", "$2.99", "$0.80"),
-        "Orange" to Triple("Sweet orange", "$1.29", "$0.30"),
-        "Papaya" to Triple("Tropical papaya", "$3.49", "$0.90"),
-        "Peach" to Triple("Juicy peach", "$2.29", "$0.60"),
-        "Pineapple" to Triple("Fresh pineapple", "$4.99", "$1.20"),
-        "Plum" to Triple("Purple plum", "$1.69", "$0.40"),
-        "Raspberry" to Triple("Red raspberry", "$2.89", "$0.70"),
-        "Strawberry" to Triple("Sweet strawberry", "$2.19", "$0.50"),
-        "Watermelon" to Triple("Juicy watermelon", "$5.99", "$1.50")
-    )
+    private var itemDetailsMap: MutableMap<String, Triple<String, String, String>> = mutableMapOf()
 
 
     // List to store the suggestions
@@ -59,11 +40,19 @@ class SearchItem : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_item)
 
-        viewModel.itemsLiveData.observe(this) { items ->
-            // Update UI with the list of items
-            Log.d("LOG_MESSAGE", items.toString())
-        }
         viewModel.fetchData()
+        viewModel.itemsLiveData.observe(this) {
+            // Update UI with the list of items
+            viewModel.findCheapestPrice()
+            //Log.d("LOG_MESSAGE", it.toString())
+        }
+
+        viewModel.itemsLiveData.observe(this) { items ->
+            for (item in items) {
+                itemDetailsMap[item.itemName] = Triple(item.itemName, item.cheapestUnitPrice.toString(), "")
+            }
+
+        }
 
         searchView = findViewById(R.id.searchItemBar)
         recyclerView = findViewById(R.id.searchRV)
