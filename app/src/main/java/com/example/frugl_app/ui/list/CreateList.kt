@@ -3,7 +3,6 @@ import android.content.Intent
 import android.database.MatrixCursor
 import android.os.Bundle
 import android.provider.BaseColumns
-import android.util.Log
 import android.widget.Button
 import android.widget.CursorAdapter
 import android.widget.SearchView
@@ -19,6 +18,7 @@ import com.example.frugl_app.data.api.RetrofitClient
 import com.example.frugl_app.data.repository.ItemRepository
 import com.example.frugl_app.ui.homepage.Homepage
 import com.example.frugl_app.ui.main.ItemViewModel
+import com.example.frugl_app.ui.rank.ListDataPresentation
 import com.example.frugl_app.ui.searchitem.SearchItem
 import com.example.frugl_app.ui.user.UserAccount
 
@@ -74,6 +74,12 @@ class CreateList : AppCompatActivity(), ItemListener {
 //            val intent: Intent = Intent(this, Maps::class.java)
 //            startActivity(intent)
 //        }
+
+        val goButton: Button = findViewById(R.id.RankPrices)
+        goButton.setOnClickListener {
+            val intent: Intent = Intent(this, ListDataPresentation::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onItemAdd(itemName: String) {

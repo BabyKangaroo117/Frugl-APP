@@ -4,23 +4,53 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.frugl_app.R
+import com.example.frugl_app.data.api.RetrofitClient
 import com.example.frugl_app.data.model.Item
+
+// view model and repository
+import com.example.frugl_app.data.repository.ItemRepository
+import com.example.frugl_app.ui.main.ItemViewModel
+
 
 class ListDataPresentation : AppCompatActivity() {
     private lateinit var _itemList: ArrayList<Item>
     private lateinit var viewModel: ListDataPresentationViewModel
+    private val repository = ItemRepository(RetrofitClient.instance)
+    private val itemViewModel: ItemViewModel = ItemViewModel(repository)
 
     //@RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_data_presentation)
 
+        // initializing _itemList
+        _itemList = ArrayList()
+
+        // GLOBAL VIEWMODEL: gets data from the repository
+        itemViewModel.fetchData()
+
+        // create instance of the the local viewmodel
+        viewModel = ViewModelProvider(this).get(ListDataPresentationViewModel::class.java)
+
+
+        // populates local viewmodel (technically observes changes)
+        itemViewModel.itemsLiveData.observe(this, Observer { items ->
+            if (items != null) {
+                viewModel.processDataFromItemViewModel(items)
+            } else {
+                Log.d("Debug", "itemsLiveData null ")
+            }
+        })
+
+
         //getting the list of items the user selected
         //for some reason this was deprecated so we will supress this issue
-        @Suppress("Deprecation")
-        _itemList = intent.getParcelableArrayListExtra<Item>("items")!! //means this will be a non-null call
-        viewModel.addItems(_itemList)
+        //@Suppress("Deprecation")
+        //_itemList = intent.getParcelableArrayListExtra<Item>("items")!! //means this will be a non-null call
+        //viewModel.addItems(_itemList)
 
         //Did this activity recieve the intent correctly from CreateList?
         Log.d("Debug", "_itemList size: ${_itemList.size}")

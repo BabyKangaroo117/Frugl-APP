@@ -12,7 +12,8 @@ class ListDataPresentationViewModel: ViewModel() {
     private val _storeObjects = ArrayList<Store>()
 
     //gettable list of items (for external interfacing)
-    val itemList: ArrayList<Item> get() = _itemList
+    val itemList: ArrayList<Item>? get() = _itemList
+
 
     init {
         //setting up our mutable list
@@ -22,6 +23,8 @@ class ListDataPresentationViewModel: ViewModel() {
     //this will take in the list of all users selected items
     //and separate the items into lists
     fun addItems(items: List<Item>){
+        //re clear just in case :)
+        _itemList.clear()
         _itemList.addAll(items)
     }
 
@@ -30,12 +33,22 @@ class ListDataPresentationViewModel: ViewModel() {
         _stores.addAll(stores)
     }
 
+    // Process data received from ItemViewModel
+    fun processDataFromItemViewModel(itemViewModelData: List<Item>) {
+
+        // getting items from parent activity
+        _itemList.clear()
+        _itemList.addAll(itemViewModelData)
+
+    }
+
 
     // calculates the price of all selected grocery items for each store
     fun rankStores(): Pair<Pair<String, String>, Pair<String, String>> {
 
-        val wegmansPrice: Double = itemList.sumOf { it.wegmansUnitPrice }
-        val shopritePrice: Double = itemList.sumOf { it.shopriteUnitPrice }
+        // null values will be treated as 0.0
+        val wegmansPrice: Double = itemList?.sumOf { it.wegmansUnitPrice } ?: 0.0
+        val shopritePrice: Double = itemList?.sumOf { it.shopriteUnitPrice } ?: 0.0
 
         val wegmansPair = Pair("Wegmans", wegmansPrice.toString())
         val shopritePair = Pair("Shoprite", shopritePrice.toString())
@@ -43,7 +56,13 @@ class ListDataPresentationViewModel: ViewModel() {
         // return value based on conditional (thats crazy)
         return if (wegmansPrice < shopritePrice) {
             Pair(wegmansPair, shopritePair)
-        } else {
+        }
+        // handling null itemlist case
+        else if (wegmansPrice == 0.0 || shopritePrice == 0.0){
+             Pair(Pair("-", "-"),Pair("-", "-"))
+        }
+
+        else {
             Pair(shopritePair, wegmansPair)
         }
     }
