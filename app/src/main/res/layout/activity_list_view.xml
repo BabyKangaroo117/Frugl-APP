@@ -3,26 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="70dp">
+    android:layout_height="100dp">
 
     <TextView
         android:id="@+id/itemName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
+        android:layout_width="179dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="32dp"
         android:text="something"
-        android:textSize="25dp"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:paddingTop="11dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/itemQuantity"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.58"></TextView>
 
     <TextView
         android:id="@+id/itemQuantity"
-        android:layout_width="72dp"
-        android:layout_height="wrap_content"
+        android:layout_width="39dp"
+        android:layout_height="34dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="56dp"
         android:paddingLeft="20dp"
+        android:text="1"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/itemDeleteButton"
@@ -30,8 +34,8 @@
 
     <Button
         android:id="@+id/itemDeleteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="65dp"
+        android:layout_height="39dp"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="16dp"
         android:text="Delete"

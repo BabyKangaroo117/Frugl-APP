@@ -34,8 +34,8 @@ class ListDataPresentationViewModel: ViewModel() {
     // calculates the price of all selected grocery items for each store
     fun rankStores(): Pair<Pair<String, String>, Pair<String, String>> {
 
-        val wegmansPrice: Double = itemList.sumOf { it.wegmansItem }
-        val shopritePrice: Double = itemList.sumOf { it.shopriteItem }
+        val wegmansPrice: Double = itemList.sumOf { it.wegmansUnitPrice }
+        val shopritePrice: Double = itemList.sumOf { it.shopriteUnitPrice }
 
         val wegmansPair = Pair("Wegmans", wegmansPrice.toString())
         val shopritePair = Pair("Shoprite", shopritePrice.toString())
