@@ -17,7 +17,7 @@ such as coupons. The application is however, concerned with sale prices in the s
 items along side it. For this reason the application is aims to get customers cheap prices fast. Saving customers any amount in this situation, is what the application strives to do.
 
 # Project Status
-The final build is finished. The application is fully released.
+The main build is finished. The application is fully released with changes that may occur in future. This includes finishing goals that were set to be finished on launch.
 
 # A Better Way to Save
 
@@ -32,8 +32,8 @@ The final build is finished. The application is fully released.
 ### Main Goals
 - Expand the amount of stores featured on Frugl (big name stores to start).
 - Update prices daily and in a efficient matter to the database.
-- Have recent orders tracked.
-- Provide excellent user security.
+- Have recent orders tracked. This is not fully finished in the final release.
+- Provide excellent user security. Eventually wanted to integrate with Google to log in.
 
 ### Far Reaching Goals
 - Provide the most effiecent path to each store.
