@@ -68,6 +68,10 @@ class CreateList : AppCompatActivity(), ItemListener {
 //        }
     }
 
+    override fun onItemAddToGroceryList(itemName: String) {
+        viewModel.addItemToGroceryList(itemName)
+    }
+
     override fun onItemAdd(itemName: String) {
         viewModel.addItem(itemName)
     }

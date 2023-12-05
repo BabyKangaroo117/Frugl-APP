@@ -1,5 +1,6 @@
 package com.example.frugl_app.ui.list
 
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -32,5 +33,13 @@ class CreateListViewModel : ViewModel() {
             list.removeAt(position)
         }
         _itemList.value = list
+    }
+
+    fun addItemToGroceryList(itemName: String) {
+        // You can add the logic to add the item to the grocery list here
+        // For now, we'll just display a toast message
+        // Replace this with your actual logic to update the grocery list
+
+        Toast.makeText(null, "Added $itemName to grocery list", Toast.LENGTH_SHORT).show()
     }
 }

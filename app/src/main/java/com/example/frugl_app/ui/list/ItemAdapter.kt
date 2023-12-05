@@ -35,6 +35,10 @@ class ItemAdapter(var items: List<Item>, private val itemListener: ItemListener)
             // Notify the main activity or whoever is listening about the deletion
             itemListener.onItemDelete(position)
         }
+
+        holder.itemView.findViewById<Button>(R.id.addToGroceryList).setOnClickListener {
+            itemListener.onItemAddToGroceryList(items[position].itemName)
+        }
     }
 
     // notify the adapter if items are updated (added or removed)
@@ -44,10 +48,16 @@ class ItemAdapter(var items: List<Item>, private val itemListener: ItemListener)
             notifyDataSetChanged()
         }
     }
+
+    fun updateGroceryList(itemName: String) {
+        itemListener.onItemAddToGroceryList(itemName)
+    }
 }
 
 // interface for performing actions related item lists
 interface ItemListener {
     fun onItemAdd(itemName: String)
     fun onItemDelete(position: Int)
+    fun onItemAddToGroceryList(itemName: String)
+
 }

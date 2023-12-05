@@ -16,17 +16,20 @@ import com.example.frugl_app.ui.list.CreateList
 import com.example.frugl_app.ui.main.ItemViewModel
 import com.example.frugl_app.ui.user.UserAccount
 
-
-class SearchItem : AppCompatActivity() {
+/**
+ * This is the SearchItem activity. It is the page that allows the user to search for items.
+ *
+ */
+class SearchItem : AppCompatActivity(), MyRecyclerViewAdapter.OnItemClickListener {
     private val repository = ItemRepository(RetrofitClient.instance)
     private val viewModel: ItemViewModel = ItemViewModel(repository)
     private lateinit var searchView: SearchView
     // Dummy data for the RecyclerView
-    private val predefinedItems = arrayOf(
-        "Apple", "Banana", "Cherry", "Date", "Fig", "Grape",
-        "Kiwi", "Lemon", "Mango", "Orange", "Papaya", "Peach", "Pineapple", "Plum", "Raspberry",
-        "Strawberry", "Watermelon"
-    )
+//    private val predefinedItems = arrayOf(
+//        "Apple", "Banana", "Cherry", "Date", "Fig", "Grape",
+//        "Kiwi", "Lemon", "Mango", "Orange", "Papaya", "Peach", "Pineapple", "Plum", "Raspberry",
+//        "Strawberry", "Watermelon"
+//    )
 
     private var itemDetailsMap: MutableMap<String, Triple<String, String, String>> = mutableMapOf()
 
@@ -45,7 +48,7 @@ class SearchItem : AppCompatActivity() {
             // Update UI with the list of items
             viewModel.findCheapestPrice()
             viewModel.findGenericItemNames()
-            Log.d("LOG_MESSAGE", it.toString())
+            //Log.d("LOG_MESSAGE", it.toString())
         }
 
         viewModel.itemsLiveData.observe(this) { items ->
@@ -62,6 +65,9 @@ class SearchItem : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = MyRecyclerViewAdapter(this, suggestionsList, itemDetailsMap)
         recyclerView.adapter = adapter
+
+        // Set the click listener for the "Add to List" button
+        adapter.setOnItemClickListener(this)
 
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -82,6 +88,8 @@ class SearchItem : AppCompatActivity() {
                 return false
             }
         })
+
+
 
         // When Home button is clicked, go to Homepage
         val homeButton: Button = findViewById(R.id.SIbtnHomepage)
@@ -110,6 +118,16 @@ class SearchItem : AppCompatActivity() {
 //        }
 
 
+    }
+
+    // Implement the onItemClick method of the OnItemClickListener interface
+    override fun onItemClick(itemName: String) {
+        // Implement the logic to send the item to the CreateList activity
+        // For now, let's just print a message to verify the click event
+        Log.d("AddToList", "Clicked: $itemName")
+
+        // TODO: Add logic to send the item to the CreateList activity
+        // You can call the necessary methods in your ViewModel or perform any other required action.
     }
 }
 
