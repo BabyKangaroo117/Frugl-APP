@@ -60,7 +60,7 @@ class ItemRepository(private val api: ApiService) {
 
                     genericItems.value = items
 
-                    Log.d("LOG_MESSAGE", response.body().toString())
+                    //Log.d("LOG_MESSAGE", response.body().toString())
                     //response.body()?.get(0)?.let { Log.d("LOG_HEADERS", it.toString()) }
                 }
                 else {
