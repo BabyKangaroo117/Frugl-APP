@@ -15,6 +15,7 @@ import com.example.frugl_app.data.repository.ItemRepository
 import com.example.frugl_app.ui.main.ItemViewModel
 
 
+
 class ListDataPresentation : AppCompatActivity() {
     private val repository = ItemRepository(RetrofitClient.instance)
     private val viewModel: ItemViewModel = ItemViewModel(repository)
@@ -34,8 +35,9 @@ class ListDataPresentation : AppCompatActivity() {
 
         Log.d("LOG_MESSAGE7", wegmansPrice.toString())
 
-        val wegmansPair = Pair("Wegmans", wegmansPrice.toString())
-        val shopritePair = Pair("Shoprite", shopritePrice.toString())
+        // currency formatting
+        val wegmansPair = Pair("Wegmans", "$" + String.format("%.2f", wegmansPrice))
+        val shopritePair = Pair("Shoprite", "$" + String.format("%.2f", shopritePrice))
 
         if (wegmansPrice < shopritePrice) {
             rankedStores = Pair(wegmansPair, shopritePair)
