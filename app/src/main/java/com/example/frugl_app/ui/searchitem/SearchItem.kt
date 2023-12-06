@@ -45,7 +45,7 @@ class SearchItem : AppCompatActivity() {
             // Update UI with the list of items
             viewModel.findCheapestPrice()
             viewModel.findGenericItemNames()
-            Log.d("LOG_MESSAGE", it.toString())
+            //Log.d("LOG_MESSAGE", it.toString())
         }
 
         viewModel.itemsLiveData.observe(this) { items ->

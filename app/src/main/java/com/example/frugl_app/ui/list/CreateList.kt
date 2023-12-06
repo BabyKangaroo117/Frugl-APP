@@ -112,10 +112,11 @@ class CreateList : AppCompatActivity(), ItemListener {
     //update suggestions based on what the user typed in the search bar
     private fun updateSuggestions(searchView: SearchView, text: String){
         lateinit var suggestedItems: List<String>
-        itemViewModel.genericItemNames.observe(this, Observer { items ->
+        itemViewModel.itemsLiveData.observe(this, Observer { items ->
             // Update UI with the list of items
             //Log.d("LOG_MESSAGE1", items.toString())
-            suggestedItems = items.map { it.itemName }
+            itemViewModel.findGenericItemNames()
+            suggestedItems = items.map { it.genericName }
         })
 
         // filter items based on starting text
