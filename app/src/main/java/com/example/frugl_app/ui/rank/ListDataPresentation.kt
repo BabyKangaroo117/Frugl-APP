@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.example.frugl_app.R
 import com.example.frugl_app.data.api.RetrofitClient
 import com.example.frugl_app.data.model.Item
@@ -16,68 +16,52 @@ import com.example.frugl_app.ui.main.ItemViewModel
 
 
 class ListDataPresentation : AppCompatActivity() {
-    private lateinit var _itemList: ArrayList<Item>
-    private lateinit var viewModel: ListDataPresentationViewModel
     private val repository = ItemRepository(RetrofitClient.instance)
-    private val itemViewModel: ItemViewModel = ItemViewModel(repository)
+    private val viewModel: ItemViewModel = ItemViewModel(repository)
 
     //@RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_data_presentation)
 
-        // initializing _itemList
-        _itemList = ArrayList()
-
-        // GLOBAL VIEWMODEL: gets data from the repository
-        itemViewModel.fetchData()
-
-        // create instance of the the local viewmodel
-        viewModel = ViewModelProvider(this).get(ListDataPresentationViewModel::class.java)
+        val receivedList: List<Item>? = intent.getParcelableArrayListExtra("itemList")
+        var rankedStores: Pair<Pair<String, String>, Pair<String, String>>? = null
+        Log.d("LOG_MESSAGE6", receivedList.toString())
 
 
-        // populates local viewmodel (technically observes changes)
-        itemViewModel.itemsLiveData.observe(this, Observer { items ->
-            if (items != null) {
-                viewModel.processDataFromItemViewModel(items)
-            } else {
-                Log.d("Debug", "itemsLiveData null ")
-            }
-        })
+        val wegmansPrice: Double = receivedList?.sumOf { it.wegmansUnitPrice * it.quantity } ?: 0.0
+        val shopritePrice: Double = receivedList?.sumOf { it.shopriteUnitPrice * it.quantity } ?: 0.0
 
+        Log.d("LOG_MESSAGE7", wegmansPrice.toString())
 
-        //getting the list of items the user selected
-        //for some reason this was deprecated so we will supress this issue
-        //@Suppress("Deprecation")
-        //_itemList = intent.getParcelableArrayListExtra<Item>("items")!! //means this will be a non-null call
-        //viewModel.addItems(_itemList)
+        val wegmansPair = Pair("Wegmans", wegmansPrice.toString())
+        val shopritePair = Pair("Shoprite", shopritePrice.toString())
 
-        //Did this activity recieve the intent correctly from CreateList?
-        Log.d("Debug", "_itemList size: ${_itemList.size}")
+        if (wegmansPrice < shopritePrice) {
+            rankedStores = Pair(wegmansPair, shopritePair)
+        }
 
-        //we will then send the items to the ListDataPresentationViewModel
-        //data will be subdivided into lists corresponding to the prices for shoprite and wegmans
-        //these lists will be sent to the recyclerviews for their given store
+        else if (wegmansPrice == 0.0 || shopritePrice == 0.0) {
+            rankedStores = (Pair(Pair("-", "-"), Pair("-", "-")))
+        }
 
-        //storeName
-        //totalPrice
+        else {
+            rankedStores = (Pair(shopritePair, wegmansPair))
+        }
 
-        val storeName1: TextView = findViewById(R.id.storeName1)
-        val totalPrice1: TextView = findViewById(R.id.totalPrice1)
-
-        val storeName2: TextView = findViewById(R.id.storeName2)
-        val totalPrice2: TextView = findViewById(R.id.totalPrice2)
-
-        //get the list of stores ranked in order by price
-        val rankedStores = viewModel.rankStores()
-
-        // first pair(storeName, price)
-        storeName1.text = rankedStores.first.first
-        totalPrice1.text = rankedStores.first.second
-
-// second pair(storeName, price)
-        storeName2.text = rankedStores.second.first
-        totalPrice2.text = rankedStores.second.second
+        // rankedStores is a Pair<Pair<String, String>, Pair<String, String>>
+        val (storeName1, totalPrice1) = rankedStores.first
+        val (storeName2, totalPrice2) = rankedStores.second
+        // Update UI elements with ranked store information
+        val storeName1TextView: TextView = findViewById(R.id.storeName1)
+        val totalPrice1TextView: TextView = findViewById(R.id.totalPrice1)
+        val storeName2TextView: TextView = findViewById(R.id.storeName2)
+        val totalPrice2TextView: TextView = findViewById(R.id.totalPrice2)
+        storeName1TextView.text = storeName1
+        totalPrice1TextView.text = totalPrice1
+        storeName2TextView.text = storeName2
+        totalPrice2TextView.text = totalPrice2
+        Log.d("Debug", rankedStores.first.toString())
 
     }
 }

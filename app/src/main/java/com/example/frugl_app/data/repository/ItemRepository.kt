@@ -21,6 +21,7 @@ class ItemRepository(private val api: ApiService) {
     // Use LiveData to observe changes in the data
     var itemsLiveData = MutableLiveData<List<Item>>()
     var genericItems = MutableLiveData<List<Item>>()
+    var cartItems = MutableLiveData<List<Item>>()
 
     fun getAreaItems() {
         val call = api.getAreaItems()

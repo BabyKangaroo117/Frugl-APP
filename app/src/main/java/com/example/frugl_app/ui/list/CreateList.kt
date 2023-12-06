@@ -3,6 +3,7 @@ import android.content.Intent
 import android.database.MatrixCursor
 import android.os.Bundle
 import android.provider.BaseColumns
+import android.util.Log
 import android.widget.Button
 import android.widget.CursorAdapter
 import android.widget.SearchView
@@ -10,11 +11,11 @@ import android.widget.SimpleCursorAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frugl_app.R
 import com.example.frugl_app.data.api.RetrofitClient
+import com.example.frugl_app.data.model.Item
 import com.example.frugl_app.data.repository.ItemRepository
 import com.example.frugl_app.ui.homepage.Homepage
 import com.example.frugl_app.ui.main.ItemViewModel
@@ -24,17 +25,21 @@ import com.example.frugl_app.ui.user.UserAccount
 
 class CreateList : AppCompatActivity(), ItemListener {
     private val repository = ItemRepository(RetrofitClient.instance)
-    private val itemViewModel: ItemViewModel = ItemViewModel(repository)
-    private lateinit var viewModel: CreateListViewModel
+    private val viewModel: ItemViewModel = ItemViewModel(repository)
+    //private lateinit var viewModel: CreateListViewModel
     private lateinit var itemAdapter: ItemAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_list)
 
-        itemViewModel.fetchData()
-
-        viewModel = ViewModelProvider(this).get(CreateListViewModel::class.java)
+        viewModel.fetchData()
+        viewModel.itemsLiveData.observe(this) {
+            // Update UI with the list of items
+            viewModel.findCheapestPrice()
+            viewModel.findGenericItemNames()
+            Log.d("LOG_MESSAGE2", it.toString())
+        }
 
         val itemRv: RecyclerView = findViewById(R.id.itemRv)
         itemAdapter = ItemAdapter(mutableListOf(), this)
@@ -77,7 +82,42 @@ class CreateList : AppCompatActivity(), ItemListener {
 
         val goButton: Button = findViewById(R.id.RankPrices)
         goButton.setOnClickListener {
-            val intent: Intent = Intent(this, ListDataPresentation::class.java)
+
+            val itemList1 = viewModel.itemsLiveData.value
+            val itemList2 = viewModel.itemList.value
+            val itemList3 = mutableListOf<Item>()
+
+            // Iterate through itemList1 and populate itemList3 with combined data
+            if (itemList1 != null) {
+                for (item1 in itemList1) {
+                    // Find the corresponding item in itemList2 based on itemName
+                    val matchingItem = itemList2?.find { it.itemName == item1.genericName }
+                    Log.d("LOG_MESSAGE5", matchingItem.toString())
+
+                    // If a matching item is found, combine data from both items and add to itemList3
+                    matchingItem?.let {
+                        val combinedItem = Item(
+                            itemName = item1.genericName,
+                            genericName = item1.genericName,
+                            shopriteItem = item1.shopriteItem,
+                            wegmansItem = item1.wegmansItem,
+                            quantity = it.quantity,
+                            shopriteUnitPrice = item1.shopriteUnitPrice,
+                            wegmansUnitPrice = item1.wegmansUnitPrice,
+                            postalCode = item1.postalCode,
+                            cheapestUnitPrice = item1.cheapestUnitPrice
+                        )
+                        itemList3.add(combinedItem)
+                    }
+                }
+            }
+
+            Log.d("LOG_MESSAGE3", itemList2.toString())
+            Log.d("LOG_MESSAGE4", itemList3.toString())
+
+
+            val intent = Intent(this, ListDataPresentation::class.java)
+            intent.putParcelableArrayListExtra("itemList", ArrayList(itemList3))
             startActivity(intent)
         }
     }
@@ -118,7 +158,7 @@ class CreateList : AppCompatActivity(), ItemListener {
     //update suggestions based on what the user typed in the search bar
     private fun updateSuggestions(searchView: SearchView, text: String){
         lateinit var suggestedItems: List<String>
-        itemViewModel.genericItemNames.observe(this, Observer { items ->
+        viewModel.genericItemNames.observe(this, Observer { items ->
             // Update UI with the list of items
             //Log.d("LOG_MESSAGE1", items.toString())
             suggestedItems = items.map { it.itemName }
