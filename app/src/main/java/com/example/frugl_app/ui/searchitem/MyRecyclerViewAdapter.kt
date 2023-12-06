@@ -82,8 +82,8 @@ class MyRecyclerViewAdapter(
                 // Set the values to the corresponding TextViews
                 holder.itemName.text = it.genericName ?: "Name not available"
                 holder.productDescription.text = it.itemName ?: "Description not available"
-                holder.fixedPrice.text = "$ ${it.shopriteUnitPrice.toString()}/ Unit" ?: "Fixed Price not available"
-                holder.unitPrice.text = "$ ${it.wegmansUnitPrice.toString()}/ Unit" ?: "Unit Price not available"
+                holder.fixedPrice.text = "$ ${it.cheapestUnitPrice.toString()}/ Unit" ?: "Fixed Price not available"
+                holder.unitPrice.text = "" ?: "Unit Price not available"
 
                 // Set a click listener for the addToGroceryListButton
                 holder.addToGroceryListButton.setOnClickListener {
