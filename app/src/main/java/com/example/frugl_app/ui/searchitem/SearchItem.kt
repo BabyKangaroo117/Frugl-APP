@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.SearchView
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frugl_app.R
 import com.example.frugl_app.data.api.RetrofitClient
+import com.example.frugl_app.data.model.Item
 import com.example.frugl_app.data.repository.ItemRepository
 import com.example.frugl_app.ui.homepage.Homepage
 import com.example.frugl_app.ui.list.CreateList
@@ -24,14 +26,9 @@ class SearchItem : AppCompatActivity(), MyRecyclerViewAdapter.OnItemClickListene
     private val repository = ItemRepository(RetrofitClient.instance)
     private val viewModel: ItemViewModel = ItemViewModel(repository)
     private lateinit var searchView: SearchView
-    // Dummy data for the RecyclerView
-//    private val predefinedItems = arrayOf(
-//        "Apple", "Banana", "Cherry", "Date", "Fig", "Grape",
-//        "Kiwi", "Lemon", "Mango", "Orange", "Papaya", "Peach", "Pineapple", "Plum", "Raspberry",
-//        "Strawberry", "Watermelon"
-//    )
 
-    private var itemDetailsMap: MutableMap<String, Triple<String, String, String>> = mutableMapOf()
+
+    private var itemDetailsMap: MutableLiveData<List<Item>> = viewModel.itemsLiveData
 
 
     // List to store the suggestions
@@ -51,19 +48,13 @@ class SearchItem : AppCompatActivity(), MyRecyclerViewAdapter.OnItemClickListene
             //Log.d("LOG_MESSAGE", it.toString())
         }
 
-        viewModel.itemsLiveData.observe(this) { items ->
-            for (item in items) {
-                itemDetailsMap[item.genericName] = Triple(item.itemName, item.cheapestUnitPrice.toString(), "")
-            }
-
-        }
 
         searchView = findViewById(R.id.searchItemBar)
         recyclerView = findViewById(R.id.searchRV)
 
         // Initialize the RecyclerView and set its layout manager
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = MyRecyclerViewAdapter(this, suggestionsList, itemDetailsMap)
+        adapter = MyRecyclerViewAdapter(this, suggestionsList, itemDetailsMap, viewModel)
         recyclerView.adapter = adapter
 
         // Set the click listener for the "Add to List" button
@@ -78,7 +69,7 @@ class SearchItem : AppCompatActivity(), MyRecyclerViewAdapter.OnItemClickListene
             override fun onQueryTextChange(newText: String?): Boolean {
                 suggestionsList.clear()
                 if (!newText.isNullOrEmpty()) {
-                    for ((item,detail) in itemDetailsMap) {
+                    for ((item,detail) in itemDetailsMap.value!!) {
                         if (item.contains(newText, ignoreCase = true)) {
                             suggestionsList.add(item)
                         }
@@ -126,8 +117,10 @@ class SearchItem : AppCompatActivity(), MyRecyclerViewAdapter.OnItemClickListene
         // For now, let's just print a message to verify the click event
         Log.d("AddToList", "Clicked: $itemName")
 
-        // TODO: Add logic to send the item to the CreateList activity
-        // You can call the necessary methods in your ViewModel or perform any other required action.
+        // Add clicked item to the list
+        viewModel.addItems(itemDetailsMap.value!!.find { it.itemName == itemName }!!)
+
+
     }
 }
 

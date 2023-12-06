@@ -18,7 +18,7 @@ class ListDataPresentation : AppCompatActivity() {
         //getting the list of items the user selected
         //for some reason this was deprecated so we will supress this issue
         @Suppress("Deprecation")
-        _itemList = intent.getParcelableArrayListExtra<Item>("items")!! //means this will be a non-null call
+        //_itemList = intent.getParcelableArrayListExtra<Item>("items")!! //means this will be a non-null call
         viewModel.addItems(_itemList)
 
         //we will then send the items to the ListDataPresentationViewModel

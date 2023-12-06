@@ -13,6 +13,8 @@ class ItemViewModel(private val repository: ItemRepository) : ViewModel() {
     // Observe changes in the data using LiveData
     var itemsLiveData: MutableLiveData<List<Item>> = repository.itemsLiveData
     var genericItemNames: MutableLiveData<List<Item>> = repository.genericItems
+    var addedItems: MutableLiveData<List<Item>> = MutableLiveData()
+
 
     fun fetchData() {
         if (!isDataLoaded) {
@@ -31,8 +33,10 @@ class ItemViewModel(private val repository: ItemRepository) : ViewModel() {
                 item.cheapestUnitPrice = minPrice
 
                 if (minPrice == item.shopriteUnitPrice) {
+                    item.storeName = "Shoprite"
                     item.itemName = item.shopriteItem
                 } else {
+                    item.storeName = "Wegmans"
                     item.itemName = item.wegmansItem
                 }
             }
@@ -41,6 +45,16 @@ class ItemViewModel(private val repository: ItemRepository) : ViewModel() {
             itemsLiveData.postValue(itemList)
         }
     }
+
+    // Function to add items added to the addedItems list
+    fun addItems(item: Item) {
+        val itemList = addedItems.value?.toMutableList()
+        if (itemList != null) {
+            itemList.add(item)
+            addedItems.postValue(itemList)
+        }
+    }
+
 
     fun findGenericItemNames(){
         val itemList = itemsLiveData.value
