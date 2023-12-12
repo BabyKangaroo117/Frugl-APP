@@ -1,7 +1,7 @@
 # Frugl
 
 <p align="center">
-  <img src="Frugl_Logo.png" width=200 height=200/>
+  <img src="images/Frugl_Logo.png" width=200 height=200/>
   <br>
   <a href="https://github.com/BabyKangaroo117/Frugl-APP/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/badge/Contributors-5-blue" /></a>
