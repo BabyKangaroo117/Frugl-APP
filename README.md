@@ -10,6 +10,8 @@
         <img src="https://img.shields.io/badge/License-MIT-green" /></a>
 </p>
 
+# User Manual
+The user manual along with installation instructions can be found here: [User Manual](User_Manual.md)
 
 # Why Frugl?
 
