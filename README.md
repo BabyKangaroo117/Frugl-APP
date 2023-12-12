@@ -11,7 +11,7 @@
 </p>
 
 # User Manual
-The user manual along with installation instructions can be found here: [User Manual](User_Manual.md)
+The user manual along with installation instructions can be found here: [User Manual](docs/User_Manual.md)
 
 # Why Frugl?
 
