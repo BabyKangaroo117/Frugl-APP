@@ -101,6 +101,7 @@ class CreateList : AppCompatActivity(), ItemListener {
                             genericName = item1.genericName,
                             shopriteItem = item1.shopriteItem,
                             wegmansItem = item1.wegmansItem,
+                            itemUnits = item1.itemUnits,
                             quantity = it.quantity,
                             shopriteUnitPrice = item1.shopriteUnitPrice,
                             wegmansUnitPrice = item1.wegmansUnitPrice,

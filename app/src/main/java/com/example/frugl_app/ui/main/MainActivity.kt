@@ -23,11 +23,7 @@ class MainActivity : AppCompatActivity() {
         // go to the sign up page
         signup()
 
-//        viewModel.itemsLiveData.observe(this) { items ->
-//            // Update UI with the list of items
-//            Log.d("LOG_MESSAGE", items.toString())
-//        }
-
+        // make dummy call in the beginning
         viewModel.fetchData()
     }
 

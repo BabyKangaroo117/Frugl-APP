@@ -7,6 +7,7 @@ data class Item(
     var genericName: String,
     val shopriteItem: String,
     val wegmansItem: String,
+    val itemUnits: String,
     var quantity: Int = 0,
     val postalCode: Int = 0,
 
@@ -21,6 +22,7 @@ data class Item(
         parcel.readString()!!, // item name
         parcel.readString()!!, // shoprite item name
         parcel.readString()!!, // wegmans item name
+        parcel.readString()!!,
         parcel.readInt(),      //quantity
         parcel.readInt(),      //postalCode
 
@@ -35,6 +37,7 @@ data class Item(
         parcel.writeString(genericName)
         parcel.writeString(shopriteItem)
         parcel.writeString(wegmansItem)
+        parcel.writeString(itemUnits)
         parcel.writeInt(quantity)
         parcel.writeInt(postalCode)
 

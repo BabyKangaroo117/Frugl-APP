@@ -35,7 +35,7 @@ class ItemViewModel(private val repository: ItemRepository) : ViewModel() {
         val item = list.find { it.itemName == itemName }
 
         if (item == null) {
-            list.add(Item(itemName, "", "", "", 1, 0, 2.0, 2.0, 0.0))
+            list.add(Item(itemName, "", "", "", "", 1, 0, 2.0, 2.0, 0.0))
         } else {
             item.quantity++
         }

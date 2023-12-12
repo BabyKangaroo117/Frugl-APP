@@ -21,12 +21,6 @@ class SearchItem : AppCompatActivity() {
     private val repository = ItemRepository(RetrofitClient.instance)
     private val viewModel: ItemViewModel = ItemViewModel(repository)
     private lateinit var searchView: SearchView
-    // Dummy data for the RecyclerView
-    private val predefinedItems = arrayOf(
-        "Apple", "Banana", "Cherry", "Date", "Fig", "Grape",
-        "Kiwi", "Lemon", "Mango", "Orange", "Papaya", "Peach", "Pineapple", "Plum", "Raspberry",
-        "Strawberry", "Watermelon"
-    )
 
     private var itemDetailsMap: MutableMap<String, Triple<String, String, String>> = mutableMapOf()
 
@@ -42,7 +36,6 @@ class SearchItem : AppCompatActivity() {
 
         viewModel.fetchData()
         viewModel.itemsLiveData.observe(this) {
-            // Update UI with the list of items
             viewModel.findCheapestPrice()
             viewModel.findGenericItemNames()
             Log.d("LOG_MESSAGE", it.toString())
@@ -50,7 +43,7 @@ class SearchItem : AppCompatActivity() {
 
         viewModel.itemsLiveData.observe(this) { items ->
             for (item in items) {
-                itemDetailsMap[item.genericName] = Triple(item.itemName, item.cheapestUnitPrice.toString(), "")
+                itemDetailsMap[item.genericName] = Triple(item.itemName, item.cheapestUnitPrice.toString(), item.itemUnits)
             }
 
         }
