@@ -1,6 +1,7 @@
 package com.example.frugl_app.data.repository
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import com.example.frugl_app.data.api.ApiService
 import com.example.frugl_app.data.model.Item
 import retrofit2.Call
@@ -17,12 +18,34 @@ import retrofit2.Response
  */
 
 class ItemRepository(private val api: ApiService) {
+    // Use LiveData to observe changes in the data
+    var itemsLiveData = MutableLiveData<List<Item>>()
+    var genericItems = MutableLiveData<List<Item>>()
 
-//    suspend fun getSpecificItems(itemId: String): Response<List<Item>> {
-//        return api.getAreaItems(itemId)
-//    }
+    fun getAreaItems() {
+        val call = api.getAreaItems()
 
-    fun getItems() {
+        call.enqueue(object : Callback<List<Item>> {
+            override fun onResponse(
+                call: Call<List<Item>>,
+                response: Response<List<Item>>
+            ) {
+                if (response.isSuccessful) {
+                    val items = response.body()
+                    itemsLiveData.value = items
+                }
+                else {
+                    Log.e("LOG_MESSAGE", "response unsuccessful")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Item>>, t: Throwable) {
+                Log.e("LOG_MESSAGE", "call failed")
+            }
+        })
+    }
+
+    fun getItems(){
         val call = api.getItems()
 
         call.enqueue(object : Callback<List<Item>> {
@@ -31,14 +54,19 @@ class ItemRepository(private val api: ApiService) {
                 response: Response<List<Item>>
             ) {
                 if (response.isSuccessful) {
-                    Log.d("LOG_MESSAGE", response.body().toString())
-                    response.body()?.get(0)?.let { Log.d("LOG_HEADERS", it.toString()) }
+                    val items = response.body()
+
+                    genericItems.value = items
+                }
+                else {
+                    Log.e("LOG_MESSAGE", "response unsuccessful")
                 }
             }
 
             override fun onFailure(call: Call<List<Item>>, t: Throwable) {
-                Log.e("LOG_MESSAGE", t.message.toString())
+                Log.e("LOG_MESSAGE", "call failed")
             }
         })
     }
+
 }

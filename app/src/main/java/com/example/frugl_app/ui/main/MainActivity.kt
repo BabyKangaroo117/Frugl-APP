@@ -11,6 +11,8 @@ import com.example.frugl_app.ui.login.Login
 import com.example.frugl_app.ui.signup.SignUp
 
 class MainActivity : AppCompatActivity() {
+    private val repository = ItemRepository(RetrofitClient.instance)
+    private val viewModel: ItemViewModel = ItemViewModel(repository)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,9 +23,8 @@ class MainActivity : AppCompatActivity() {
         // go to the sign up page
         signup()
 
-        // get all items to test api call
-        val itemRepository: ItemRepository = ItemRepository(RetrofitClient.instance)
-        itemRepository.getItems()
+        // make dummy call in the beginning
+        viewModel.fetchData()
     }
 
 

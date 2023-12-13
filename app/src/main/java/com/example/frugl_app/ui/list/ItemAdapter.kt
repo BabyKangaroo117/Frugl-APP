@@ -28,7 +28,7 @@ class ItemAdapter(var items: List<Item>, private val itemListener: ItemListener)
         val item: TextView = holder.itemView.findViewById(R.id.itemName)
         val quantity: TextView = holder.itemView.findViewById(R.id.itemQuantity)
         holder.itemView.apply {
-            item.text = items[position].itemName
+            item.text = items[position].genericName
             quantity.text = items[position].quantity.toString()
         }
         holder.itemView.findViewById<Button>(R.id.itemDeleteButton).setOnClickListener {
@@ -44,10 +44,4 @@ class ItemAdapter(var items: List<Item>, private val itemListener: ItemListener)
             notifyDataSetChanged()
         }
     }
-}
-
-// interface for performing actions related item lists
-interface ItemListener {
-    fun onItemAdd(itemName: String)
-    fun onItemDelete(position: Int)
 }

@@ -1,3 +1,4 @@
+
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.intent.Intents
@@ -5,9 +6,9 @@ import androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.frugl_app.Login
-import com.example.frugl_app.MainActivity
-import com.example.frugl_app.SignUp
+import com.example.frugl_app.ui.login.Login
+import com.example.frugl_app.ui.main.MainActivity
+import com.example.frugl_app.ui.signup.SignUp
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule

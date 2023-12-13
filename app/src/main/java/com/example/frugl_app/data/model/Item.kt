@@ -3,37 +3,48 @@ package com.example.frugl_app.data.model
 import android.os.Parcelable
 
 data class Item(
-    val itemName: String,
-    val itemUnits: String = "",
+    var itemName: String,
+    var genericName: String,
+    val shopriteItem: String,
+    val wegmansItem: String,
+    val itemUnits: String,
     var quantity: Int = 0,
     val postalCode: Int = 0,
 
     //unit prices
-    val shopriteItem: Double = 0.0,
-    val wegmansItem: Double = 0.0
+    val shopriteUnitPrice: Double = 0.0,
+    val wegmansUnitPrice: Double = 0.0,
+    var cheapestUnitPrice: Double
 
 ): Parcelable {
     constructor(parcel: android.os.Parcel) : this(
-        parcel.readString()!!, //itemName
-        parcel.readString()!!, //itemUnits
+        parcel.readString()!!, // generic name for the item
+        parcel.readString()!!, // item name
+        parcel.readString()!!, // shoprite item name
+        parcel.readString()!!, // wegmans item name
+        parcel.readString()!!,
         parcel.readInt(),      //quantity
         parcel.readInt(),      //postalCode
 
         //unit prices
-        parcel.readDouble(),
-        parcel.readDouble()
-    ) {
-    }
+        parcel.readDouble(), // shoprite unit price
+        parcel.readDouble(), // wegmans unit price
+        parcel.readDouble() // cheapest unit price
+    )
 
     override fun writeToParcel(parcel: android.os.Parcel, flags: Int) {
         parcel.writeString(itemName)
+        parcel.writeString(genericName)
+        parcel.writeString(shopriteItem)
+        parcel.writeString(wegmansItem)
         parcel.writeString(itemUnits)
         parcel.writeInt(quantity)
         parcel.writeInt(postalCode)
 
         //unit prices
-        parcel.writeDouble(shopriteItem)
-        parcel.writeDouble(wegmansItem)
+        parcel.writeDouble(shopriteUnitPrice)
+        parcel.writeDouble(wegmansUnitPrice)
+        parcel.writeDouble(cheapestUnitPrice)
     }
 
     override fun describeContents(): Int {
