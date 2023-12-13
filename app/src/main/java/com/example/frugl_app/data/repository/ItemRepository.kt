@@ -21,7 +21,6 @@ class ItemRepository(private val api: ApiService) {
     // Use LiveData to observe changes in the data
     var itemsLiveData = MutableLiveData<List<Item>>()
     var genericItems = MutableLiveData<List<Item>>()
-    var cartItems = MutableLiveData<List<Item>>()
 
     fun getAreaItems() {
         val call = api.getAreaItems()
@@ -34,8 +33,6 @@ class ItemRepository(private val api: ApiService) {
                 if (response.isSuccessful) {
                     val items = response.body()
                     itemsLiveData.value = items
-                    //Log.d("LOG_MESSAGE", response.body().toString())
-                    //response.body()?.get(0)?.let { Log.d("LOG_HEADERS", it.toString()) }
                 }
                 else {
                     Log.e("LOG_MESSAGE", "response unsuccessful")
@@ -60,9 +57,6 @@ class ItemRepository(private val api: ApiService) {
                     val items = response.body()
 
                     genericItems.value = items
-
-                    //Log.d("LOG_MESSAGE", response.body().toString())
-                    //response.body()?.get(0)?.let { Log.d("LOG_HEADERS", it.toString()) }
                 }
                 else {
                     Log.e("LOG_MESSAGE", "response unsuccessful")

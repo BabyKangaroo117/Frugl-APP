@@ -26,7 +26,6 @@ import com.example.frugl_app.ui.user.UserAccount
 class CreateList : AppCompatActivity(), ItemListener {
     private val repository = ItemRepository(RetrofitClient.instance)
     private val viewModel: ItemViewModel = ItemViewModel(repository)
-    //private lateinit var viewModel: CreateListViewModel
     private lateinit var itemAdapter: ItemAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +45,7 @@ class CreateList : AppCompatActivity(), ItemListener {
         itemRv.adapter = itemAdapter
         itemRv.layoutManager = LinearLayoutManager(this)
 
-        viewModel.itemList.observe(this, Observer { items ->
+        viewModel.cartList.observe(this, Observer { items ->
             itemAdapter.updateItems(items)
         })
 
@@ -73,58 +72,18 @@ class CreateList : AppCompatActivity(), ItemListener {
             startActivity(intent)
         }
 
-//        // When Map button is clicked, go to Maps
-//        val mapButton: Button = findViewById(R.id.CLbtnMaps)
-//        mapButton.setOnClickListener {
-//            val intent: Intent = Intent(this, Maps::class.java)
-//            startActivity(intent)
-//        }
-
         val goButton: Button = findViewById(R.id.RankPrices)
         goButton.setOnClickListener {
-
-            val itemList1 = viewModel.itemsLiveData.value
-            val itemList2 = viewModel.itemList.value
-            val itemList3 = mutableListOf<Item>()
-
-            // Iterate through itemList1 and populate itemList3 with combined data
-            if (itemList1 != null) {
-                for (item1 in itemList1) {
-                    // Find the corresponding item in itemList2 based on itemName
-                    val matchingItem = itemList2?.find { it.itemName == item1.genericName }
-                    Log.d("LOG_MESSAGE5", matchingItem.toString())
-
-                    // If a matching item is found, combine data from both items and add to itemList3
-                    matchingItem?.let {
-                        val combinedItem = Item(
-                            itemName = item1.genericName,
-                            genericName = item1.genericName,
-                            shopriteItem = item1.shopriteItem,
-                            wegmansItem = item1.wegmansItem,
-                            itemUnits = item1.itemUnits,
-                            quantity = it.quantity,
-                            shopriteUnitPrice = item1.shopriteUnitPrice,
-                            wegmansUnitPrice = item1.wegmansUnitPrice,
-                            postalCode = item1.postalCode,
-                            cheapestUnitPrice = item1.cheapestUnitPrice
-                        )
-                        itemList3.add(combinedItem)
-                    }
-                }
-            }
-
-            Log.d("LOG_MESSAGE3", itemList2.toString())
-            Log.d("LOG_MESSAGE4", itemList3.toString())
-
+            val itemList2 = viewModel.cartList.value
 
             val intent = Intent(this, ListDataPresentation::class.java)
-            intent.putParcelableArrayListExtra("itemList", ArrayList(itemList3))
+            intent.putParcelableArrayListExtra("itemList", ArrayList(itemList2))
             startActivity(intent)
         }
     }
 
-    override fun onItemAdd(itemName: String) {
-        viewModel.addItem(itemName)
+    override fun onItemAdd(item: Item) {
+        viewModel.addItem(item)
     }
 
     override fun onItemDelete(position: Int) {
@@ -194,7 +153,8 @@ class CreateList : AppCompatActivity(), ItemListener {
 
                 // add the item to the list when user clicks on the suggestion
                 if (selectedSuggestion != null) {
-                    onItemAdd(selectedSuggestion)
+                    val suggestedItem = viewModel.itemsLiveData.value?.find { it.genericName == selectedSuggestion }
+                    onItemAdd(suggestedItem!!)
                 }
 
                 // clear the search bar
