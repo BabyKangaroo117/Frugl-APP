@@ -1,7 +1,7 @@
 # Frugl
 
 <p align="center">
-  <img src="Frugl_Logo.png" width=200 height=200/>
+  <img src="images/Frugl_Logo.png" width=200 height=200/>
   <br>
   <a href="https://github.com/BabyKangaroo117/Frugl-APP/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/badge/Contributors-5-blue" /></a>
@@ -9,6 +9,9 @@
   <a href="https://github.com/BabyKangaroo117/Frugl-APP/graphs/contributors" alt="License">
         <img src="https://img.shields.io/badge/License-MIT-green" /></a>
 </p>
+
+# User Manual
+The stand-alone user manual along with installation instructions can be found here: [User Manual](docs/user_manual.md)
 
 # Why Frugl?
 
@@ -395,7 +398,7 @@ testing is performed with **JUnit4**. Test are able to be run easily within andr
 
 Within the Java folder, you will find 2 subdirectories (test and androidtest)
 
-![image](282649590-36b46230-b40b-4830-914f-620395c0978c.png)
+![image](images/282649590-36b46230-b40b-4830-914f-620395c0978c.png)
 
 ### Unit Tests
 unit tests run the foundational aspects of your code and are limited to the output of a single function. 
@@ -409,7 +412,7 @@ int the androidtest folder (java/com/example/frugl_app).
 ### Running Tests: 
 Tests may be easily run within android studio as it features built-in testing support.
 
-![image](282651163-9f90170b-062f-41b1-9c24-bfae426a768b.png)
+![image](images/282651163-9f90170b-062f-41b1-9c24-bfae426a768b.png)
 
 
 you may run tests in the following ways
