@@ -29,7 +29,7 @@ __Role__:  Full stack engineer. Will focus on frontend and MVC development in th
 #### Frequent Scrum Meetings
 This will be held through Microsoft Teams, and will provide a strong and consistent workflow.
 
-# Product Discription
+# Product Description
 
 Frugl is a price comparison app that compares prices of grocery store items to find the cheapest price. A user can initiate a search for an item such as chicken breast. The app will then return locations to get chicken breast with prices in ascending order. The user can then save selected items in a shopping cart. The user can create an account and save up to 5 recent orders. 
 
